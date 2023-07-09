@@ -140,4 +140,4 @@ Nested arrays can be created by simply including one or more arrays inside anoth
 
 Here's an example:
 
-![Alt text](images/09-nexted-array.png)
+![nested array](images/09-nexted-array.png)
