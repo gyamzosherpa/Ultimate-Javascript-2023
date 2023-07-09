@@ -44,3 +44,18 @@ New feature of ECMA 2022, better performance.
 ```
 
 Previously, we couldn’t use negative value to access element, but the new feature i.e., array.at() solve this issue.
+
+## Array built-in methods
+
+1. Array.from()
+   ![Splice](images/03-array-from.png)
+
+2. splice()
+
+splice(start, deleteCount, [item1 [, item2 [, ...]]]):
+
+The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. The start parameter specifies the starting index of the change and the deleteCount parameter specifies the number of elements to be removed. Additional elements to be added can be specified as arguments after the deleteCount parameter. The splice() method returns the removed elements as a new array.
+
+![Alt text](images/04-array-splice.png)
+
+In this example, the splice() method is used to remove the first two elements of the numbers array and add the numbers 0 and 1 in their place. The splice() method returns the removed elements as a new array, which is logged to the console.
