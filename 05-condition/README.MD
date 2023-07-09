@@ -115,6 +115,7 @@ It returns true if one of its operands is true, otherwise, it returns false.
 ## Equality Operator
 
 == VS ===
+
 == (loose equality operator) checks for equality between two values after type coercion. It means that if the operands are of different types, JavaScript will attempt to convert them to a common type.
 
 === (strict equality operator) checks for equality between two values without type coercion. It means that if the operands are of different types, the result of the comparison will always be false.
