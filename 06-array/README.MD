@@ -138,6 +138,4 @@ In this example, the numbers array is created and contains seven elements. The l
 
 Nested arrays can be created by simply including one or more arrays inside another array, separated by commas.
 
-Here's an example:
-
 ![nested array](images/09-nexted-array.png)
