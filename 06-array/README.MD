@@ -143,7 +143,8 @@ Nested arrays can be created by simply including one or more arrays inside anoth
   let array2 = ["Books", "fruits", "movies"];
   let array3 = ["netflix", "coffee"];
   let array4 = ["London"];
-  //let finalArray = array2.concat(array3).concat(array4); 6 let finalArray = array2.concat(array3, array4);
+  //let finalArray = array2.concat(array3).concat(array4);
+  let finalArray = array2.concat(array3, array4);
   console.log(finalArray);
 
   //nested arrays
