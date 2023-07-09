@@ -138,4 +138,20 @@ In this example, the numbers array is created and contains seven elements. The l
 
 Nested arrays can be created by simply including one or more arrays inside another array, separated by commas.
 
-![nested array](images/09-nexted-array.png)
+```
+  //concat: copy array or join array
+  let array2 = ["Books", "fruits", "movies"];
+  let array3 = ["netflix", "coffee"];
+  let array4 = ["London"];
+  //let finalArray = array2.concat(array3).concat(array4); 6 let finalArray = array2.concat(array3, array4);
+  console.log(finalArray);
+
+  //nested arrays
+  let books = [["Physics", 200]];
+  ["Chemistry", 300], ["Computer", 500];
+
+  //access Computer
+  let computerBook = books[2][0];
+  console.log(computerBook);
+
+```
