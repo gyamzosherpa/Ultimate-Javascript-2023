@@ -60,3 +60,12 @@ The splice() method changes the contents of an array by removing or replacing ex
 ![Alt text](images/04-array-splice.png)
 
 In this example, the splice() method is used to remove the first two elements of the numbers array and add the numbers 0 and 1 in their place. The splice() method returns the removed elements as a new array, which is logged to the console.
+
+3. slice()
+
+slice(start, [end]):
+The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included). The original array will not be modified. If end is omitted, slice() extracts to the end of the array.
+
+![Alt text](images/05-array-slice.png)
+
+In this example, the slice() method is used to extract the elements of the numbers array from index 2 to index 4 (not included) into a new array. The original array remains unchanged, and the new array is logged to the console.
