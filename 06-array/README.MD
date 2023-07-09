@@ -48,7 +48,8 @@ Previously, we couldn’t use negative value to access element, but the new feat
 ## Array built-in methods
 
 1. Array.from()
-   ![Splice](images/03-array-from.png)
+
+![Splice](images/03-array-from.png)
 
 2. splice()
 
