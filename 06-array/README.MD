@@ -111,3 +111,25 @@ unshift(element1, element2, ..., elementX): The unshift() method adds one or mor
 ![Alt text](images/06-array-push.png)
 
 In this example, the push() method is used to add the numbers 0, 1, and 2 to the numbers array. The pop() method is then used to remove the last element from the numbers array, which is logged to the console. The shift() method is used to remove the first element from the numbers array, which is also logged to the console. Finally, the unshift() method is used to add the numbers -1, -2, and -3 to the beginning of the numbers array, which is logged to the console.
+
+5. sort()
+
+sort(): Sorts the elements of an array in place and returns the array
+
+![Alt text](images/06-array-sort.png)
+
+6. indexOf()
+
+The indexOf() method is used to find the first index of an element in an array that matches a specified value. If the element is not found, the indexOf() method returns -1.
+
+![Alt text](images/07-array-indexOf.png)
+
+In this example, the colors array is created and contains three elements: 'red', 'green', and 'blue'. The indexOf() method is then used to find the index of 'green' in the colors array. The result is logged to the console and is 1, since 'green' is the second element in the array. The indexOf() method is then used again to find the index of 'yellow' in the colors array. The result is logged to the console and is -1, since 'yellow' is not in the colors array.
+
+7. lastIndexOf()
+
+The lastIndexOf() method is used to find the last index of an element in an array that matches a specified value. If the element is not found, the lastIndexOf() method returns -1.
+
+![Alt text](images/08-array-lastInjdex.png)
+
+In this example, the numbers array is created and contains seven elements. The lastIndexOf() method is then used to find the last index of the number 3 in the numbers array. The result is logged to the console and is 4, since 3 is the last occurrence of the number 3 in the numbers array. The lastIndexOf() method is then used again to find the last index of the number 5 in the numbers array. The result is logged to the console and is -1, since 5 is not in the numbers array.
