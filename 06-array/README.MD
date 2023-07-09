@@ -69,3 +69,45 @@ The slice() method returns a shallow copy of a portion of an array into a new ar
 ![Alt text](images/05-array-slice.png)
 
 In this example, the slice() method is used to extract the elements of the numbers array from index 2 to index 4 (not included) into a new array. The original array remains unchanged, and the new array is logged to the console.
+
+Here's a real-world example of using the slice() and splice() methods in a project:
+
+Imagine you're building a web application for a to-do list, and you want to allow users to add, remove, and rearrange tasks. The tasks are stored in an array, and you want to use the slice() and splice() methods to manipulate the tasks.
+
+```
+  //slice() and splice()
+  let tasks = ["Take out the trash", "Buy groceries", "Clean the kitchen"];
+
+  // Use slice() to copy a portion of the tasks array
+  let newTasks = tasks.slice(1, 3);
+
+  console.log(newTasks);
+  // Output: [ 'Buy groceries', 'Clean the kitchen' ]
+
+  // Use splice() to add a new task to the tasks array
+  tasks.splice(3, 0, "Do laundry");
+  console.log(tasks);
+  // Output: [ 'Take out the trash', 'Buy groceries', 'Clean the kitchen', 'Do laundry']
+
+  // Use splice() to remove a task from the tasks array
+  tasks.splice(2, 1);
+  console.log(tasks);
+  // Output: [ 'Take out the trash', 'Buy groceries', 'Do laundry' ]
+
+```
+
+In this example, the tasks array is created to store the to-do tasks. The slice() method is then used to create a new array called newTasks that contains a portion of the tasks array, starting from index 1 and ending at index 2. The splice() method is then used to add a new task to the tasks array by specifying the index 3, the number of elements to remove (0), and the new task to add. The splice() method is then used again to remove a task from the tasks array by specifying the index 2 and the number of elements to remove (1). The results of the tasks array are logged to the console after each operation to show the updated state of the tasks array.
+
+4. push(), pop(), shift(), unshift()
+
+push(element1, element2, ..., elementX): The push() method adds one or more elements to the end of an array and returns the new length of the array.
+
+pop(): The pop() method removes the last element from an array and returns the removed element.
+
+shift(): The shift() method removes the first element from an array and returns the removed element.
+
+unshift(element1, element2, ..., elementX): The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+
+![Alt text](images/06-array-push.png)
+
+In this example, the push() method is used to add the numbers 0, 1, and 2 to the numbers array. The pop() method is then used to remove the last element from the numbers array, which is logged to the console. The shift() method is used to remove the first element from the numbers array, which is also logged to the console. Finally, the unshift() method is used to add the numbers -1, -2, and -3 to the beginning of the numbers array, which is logged to the console.
