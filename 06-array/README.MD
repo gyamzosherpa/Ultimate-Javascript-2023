@@ -133,3 +133,11 @@ The lastIndexOf() method is used to find the last index of an element in an arra
 ![Alt text](images/08-array-lastInjdex.png)
 
 In this example, the numbers array is created and contains seven elements. The lastIndexOf() method is then used to find the last index of the number 3 in the numbers array. The result is logged to the console and is 4, since 3 is the last occurrence of the number 3 in the numbers array. The lastIndexOf() method is then used again to find the last index of the number 5 in the numbers array. The result is logged to the console and is -1, since 5 is not in the numbers array.
+
+## Nested Array
+
+Nested arrays can be created by simply including one or more arrays inside another array, separated by commas.
+
+Here's an example:
+
+![Alt text](images/09-nexted-array.png)
