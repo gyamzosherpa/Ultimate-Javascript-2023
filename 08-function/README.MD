@@ -217,3 +217,24 @@ When the add function is called multiple times, it returns the value of the coun
 The first script, script1.js, defines the data object. The second script, script2.js, uses the data object to set and retrieve data.
 
 Since the data object is defined as an IIFE, it can be included in multiple scripts and will always reference the same data. This makes it possible to share data between scripts, even if the scripts are loaded asynchronously or in a different order."
+
+## Anonymous Function or function expression
+
+An anonymous function is a function that is declared without a named identifier. It is often used as a function expression and assigned to a variable, or passed as an argument to another function.
+
+```
+  //function expression
+  let multiply = function (num1, num2) {
+    return num1 * num2;
+  };
+
+  let result = multiply(5, 10);
+  console.log(result); // Output: 50
+
+```
+
+In this example, we define a function multiply using a function expression. We start by declaring a variable multiply and assigning it a function that takes two arguments num1 and num2 and multiplies them together using the \* operator. Note that we don't use the function keyword to define the function; instead, we use an anonymous function expression (a function without a name) that is assigned to the multiply variable.
+
+We can then call the multiply function using the variable name and passing it the two arguments 5 and 10. The function returns 50, which is the result of multiplying 5 and 10. We then log the result to the console.
+
+Function expressions are useful because they allow us to define functions dynamically at runtime, assign them to variables, and pass them as arguments to other functions. They can also be used to create anonymous functions, which are useful for event listeners and callbacks.
