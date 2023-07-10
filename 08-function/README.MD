@@ -167,3 +167,53 @@ We can then call the findFirstPositive function with different arrays to test it
 In this example, the calculateStats function takes an array of numbers as an argument and calculates the sum, average, minimum, and maximum values of the array. It then returns an array containing these four values using the return statement.
 
 We can then call the calculateStats function and use array destructuring to assign the returned values to individual variables. We can then log these values to the console to display the result. The output will be Sum: 25, Avg: 5, Min: 1, Max: 10, which is the sum, average, minimum, and maximum values of the numbers array.
+
+## IIFE: Immediately Invoked Function Expression
+
+An Immediately Invoked Function Expression (IIFE) is a self-executing anonymous function in JavaScript. It runs automatically as soon as it is defined and can't be re-invoked later. IIFEs are commonly used to create a private scope for variables and functions, avoiding polluting the global scope and conflicts with other variables with the same names.
+
+```
+  // IIFE are the function defined as a expression and executed immediately after creation
+  let result = (function (a, b) {
+    return a + b;
+  })(1, 2);
+  console.log(result); //returns 3
+
+```
+
+Immediately Invoked Function Expressions (IIFEs) can be used in several situations in JavaScript, including:
+
+1. Isolating variables and functions: IIFEs allow you to create a new scope and isolate variables and functions from the global scope. This can help to prevent variable and function name collisions, especially when working on large projects with many contributors.
+
+![Alt text](images/10-iife.png)
+
+"In this example, an anonymous function is defined and immediately invoked as an IIFE. The function contains a let statement, which defines a local variable message, and a function printMessage, which prints the value of message to the console. The printMessage function is called within the IIFE, causing the value of message to be printed to the console.
+
+After the IIFE is executed, an attempt is made to access the message variable from the global scope, but a ReferenceError is thrown because the message variable is not defined in the global scope. This demonstrates how the IIFE can be used to isolate variables and functions from the global scope."
+
+2. Encapsulating code: IIFEs allow you to encapsulate code and data within a single unit, making it easier to understand and maintain.
+
+![Alt text](images/11-iife.png)
+
+"In this example, an IIFE returns a function that adds 1 to a counter each time it is called. The counter is defined within the IIFE and is not accessible from the outside. The returned function is assigned to the add variable in the global scope, making it accessible to the rest of the code.
+
+When the add function is called multiple times, it returns the value of the counter, which is incremented each time the function is called. This demonstrates how the IIFE can be used to encapsulate code and data within a single unit, making it easier to understand and maintain."
+
+3. Hiding implementation details: IIFEs allow you to hide the implementation details of your code, making it more secure and less prone to tampering.
+
+![Alt text](images/12-iife.png)
+
+"In this example, an IIFE returns an object with several methods for performing basic arithmetic operations. The result variable, which stores the current value of the calculator, is defined within the IIFE and is not accessible from the outside."
+
+"The methods add, subtract, and getResult are exposed in the returned object, making them accessible from the outside. The methods can be used to perform arithmetic operations on the result variable, but the actual implementation details of the calculation are hidden within the IIFE."
+
+"When the code is executed, the getResult method is called to retrieve the current value of the calculator, but an attempt to access the result variable directly from the global scope results in an undefined value. This demonstrates how the IIFE can be used to hide implementation details and make code more secure and less prone to tampering."
+
+4. Sharing data between scripts: IIFEs allow you to share data between scripts in a controlled and secure manner, which is useful when working with third-party libraries.
+
+![Alt text](images/13-iife.png)
+
+"In this example, an IIFE is used to create a singleton object, data, that can be shared between scripts. The object contains methods setData and getData, which can be used to set and retrieve data stored in the data object.
+The first script, script1.js, defines the data object. The second script, script2.js, uses the data object to set and retrieve data.
+
+Since the data object is defined as an IIFE, it can be included in multiple scripts and will always reference the same data. This makes it possible to share data between scripts, even if the scripts are loaded asynchronously or in a different order."
