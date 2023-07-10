@@ -238,3 +238,60 @@ In this example, we define a function multiply using a function expression. We s
 We can then call the multiply function using the variable name and passing it the two arguments 5 and 10. The function returns 50, which is the result of multiplying 5 and 10. We then log the result to the console.
 
 Function expressions are useful because they allow us to define functions dynamically at runtime, assign them to variables, and pass them as arguments to other functions. They can also be used to create anonymous functions, which are useful for event listeners and callbacks.
+
+## Arrow Function
+
+An arrow function (also known as a "fat arrow function") is a shorthand syntax for writing anonymous functions in JavaScript. Arrow functions were introduced in ECMAScript 6 (ES6) and are widely used in modern JavaScript.
+
+```
+  `let greet = () => {
+    console.log("hello world");
+  };
+
+  greet();`
+```
+
+Here's an example of an arrow function with arguments:
+
+```
+  let square = (num) => {
+    return num * num;
+  };
+  console.log(square(5));
+```
+
+In this example, the arrow function square takes a single argument num and returns its square.
+
+If the arrow function has only a single expression, you can omit the curly braces and return keyword. The result of the expression will automatically be returned.
+
+Here's an example:
+
+```
+  let square = (num) => num * num;
+  console.log(square(5));
+```
+
+### Default parameters
+
+Arrow functions in JavaScript can have default parameters, which are used when the function is called without a value being passed for that parameter. Default parameters are specified by assigning a value to the parameter in the function definition.
+
+For example:
+
+```
+const greeting = (name = 'stranger) => {
+  retutn `Hello, ${name}`;
+};
+
+console.log(greeting()); //'Hello, stranger
+console.log(greeting('John')); //'Hello, John
+```
+
+![Alt text](images/20-arrow-5.png)
+
+Advantages of using arrow functions in JavaScript include:
+
+1. Shorter syntax: Arrow functions have a more concise syntax compared to traditional function expressions, making the code more readable and easier to write.
+2. Implicit this: Arrow functions do not have their own this value, which means that they inherit the this value from their surrounding context, making it easier to work with this inside callbacks.
+3. Lexical arguments: The arguments object is not available inside arrow functions, making it easier to manage function arguments.
+4. No new keyword: Arrow functions cannot be used with the new keyword to create objects, making it harder to accidentally create objects in the wrong way.
+5. Easy to use in functional programming: Arrow functions can be used in functional programming paradigms, making it easier to write functional code and to work with higher-order functions.
