@@ -336,6 +336,8 @@ The filter () method is used to create a new array from a given array consisting
 
 ![Alt text](images/23-filter.png)
 
+Let’s look at real project example:
+
 ```
   const products = [
     { name: "Apple", type: "fruit", price: 1.99 },
@@ -358,3 +360,28 @@ The filter () method is used to create a new array from a given array consisting
 ```
 
 In this example, the filter function is used to create a new array of products that are fruits and have a price less than 1.00. The original products array is not modified. The filter function takes a callback function as an argument, which returns true for elements that should be included in the filtered array and false for elements that should be excluded. In this example, the callback function checks if the product type is 'fruit' and the price is less than 1.00.
+
+### reduce()
+
+Applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+
+![Alt text](images/25-reduce.png)
+
+Let’s look at real project example:
+
+```
+  const purchases = [
+    { item: "Apple", price: 1.99, quantity: 5 },
+    { item: "Carrot", price: 0.99, quantity: 3 },
+    { item: "Banana", price: 0.79, quantity: 10 },
+    { item: "Tomato", price: 1.49, quantity: 2 },
+  ];
+
+  const totalCost = purchases.reduce((acc, purchase) => {
+    return acc + purchase.price * purchase.quantity;
+  }, 0);
+  console.log(totalCost); // 29.64
+
+```
+
+In this example, the reduce function is used to calculate the total cost of all purchases by multiplying the price and quantity of each purchase and adding the result to an accumulator. The second argument to reduce, 0, is the initial value of the accumulator. The reduce function takes a callback function as an argument, which takes the accumulator and the current purchase as arguments, calculates the cost of the current purchase, and returns the updated accumulator value. The reduce function returns the final accumulator value, which is the total cost of all purchases in this example.
