@@ -346,9 +346,7 @@ Let’s look at real project example:
 
     { name: "Banana", type: "fruit", price: 0.79 },
     { name: "Tomato", type: "vegetable", price: 1.49 },
-    ,
   ];
-  [];
   const filteredProducts = products.filter((product) => {
     return product.type === "fruit" && product.price < 1.0;
   });
@@ -385,3 +383,39 @@ Let’s look at real project example:
 ```
 
 In this example, the reduce function is used to calculate the total cost of all purchases by multiplying the price and quantity of each purchase and adding the result to an accumulator. The second argument to reduce, 0, is the initial value of the accumulator. The reduce function takes a callback function as an argument, which takes the accumulator and the current purchase as arguments, calculates the cost of the current purchase, and returns the updated accumulator value. The reduce function returns the final accumulator value, which is the total cost of all purchases in this example.
+
+### find()
+
+Returns the value of the first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.
+
+Here's an example of how you could use the find() method in a real-world project:
+
+Imagine you have an array of objects representing customers, and each object has a customerId property. You want to find the customer with a specific customerId.
+
+![Alt text](images/27-find.png)
+
+In this example, the find() method is used to find the customer object with the customerId of 456. The find() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The find() method will stop and return the first customer object for which the callback returns true.
+
+### findIndex()
+
+Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, -1 is returned. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
+
+Here's an example of how you could use the findIndex() method in a real-world project:
+
+Imagine you have an array of objects representing customers, and each object has a customerId property. You want to find the index of the customer with a specific customerId.
+
+![Alt text](images/28-findIndex.png)
+
+In this example, the findIndex() method is used to find the index of the customer object with the customerId of 456. The findIndex() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The findIndex() method will stop and return the index of the first customer object for which the callback returns true.
+
+### some()
+
+Tests whether at least one element in the array passes the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
+
+Here's an example of how you could use the some() method in a real-world project:
+
+Imagine you have an array of objects representing customers, and each object has a customerId property. You want to know if there are any customers with a specific customerId.
+
+![Alt text](images/29-some.png)
+
+In this example, the some() method is used to check if there are any customers with the customerId of 456. The some() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The some() method will stop and return true as soon as it finds the first customer object for which the callback returns true.
