@@ -419,3 +419,15 @@ Imagine you have an array of objects representing customers, and each object has
 ![Alt text](images/29-some.png)
 
 In this example, the some() method is used to check if there are any customers with the customerId of 456. The some() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The some() method will stop and return true as soon as it finds the first customer object for which the callback returns true.
+
+### every()
+
+Tests whether all elements in the array pass the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
+
+Here's an example of how you could use the every() method in a real-world project:
+
+Imagine you have an array of objects representing customers, and each object has a customerId property. You want to know if all customers have a customerId that is greater than 100.
+
+![Alt text](images/30-every.png)
+
+In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
