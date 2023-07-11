@@ -295,3 +295,66 @@ Advantages of using arrow functions in JavaScript include:
 3. Lexical arguments: The arguments object is not available inside arrow functions, making it easier to manage function arguments.
 4. No new keyword: Arrow functions cannot be used with the new keyword to create objects, making it harder to accidentally create objects in the wrong way.
 5. Easy to use in functional programming: Arrow functions can be used in functional programming paradigms, making it easier to write functional code and to work with higher-order functions.
+
+## Higher order Functions
+
+### map()
+
+Sometimes you may need to take an array and apply some procedure to its elements so that you get a new array with modified elements. "Creates a new array with the results of calling a provided function on every element in the calling array."
+
+![Alt text](images/21-map.png)
+
+In this example, the map function is called on the numbers array and a callback function num => num \* num is passed as an argument. The map function returns a new array squaredNumbers with the results of squaring each element in the numbers array.
+
+```
+  const employees = [
+    { name: "John", salary: 50000 },
+    { name: "Jane", salary: 55000 },
+    { name: "Jim", salary: 60000 },
+  ];
+  const updatedEmployees = employees.map((empLoyee) => {
+    return {
+      name: employee.name,
+      salary: employee.salary + 5000,
+      currency: "USD",
+    };
+  });
+  console.log, updatedEmployees;
+
+  /*  [  { name: 'John', salary: 55000, currency: 'USD'},
+          { name: 'Jane', salary: 60000, currency: 'USD' },
+          { name: 'Jim', salary: 65000, currency: 'USD' }
+        ] ;
+    */
+
+  //In this example you get the new updated salary of all employees.
+```
+
+### filter()
+
+The filter () method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.
+
+![Alt text](images/23-filter.png)
+
+```
+  const products = [
+    { name: "Apple", type: "fruit", price: 1.99 },
+
+    { name: "Carrot", type: "vegetable", price: 0.99 },
+
+    { name: "Banana", type: "fruit", price: 0.79 },
+    { name: "Tomato", type: "vegetable", price: 1.49 },
+    ,
+  ];
+  [];
+  const filteredProducts = products.filter((product) => {
+    return product.type === "fruit" && product.price < 1.0;
+  });
+  console.log(filteredProducts);
+  /*
+    { name: 'Banana', type: 'fruit', price: 0.79 }
+    */
+
+```
+
+In this example, the filter function is used to create a new array of products that are fruits and have a price less than 1.00. The original products array is not modified. The filter function takes a callback function as an argument, which returns true for elements that should be included in the filtered array and false for elements that should be excluded. In this example, the callback function checks if the product type is 'fruit' and the price is less than 1.00.
