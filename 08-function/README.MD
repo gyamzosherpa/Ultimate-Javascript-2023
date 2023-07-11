@@ -431,3 +431,64 @@ Imagine you have an array of objects representing customers, and each object has
 ![Alt text](images/30-every.png)
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
+
+### CALL APPLY BIND
+
+Call is a function that helps you change the context of the invoking function. In layperson's terms, it helps you replace the value of this inside a function with whatever value you want.
+
+Apply is very similar to the call function. The only difference is that in apply you can pass an array as an argument list.
+
+Bind is a function that helps you create another function that you can execute later with the new context of this that is provided.
+
+#### How to Use the Call Function in JavaScript?
+
+call is a function that you use to change the value of this inside a function and execute it with the arguments provided.
+Here is the syntax of the call function: func.call(thisObj, args1, args2, ...)
+
+-func is a function that needs to be invoked with a different this object.
+-thisObj is an object or a value that needs to be replaced with this keyword present inside the function func.
+-args1, args2 are arguments that are passed to the invoking function with the changed this object.
+
+Note that if you invoke a function without any thisObj argument, then JavaScript considers this property to be a global object.
+
+![Alt text](images/31-call.png)
+
+In the example above, we have two objects student and teacher, where student object has getEmail function and teacher has no function. If we have to print firstName and lastName of teacher object then we can use call method as shown in line no 15 by combining with student object.
+
+If we do not have getEmail function in both object then we can access to the key properties by combining both objects with getEmail function.
+
+Another example:
+
+![Alt text](images/32-call.png)
+
+In this example, the call method is used to invoke the displayName function and set its this value to person object. The first argument passed to call is used as the value of this inside the function, and any additional arguments are passed as arguments to the function. In this case, we passed "Hello" as the greeting and person as the 'this' value. The result is the expected greeting along with firstName and lastName from the person object.
+
+#### How to Use the Apply Function in JavaScript?
+
+The Apply function is very similar to the Call function. The only difference between call and apply is the difference in how arguments are passed.
+
+In apply, arguments you can pass an argument as an array literal or a new array object.
+
+![Alt text](images/33-apply.png)
+
+In this example, the apply method is used to invoke the displayName function and set its this value to person object. The first argument passed to apply is used as the value of this inside the function, and the second argument is an array that contains the arguments to be passed to the function. In this case, we passed ["Hello"] as the array of arguments and person as the this value. The result is the expected greeting along with firstName and lastName from the person object.
+
+The best part about apply is we don’t need to take care of the number of arguments that are passed to the invoking function. Because of its dynamic and versatile nature, you can use it in complicated situations.
+
+Let’s look at another example of apply function.
+
+![Alt text](images/34-apply.png)
+
+#### How to Use the Bind Function in JavaScript?
+
+The bind function creates a copy of a function with a new value to the this presents inside the calling function.
+
+Here is the syntax for the bind function: func.bind(thisObj, arg1, arg2, ..., argN);
+
+-func is a function that needs to be invoked with a different this object
+-thisObj is an object or a value that needs to be replaced with this keyword present inside the function func
+-arg1, arg2…argN – you can pass 1 argument to the calling function or more than that, similar to the call function.
+
+![Alt text](images/35-bind.png)
+
+In this example, the bind method is used to create a new function displayPersonName that has its this value set to person object. When displayPersonName is called, it returns the expected greeting along with firstName and lastName from the person object.
