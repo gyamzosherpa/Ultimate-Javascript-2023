@@ -1,5 +1,16 @@
 # LOOP
 
+- [LOOP](#loop)
+  - [Loop Definition](#loop-definition)
+  - [Type of Loops](#type-of-loops)
+    - [For loop](#for-loop)
+    - [While loop](#while-loop)
+    - [Do while loop](#do-while-loop)
+    - [For of loop](#for-of-loop)
+    - [For in loop](#for-in-loop)
+
+## Loop Definition
+
 A loop is a control flow statement used to execute a block of code repeatedly until the condition given in the loop is true. The most common use of loops is to repeat a block of code several times. When the condition is false the loop stops.
 
 ![Alt text](images/00-loop.png)
@@ -8,7 +19,7 @@ For example, if we want to print "Hello, World!" 10 times then instead of writin
 
 ![Alt text](images/01-loop.png)
 
-## Types of Loops
+## Type of Loops
 
 ### For loop
 
