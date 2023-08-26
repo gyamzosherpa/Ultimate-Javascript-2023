@@ -1,10 +1,10 @@
-# Table of Contents
+# Condition or Control Flows
 
 ## Condition or Control Flow
 
 A conditional statement is a type of control flow statement that allows you to execute different code blocks based on a specified condition.
 
-- [Table of Contents](#table-of-contents)
+- [Condition or Control Flows](#condition-or-control-flows)
   - [Condition or Control Flow](#condition-or-control-flow)
   - [If/else statement](#ifelse-statement)
   - [Nested if/else](#nested-ifelse)
