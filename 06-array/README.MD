@@ -1,4 +1,17 @@
-# array
+# Array
+
+## Array Definition
+
+An array is an ordered list of values.
+
+- [Array](#array)
+  - [Array Definition](#array-definition)
+  - [array](#array-1)
+    - [Array.at (ECMA 2022)](#arrayat-ecma-2022)
+  - [Array built-in methods](#array-built-in-methods)
+  - [Nested Array](#nested-array)
+
+## array
 
 1. An array is an ordered list of values.
 2. Each value is called an element specified by an index.
@@ -29,7 +42,7 @@ You can access elements in an array by using the square brackets and the index o
   arr[2] = 42; // [1,2,45,4,5]
 ```
 
-## Array.at (ECMA 2022)
+### Array.at (ECMA 2022)
 
 New feature of ECMA 2022, better performance.
 
