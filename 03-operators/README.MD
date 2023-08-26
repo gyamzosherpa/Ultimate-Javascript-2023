@@ -1,6 +1,23 @@
 # OPERATOR
 
-## Arithmetic Operator: used for mathematical operations like addition (+), subtraction (-), multiplication (\*), division (/), modulus (%), and exponentiation
+## Table of Contents
+
+- [OPERATOR](#operator)
+  - [Table of Contents](#table-of-contents)
+  - [Arithmetic Operator](#arithmetic-operator)
+  - [Comparison Operator](#comparison-operator)
+  - [Logical operators](#logical-operators)
+  - [Assignment operators](#assignment-operators)
+  - [Four Important Operators](#four-important-operators)
+    - [OR Operator](#or-operator)
+    - [AND OPERATOR](#and-operator)
+    - [NULLISH COALESCING OPERATOR](#nullish-coalescing-operator)
+    - [TERNARY OPERATOR](#ternary-operator)
+    - [Differences between OR(||) and ?? Operator](#differences-between-or-and--operator)
+
+## Arithmetic Operator
+
+used for mathematical operations like addition (+), subtraction (-), multiplication (\*), division (/), modulus (%), and exponentiation
 
 ```
   let x = 10;
@@ -23,7 +40,9 @@
   console.log('Modulus: ' result);
 ```
 
-## Comparison Operator: used for comparing values and evaluating to a boolean value (e.g. equal to (==), not equal to (!=), greater than (>), less than (<), greater than or equal to (>=), less than or equal to (<=)).
+## Comparison Operator
+
+used for comparing values and evaluating to a boolean value (e.g. equal to (==), not equal to (!=), greater than (>), less than (<), greater than or equal to (>=), less than or equal to (<=)).
 
 ```
 // comparison operator
@@ -37,7 +56,9 @@
   console.log(x <= y); // false
 ```
 
-## Logical operators: used for combining and manipulating boolean values (e.g. AND (&&), OR (||), NOT (!).
+## Logical operators
+
+used for combining and manipulating boolean values (e.g. AND (&&), OR (||), NOT (!).
 
 ```
   // Logical. operator
@@ -49,7 +70,9 @@
 
 ```
 
-## Assignment operators: used for assigning values to variables (e.g. =, +=, -=, \*=, /=, %=, \*\*=).
+## Assignment operators
+
+used for assigning values to variables (e.g. =, +=, -=, \*=, /=, %=, \*\*=).
 
 ```
   // assignment operator
@@ -60,12 +83,6 @@
   x %= 2; // x is now 0
 
 ```
-
-other operators:
-
-1. Ternary Operator
-2. unary operator
-3. Spread operator
 
 ## Four Important Operators
 
