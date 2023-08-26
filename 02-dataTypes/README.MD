@@ -1,12 +1,30 @@
 # Data Types
 
-## Table of Contents
+Table of Contents
 
-- [String](#string)
-- [Number](#number)
-- [null and undefined](#null-and-undefined)
-- [Boolean](#boolean)
-- [Type Conversion](#type-conversion)
+- [Data Types](#data-types)
+  - [Primitive and Non-Primitive Data Types](#primitive-and-non-primitive-data-types)
+  - [Primitive Data Types](#primitive-data-types)
+    - [String](#string)
+      - [Some String built-in methods](#some-string-built-in-methods)
+    - [Number](#number)
+      - [Some Number built-in methods](#some-number-built-in-methods)
+      - [Math Built-In Methods](#math-built-in-methods)
+      - [some important math built in methods:](#some-important-math-built-in-methods)
+      - [Random Number Generator](#random-number-generator)
+    - [null and undefined](#null-and-undefined)
+    - [Boolean](#boolean)
+  - [Type Conversion](#type-conversion)
+    - [Implicit(type-coercion)](#implicittype-coercion)
+    - [Explicit(Type-Casting)](#explicittype-casting)
+
+## Primitive and Non-Primitive Data Types
+
+"Primitive data" are the type that contains a single value.
+
+"non-primitive" contains a collection of values.
+
+Primitive Data Types:
 
 1. Number: represents numeric values, e.g. 42, 3.14.
 2. String: represents a sequence of characters, e.g. 'hello', "world".
@@ -20,7 +38,7 @@ Additionally, there are three special data types in JavaScript:
 2. Array: an ordered list of values, represented as [value1, value2, value3, ...]. Arrays are a type of object in JavaScript.
 3. Object: represents a collection of key-value pairs and is used to store more complex data structures.
 
-"Primitive data" are the type that contains a single value, whereas "non-primitive" contains a collection of values.
+Example:
 
 ```
     // primitive data types
@@ -56,7 +74,9 @@ Additionally, there are three special data types in JavaScript:
 
 ```
 
-## String
+## Primitive Data Types
+
+### String
 
 ```
     //string-manipulation
@@ -78,7 +98,7 @@ Additionally, there are three special data types in JavaScript:
     console. log(myName); // gyamzo sherpa
 ```
 
-### Some String built-in methods
+#### Some String built-in methods
 
 1. length and charAt
 2. indexOf and lastIndexOf
@@ -88,7 +108,7 @@ Additionally, there are three special data types in JavaScript:
 
 for more details: https://www.w3schools.com/jsref/jsref_obj_string.asp
 
-## Number
+### Number
 
 ```
 // Integer
@@ -129,7 +149,7 @@ You can check if a value is NaN using the isNaN() function.
 
 ```
 
-### Some Number built-in methods
+#### Some Number built-in methods
 
 1. toPrecision()
 2. valueOf()
@@ -164,7 +184,7 @@ You can check if a value is NaN using the isNaN() function.
 
 ```
 
-### Math Built-In Methods
+#### Math Built-In Methods
 
 Math is a built-in object that has properties and methods for mathematical constants and functions. It's not a function object. The JavaScript Math object allows you to perform mathematical tasks on numbers.
 
@@ -183,7 +203,7 @@ Math is a built-in object that has properties and methods for mathematical const
 
 ```
 
-### some important math built in methods:
+#### some important math built in methods:
 
 1. math.floor()
 2. math.round()
@@ -193,7 +213,7 @@ Math is a built-in object that has properties and methods for mathematical const
 
 for mmore details visit: https://www.w3schools.com/js/js_math.asp
 
-### Random Number Generator
+#### Random Number Generator
 
 Math.random() returns a random floating-point number ranging from 0 to less than 1 (inclusive of 0 and exclusive of 1).
 
@@ -220,7 +240,7 @@ Math.random() returns a random floating-point number ranging from 0 to less than
     randomNum(26, 15); // 115-25
 ```
 
-## null and undefined
+### null and undefined
 
 In JavaScript, undefined is a type, whereas null an object. Both represent no value.
 
@@ -246,39 +266,64 @@ In JavaScript, undefined is a type, whereas null an object. Both represent no va
     console.log(number2); //shows Nan
 ```
 
-## Boolean
+### Boolean
 
 The boolean data type represents a value that can be either true or false. This data type is often used in conditional statements and loops to determine whether certain conditions are met.
 
+```
+    let isNepali = true;
+    console.log(isNepali) //true
+    console.log(typeof isNepali) //boolean
+```
+
 ## Type Conversion
 
-### Implicit(type-coercion) and Explicit(Type-Casting)
+### Implicit(type-coercion)
+
+JavaScript automatically converts one data type to another (to the right type). This is known as implicit conversion.
+
+```
+        // numeric string used with + gives string type
+        let result;
+
+        result = '3' + 2;
+        console.log(result) // "32"
+
+        result = '3' + true;
+        console.log(result); // "3true"
+
+        result = '3' + undefined;
+        console.log(result); // "3undefined"
+
+        result = '3' + null;
+        console.log(result); // "3null"
+```
+
+```
+    // Implicit Conversion
+    const implicitConversion = "20" / "5"; //both automatically convert to number
+    console.log(implicitConversion); // 4
+
+    console.log("23" + 23); //2323, because in string we can use "+"
+    console.log("hello" + 23); //hello23, 23 automatically change to string
+    console.log("hello" - 34); //NaN, in string we cannot use "-,/,*"
+    console.log(24 - "Hello"); //NaN
+    console.log(2000 / "hello"); //NaN
+    console.log(2000 * "hello"); //NaN
+    console.log(true + true); //true = 1
+```
+
+### Explicit(Type-Casting)
+
+In JavaScript, explicit type conversions are done using built-in methods.
+
+Number() AND Boolean()
 
 ```
         // Explicit Conversion
-        const num = 20;
-        const changeNum = String(num);
-        console.log(typeof changeNum); //string
 
-        const isNepali = true;
-        const check = String(isNepali);
-        console.log(check);
-        console.log(typeof check); //string
-
-        // Implicit Conversion
-        const implicitConversion = "20" / "5"; //both automatically convert to number
-        console.log(implicitConversion); // 4
-
-        console.log("23" + 23); //2323, because in string we can use "+"
-        console.log("hello" + 23); //hello23, 23 automatically change to string
-        console.log("hello" - 34); //NaN, in string we cannot use "-,/,*"
-        console.log(24 - "Hello"); //NaN
-        console.log(2000 / "hello"); //NaN
-        console.log(2000 * "hello"); //NaN
-        console.log(true + true); //true = 1
-
-        // Examples
         // falsy values: 0, "", undefined, null, NaN, false
+
         console.log(Number("123456")); // 123456
         console.log(Number("Hello")); // Nan, string cannot be number
         console.log(Number(true)); // 1, true = 1
@@ -287,8 +332,8 @@ The boolean data type represents a value that can be either true or false. This 
         console.log(Number(undefined)); // NaN
 
         console.log(Boolean("hello")); //true, if there is content inside "", it is set to true
-        console.log(""); //false, empty string
-        console.log(" "); //true, there is some space: " "
+        console.log(Boolean("")); //false, empty string
+        console.log(Boolean(" ")); //true, there is some space: " "
         console.log(Boolean(0)); // false, 0=false
         console.log(Boolean(1)); // true, 1=true
         console.log(Boolean(null)); // false
@@ -299,4 +344,48 @@ The boolean data type represents a value that can be either true or false. This 
         console.log(!"123"); //false
         console.log(!123); //false
 
+```
+
+To convert other data types to strings, you can use either String() or toString()
+
+```
+    //number to string
+    const num = 20;
+    const changeNum = String(num);
+    console.log(typeof changeNum); //string
+
+    const isNepali = true;
+    const check = String(isNepali);
+    console.log(check);
+    console.log(typeof check); //string
+
+    let result;
+    result = String(324);
+    console.log(result);  // "324"
+
+    result = String(2 + 4);
+    console.log(result); // "6"
+
+    //other data types to string
+    result = String(null);
+    console.log(result); // "null"
+
+    result = String(undefined);
+    console.log(result); // "undefined"
+
+    result = String(NaN);
+    console.log(result); // "NaN"
+
+    result = String(true);
+    console.log(result); // "true"
+
+    result = String(false);
+    console.log(result); // "false"
+
+    // using toString()
+    result = (324).toString();
+    console.log(result); // "324"
+
+    result = true.toString();
+    console.log(result); // "true"
 ```
