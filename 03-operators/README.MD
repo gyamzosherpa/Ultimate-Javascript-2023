@@ -1,9 +1,6 @@
-# OPERATOR
+# OPERATORS
 
-## Table of Contents
-
-- [OPERATOR](#operator)
-  - [Table of Contents](#table-of-contents)
+- [OPERATORS](#operators)
   - [Arithmetic Operator](#arithmetic-operator)
   - [Comparison Operator](#comparison-operator)
   - [Logical operators](#logical-operators)
