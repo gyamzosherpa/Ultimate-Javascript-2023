@@ -1,5 +1,12 @@
 # Date
 
+- [Date](#date)
+  - [Date Definition](#date-definition)
+  - [Get local (your region) date and time](#get-local-your-region-date-and-time)
+  - [Get date and time of other regions](#get-date-and-time-of-other-regions)
+
+## Date Definition
+
 When a Date object is created, a number of methods allow you to operate on it. Date methods allow you to get and set the year, month, day, hour, minute, second, etc.
 
 ```
