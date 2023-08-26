@@ -2,6 +2,21 @@
 
 A conditional statement is a type of control flow statement that allows you to execute different code blocks based on a specified condition.
 
+## Table of Contents
+
+- [Condition or Control Flow](#condition-or-control-flow)
+  - [Table of Contents](#table-of-contents)
+  - [If/else statement](#ifelse-statement)
+  - [Nested if/else](#nested-ifelse)
+  - [logical operators](#logical-operators)
+    - [AND Operator](#and-operator)
+    - [OR Operator](#or-operator)
+  - [Equality Operator](#equality-operator)
+    - [Not Equal to](#not-equal-to)
+  - [Ternary Operator](#ternary-operator)
+  - [Switch statement](#switch-statement)
+    - [Multiple case switch statement](#multiple-case-switch-statement)
+
 ## If/else statement
 
 Suppose you want to perform one task or you want a block of code to run only if a specific condition is true.
@@ -80,9 +95,9 @@ Let’s look at the example:
 
 ```
 
-## logical operator
+## logical operators
 
-## AND Operator
+### AND Operator
 
 It returns true if both of its operands are true, otherwise, it returns false.
 
@@ -97,7 +112,7 @@ It returns true if both of its operands are true, otherwise, it returns false.
 
 ```
 
-## OR Operator
+### OR Operator
 
 It returns true if one of its operands is true, otherwise, it returns false.
 
@@ -135,7 +150,7 @@ Here is an example of how the == and === operators can produce different results
 In this example, x is a number and y is a string, but the loose equality operator == performs type coercion and considers them equal because their values are the same after coercion. On the other hand, the strict equality operator === does not perform type coercion and considers them unequal because they are of different types.
 In general, it is recommended to use === instead of == to avoid unexpected type coercion results.
 
-## Not Equal to
+### Not Equal to
 
 ```
   //not equal to
@@ -312,7 +327,7 @@ Switch, array
 
 ```
 
-## Multiple case switch statement
+### Multiple case switch statement
 
 You may encounter code in which multiple cases should have the same output. In order to accomplish this, you can use more than one case for each block of code.
 
