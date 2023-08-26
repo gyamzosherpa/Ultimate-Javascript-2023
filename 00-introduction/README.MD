@@ -1,4 +1,13 @@
-# Introduction
+# JavaScript
+
+Table of contents
+
+- [JavaScript](#javascript)
+  - [Introduction](#introduction)
+  - [Client-side and Server-side](#client-side-and-server-side)
+  - [Advantages of JavaScript](#advantages-of-javascript)
+
+## Introduction
 
 1. JavaScript is a high-level, dynamic, and interpreted programming language that is widely used for web development and other applications.
 
