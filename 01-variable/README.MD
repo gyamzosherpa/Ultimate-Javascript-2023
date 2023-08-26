@@ -1,4 +1,11 @@
-# variable
+# VARIABLE
+
+- [VARIABLE](#variable)
+  - [Variable Definition](#variable-definition)
+  - [Keywords: var, let, and const.](#keywords-var-let-and-const)
+  - [Ways to declare a variable](#ways-to-declare-a-variable)
+
+## Variable Definition
 
 Variables are those containers that store data values.
 
