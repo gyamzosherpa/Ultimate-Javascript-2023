@@ -1,5 +1,7 @@
 # LOOP
 
+Table of Contents
+
 - [LOOP](#loop)
   - [Loop Definition](#loop-definition)
   - [Type of Loops](#type-of-loops)
