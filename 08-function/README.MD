@@ -1,4 +1,38 @@
-# function
+# FUNCTION
+
+Table of Contents
+
+- [FUNCTION](#function)
+  - [function definition](#function-definition)
+  - [Parameters and Arguments](#parameters-and-arguments)
+  - [The arguments object](#the-arguments-object)
+  - [Function with a return statement or return value](#function-with-a-return-statement-or-return-value)
+    - [Returning a value from a function](#returning-a-value-from-a-function)
+    - [Terminating a function early](#terminating-a-function-early)
+    - [Breaking out of a loop](#breaking-out-of-a-loop)
+    - [Returning multiple values](#returning-multiple-values)
+  - [IIFE: Immediately Invoked Function Expression](#iife-immediately-invoked-function-expression)
+    - [Isolating variables and functions](#isolating-variables-and-functions)
+    - [Encapsulating code](#encapsulating-code)
+    - [Hiding implementation details](#hiding-implementation-details)
+    - [Sharing data between scripts](#sharing-data-between-scripts)
+  - [Anonymous Function or function expression](#anonymous-function-or-function-expression)
+  - [Arrow Function](#arrow-function)
+    - [Default parameters](#default-parameters)
+  - [Higher order Functions](#higher-order-functions)
+    - [map()](#map)
+    - [filter()](#filter)
+    - [reduce()](#reduce)
+    - [find()](#find)
+    - [findIndex()](#findindex)
+    - [some()](#some)
+    - [every()](#every)
+  - [CALL APPLY BIND](#call-apply-bind)
+    - [How to Use the Call Function in JavaScript?](#how-to-use-the-call-function-in-javascript)
+    - [How to Use the Apply Function in JavaScript?](#how-to-use-the-apply-function-in-javascript)
+    - [How to Use the Bind Function in JavaScript?](#how-to-use-the-bind-function-in-javascript)
+
+## function definition
 
 The function is a block of code to perform a specific task. So, you don’t have to write the code for the same task again and again but create a function and call it wherever the task needed to be performed. “function” is a keyword to create a function.
 
@@ -62,7 +96,9 @@ The return statement ends function execution and specifies a value to be returne
 
 Here are some common uses of the return statement in programming:
 
-• Returning a value from a function: Functions can perform calculations and return the result back to the caller using the return statement. This allows the result to be used by other parts of the program.
+### Returning a value from a function
+
+Functions can perform calculations and return the result back to the caller using the return statement. This allows the result to be used by other parts of the program.
 
 ```
   // Returning a value from a function
@@ -81,7 +117,9 @@ We can then call the multiply function and assign the returned value to a variab
 
 By using the return statement in this way, we can make our functions more flexible and reusable, as the returned value can be used by other parts of the program for further computation or to make decisions based on the result.
 
-• Terminating a function early: If a function encounters an error condition or unexpected input, it can use the return statement to terminate the function early and return an error message or null value back to the caller.
+### Terminating a function early
+
+If a function encounters an error condition or unexpected input, it can use the return statement to terminate the function early and return an error message or null value back to the caller.
 
 ```
   // terminating a function early
@@ -105,7 +143,9 @@ In this example, the divide function takes two arguments num1 and num2 and divid
 
 We can then call the divide function with different arguments to test its behavior. The first call to divide with arguments 10 and 2 will return 5, which is the correct result. The second call to divide with arguments 10 and 0 will return null, indicating that the division by zero was not allowed and the function terminated early.
 
-• Breaking out of a loop: Inside a loop, a return statement can be used to break out of the loop early and return a result.
+### Breaking out of a loop
+
+Inside a loop, a return statement can be used to break out of the loop early and return a result.
 
 ```
   // breaking out of loop
@@ -132,7 +172,9 @@ In this example, the findFirstPositive function takes an array of numbers as an 
 
 We can then call the findFirstPositive function with different arrays to test its behavior. The first call to findFirstPositive with an array containing both positive and negative numbers will return 3, which is the first positive number in the array. The second call to findFirstPositive with an array containing only negative numbers and zero will return null, indicating that no positive number was found in the array.
 
-• Returning multiple values: In some programming languages, a function can return multiple values using the return statement, separated by commas.
+### Returning multiple values
+
+In some programming languages, a function can return multiple values using the return statement, separated by commas.
 
 ```
   // Returning multiple values
@@ -183,7 +225,9 @@ An Immediately Invoked Function Expression (IIFE) is a self-executing anonymous 
 
 Immediately Invoked Function Expressions (IIFEs) can be used in several situations in JavaScript, including:
 
-1. Isolating variables and functions: IIFEs allow you to create a new scope and isolate variables and functions from the global scope. This can help to prevent variable and function name collisions, especially when working on large projects with many contributors.
+### Isolating variables and functions
+
+IIFEs allow you to create a new scope and isolate variables and functions from the global scope. This can help to prevent variable and function name collisions, especially when working on large projects with many contributors.
 
 ![Alt text](images/10-iife.png)
 
@@ -191,7 +235,9 @@ Immediately Invoked Function Expressions (IIFEs) can be used in several situatio
 
 After the IIFE is executed, an attempt is made to access the message variable from the global scope, but a ReferenceError is thrown because the message variable is not defined in the global scope. This demonstrates how the IIFE can be used to isolate variables and functions from the global scope."
 
-2. Encapsulating code: IIFEs allow you to encapsulate code and data within a single unit, making it easier to understand and maintain.
+### Encapsulating code
+
+IIFEs allow you to encapsulate code and data within a single unit, making it easier to understand and maintain.
 
 ![Alt text](images/11-iife.png)
 
@@ -199,7 +245,9 @@ After the IIFE is executed, an attempt is made to access the message variable fr
 
 When the add function is called multiple times, it returns the value of the counter, which is incremented each time the function is called. This demonstrates how the IIFE can be used to encapsulate code and data within a single unit, making it easier to understand and maintain."
 
-3. Hiding implementation details: IIFEs allow you to hide the implementation details of your code, making it more secure and less prone to tampering.
+### Hiding implementation details
+
+IIFEs allow you to hide the implementation details of your code, making it more secure and less prone to tampering.
 
 ![Alt text](images/12-iife.png)
 
@@ -209,7 +257,9 @@ When the add function is called multiple times, it returns the value of the coun
 
 "When the code is executed, the getResult method is called to retrieve the current value of the calculator, but an attempt to access the result variable directly from the global scope results in an undefined value. This demonstrates how the IIFE can be used to hide implementation details and make code more secure and less prone to tampering."
 
-4. Sharing data between scripts: IIFEs allow you to share data between scripts in a controlled and secure manner, which is useful when working with third-party libraries.
+### Sharing data between scripts
+
+IIFEs allow you to share data between scripts in a controlled and secure manner, which is useful when working with third-party libraries.
 
 ![Alt text](images/13-iife.png)
 
@@ -432,7 +482,7 @@ Imagine you have an array of objects representing customers, and each object has
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
 
-### CALL APPLY BIND
+## CALL APPLY BIND
 
 Call is a function that helps you change the context of the invoking function. In layperson's terms, it helps you replace the value of this inside a function with whatever value you want.
 
@@ -440,7 +490,7 @@ Apply is very similar to the call function. The only difference is that in apply
 
 Bind is a function that helps you create another function that you can execute later with the new context of this that is provided.
 
-#### How to Use the Call Function in JavaScript?
+### How to Use the Call Function in JavaScript?
 
 call is a function that you use to change the value of this inside a function and execute it with the arguments provided.
 Here is the syntax of the call function: func.call(thisObj, args1, args2, ...)
@@ -463,7 +513,7 @@ Another example:
 
 In this example, the call method is used to invoke the displayName function and set its this value to person object. The first argument passed to call is used as the value of this inside the function, and any additional arguments are passed as arguments to the function. In this case, we passed "Hello" as the greeting and person as the 'this' value. The result is the expected greeting along with firstName and lastName from the person object.
 
-#### How to Use the Apply Function in JavaScript?
+### How to Use the Apply Function in JavaScript?
 
 The Apply function is very similar to the Call function. The only difference between call and apply is the difference in how arguments are passed.
 
@@ -479,7 +529,7 @@ Let’s look at another example of apply function.
 
 ![Alt text](images/34-apply.png)
 
-#### How to Use the Bind Function in JavaScript?
+### How to Use the Bind Function in JavaScript?
 
 The bind function creates a copy of a function with a new value to the this presents inside the calling function.
 
