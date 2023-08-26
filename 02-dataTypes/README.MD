@@ -241,3 +241,54 @@ In JavaScript, undefined is a type, whereas null an object. Both represent no va
 ## Boolean
 
 The boolean data type represents a value that can be either true or false. This data type is often used in conditional statements and loops to determine whether certain conditions are met.
+
+## Type Conversion
+
+### Implicit(type-coercion) and Explicit(Type-Casting)
+
+```
+        // Explicit Conversion
+        const num = 20;
+        const changeNum = String(num);
+        console.log(typeof changeNum); //string
+
+        const isNepali = true;
+        const check = String(isNepali);
+        console.log(check);
+        console.log(typeof check); //string
+
+        // Implicit Conversion
+        const implicitConversion = "20" / "5"; //both automatically convert to number
+        console.log(implicitConversion); // 4
+
+        console.log("23" + 23); //2323, because in string we can use "+"
+        console.log("hello" + 23); //hello23, 23 automatically change to string
+        console.log("hello" - 34); //NaN, in string we cannot use "-,/,*"
+        console.log(24 - "Hello"); //NaN
+        console.log(2000 / "hello"); //NaN
+        console.log(2000 * "hello"); //NaN
+        console.log(true + true); //true = 1
+
+        // Examples
+        // falsy values: 0, "", undefined, null, NaN, false
+        console.log(Number("123456")); // 123456
+        console.log(Number("Hello")); // Nan, string cannot be number
+        console.log(Number(true)); // 1, true = 1
+        console.log(Number(false)); // 0, false = 0
+        console.log(Number(null)); // 0
+        console.log(Number(undefined)); // NaN
+
+        console.log(Boolean("hello")); //true, if there is content inside "", it is set to true
+        console.log(""); //false, empty string
+        console.log(" "); //true, there is some space: " "
+        console.log(Boolean(0)); // false, 0=false
+        console.log(Boolean(1)); // true, 1=true
+        console.log(Boolean(null)); // false
+        console.log(Boolean(undefined)); // false
+
+        console.log(!"true"); //false, "true" is string, anything inside "" is true, therefore !true = false
+        console.log(!"gYAMZO"); //false
+        console.log(!"123"); //false
+        console.log(!123); //false
+
+```
