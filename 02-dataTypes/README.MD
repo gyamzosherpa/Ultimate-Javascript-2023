@@ -1,5 +1,13 @@
 # Data Types
 
+## Table of Contents
+
+- [String](#string)
+- [Number](#number)
+- [null and undefined](#null-and-undefined)
+- [Boolean](#boolean)
+- [Type Conversion](#type-conversion)
+
 1. Number: represents numeric values, e.g. 42, 3.14.
 2. String: represents a sequence of characters, e.g. 'hello', "world".
 3. Boolean: represents true or false values.
@@ -70,7 +78,7 @@ Additionally, there are three special data types in JavaScript:
     console. log(myName); // gyamzo sherpa
 ```
 
-## Some String built-in methods
+### Some String built-in methods
 
 1. length and charAt
 2. indexOf and lastIndexOf
@@ -121,7 +129,7 @@ You can check if a value is NaN using the isNaN() function.
 
 ```
 
-## Some Number built-in methods
+### Some Number built-in methods
 
 1. toPrecision()
 2. valueOf()
@@ -156,7 +164,7 @@ You can check if a value is NaN using the isNaN() function.
 
 ```
 
-## Math Built-In Methods:
+### Math Built-In Methods
 
 Math is a built-in object that has properties and methods for mathematical constants and functions. It's not a function object. The JavaScript Math object allows you to perform mathematical tasks on numbers.
 
@@ -175,7 +183,7 @@ Math is a built-in object that has properties and methods for mathematical const
 
 ```
 
-## some important math built in methods:
+### some important math built in methods:
 
 1. math.floor()
 2. math.round()
