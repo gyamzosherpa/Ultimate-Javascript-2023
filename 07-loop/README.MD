@@ -21,8 +21,23 @@ Example: `loop`
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log("hello world"); // returns "hello world" 10 times
+  console.log("Loop", i);
 }
+
+//first i assign it value to 0 and increase letter, this is called post increment
+
+/*Note:
+first i = 0 (one time only); 0 < 10 => true; i++ =>0+1=1, code repeats untill the condition is true,
+1 < 10 => true; i++ => 1 + 1 = 2 and so on
+
+// post and pre increment
+// let x = 0;
+// let d = 0;
+// const z = x++; // x = x+1, post increment, first assign itself and increase later
+
+// const w = ++d; // d = d+1, pre increment, first value should be increased
+// console.log(z, w); // 0 and 1
+*/
 ```
 
 ## Type of Loops
