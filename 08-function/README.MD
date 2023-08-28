@@ -450,9 +450,17 @@ Advantages of using arrow functions in JavaScript include:
 
 Sometimes you may need to take an array and apply some procedure to its elements so that you get a new array with modified elements. "Creates a new array with the results of calling a provided function on every element in the calling array."
 
-![Alt text](images/21-map.png)
+`map()`
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const squareNumbers = numbers.map((num) => num * num);
+console.log(squareNumbers); // [1,4,9,16,25]
+```
 
 In this example, the map function is called on the numbers array and a callback function num => num × num is passed as an argument. The map function returns a new array squaredNumbers with the results of squaring each element in the numbers array.
+
+`code`
 
 ```js
 const employees = [
@@ -482,27 +490,39 @@ console.log, updatedEmployees;
 
 The filter () method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.
 
-![Alt text](images/23-filter.png)
+`filter()`
+
+```js
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+console.log(result); // [32,33,40]
+```
 
 Let’s look at real project example:
 
-```
-  const products = [
-    { name: "Apple", type: "fruit", price: 1.99 },
+`code`
 
-    { name: "Carrot", type: "vegetable", price: 0.99 },
+```js
+const products = [
+  { name: "Apple", type: "fruit", price: 1.99 },
 
-    { name: "Banana", type: "fruit", price: 0.79 },
-    { name: "Tomato", type: "vegetable", price: 1.49 },
-  ];
-  const filteredProducts = products.filter((product) => {
-    return product.type === "fruit" && product.price < 1.0;
-  });
-  console.log(filteredProducts);
-  /*
+  { name: "Carrot", type: "vegetable", price: 0.99 },
+
+  { name: "Banana", type: "fruit", price: 0.79 },
+  { name: "Tomato", type: "vegetable", price: 1.49 },
+];
+const filteredProducts = products.filter((product) => {
+  return product.type === "fruit" && product.price < 1.0;
+});
+console.log(filteredProducts);
+/*
     { name: 'Banana', type: 'fruit', price: 0.79 }
     */
-
 ```
 
 In this example, the filter function is used to create a new array of products that are fruits and have a price less than 1.00. The original products array is not modified. The filter function takes a callback function as an argument, which returns true for elements that should be included in the filtered array and false for elements that should be excluded. In this example, the callback function checks if the product type is 'fruit' and the price is less than 1.00.
@@ -511,23 +531,32 @@ In this example, the filter function is used to create a new array of products t
 
 Applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
 
-![Alt text](images/25-reduce.png)
+`reduce()`
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+});
+console.log(sum); // 15
+```
 
 Let’s look at real project example:
 
-```
-  const purchases = [
-    { item: "Apple", price: 1.99, quantity: 5 },
-    { item: "Carrot", price: 0.99, quantity: 3 },
-    { item: "Banana", price: 0.79, quantity: 10 },
-    { item: "Tomato", price: 1.49, quantity: 2 },
-  ];
+`code`
 
-  const totalCost = purchases.reduce((acc, purchase) => {
-    return acc + purchase.price * purchase.quantity;
-  }, 0);
-  console.log(totalCost); // 29.64
+```js
+const purchases = [
+  { item: "Apple", price: 1.99, quantity: 5 },
+  { item: "Carrot", price: 0.99, quantity: 3 },
+  { item: "Banana", price: 0.79, quantity: 10 },
+  { item: "Tomato", price: 1.49, quantity: 2 },
+];
 
+const totalCost = purchases.reduce((acc, purchase) => {
+  return acc + purchase.price * purchase.quantity;
+}, 0);
+console.log(totalCost); // 29.64
 ```
 
 In this example, the reduce function is used to calculate the total cost of all purchases by multiplying the price and quantity of each purchase and adding the result to an accumulator. The second argument to reduce, 0, is the initial value of the accumulator. The reduce function takes a callback function as an argument, which takes the accumulator and the current purchase as arguments, calculates the cost of the current purchase, and returns the updated accumulator value. The reduce function returns the final accumulator value, which is the total cost of all purchases in this example.
@@ -540,7 +569,22 @@ Here's an example of how you could use the find() method in a real-world project
 
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to find the customer with a specific customerId.
 
-![Alt text](images/27-find.png)
+`find()`
+
+```js
+//find
+let customers = [
+  { customerId: 123, name: "John Doe" },
+  { customerId: 456, name: "Jane Doe" },
+  { customerId: 789, name: "Jim Smith" },
+];
+let targetId = 456;
+let targetCustomer = customers.find(function (customer) {
+  return customer.customerId === targetId;
+});
+console.log(targetCustomer);
+// {customerId: 456, name:"Jane Doe"}
+```
 
 In this example, the find() method is used to find the customer object with the customerId of 456. The find() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The find() method will stop and return the first customer object for which the callback returns true.
 
@@ -552,7 +596,21 @@ Here's an example of how you could use the findIndex() method in a real-world pr
 
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to find the index of the customer with a specific customerId.
 
-![Alt text](images/28-findIndex.png)
+`findIndex()`
+
+```js
+//findIndex()
+let customers = [
+  { customerId: 123, name: "John Doe" },
+  { customerId: 456, name: "Jane Doe" },
+  { customerId: 789, name: "Jim Smith" },
+];
+let targetId = 456;
+let targetCustomer = customers.findIndex(function (customer) {
+  return customer.customerId === targetId;
+});
+console.log(targetCustomer); //1
+```
 
 In this example, the findIndex() method is used to find the index of the customer object with the customerId of 456. The findIndex() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The findIndex() method will stop and return the index of the first customer object for which the callback returns true.
 
@@ -564,7 +622,21 @@ Here's an example of how you could use the some() method in a real-world project
 
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to know if there are any customers with a specific customerId.
 
-![Alt text](images/29-some.png)
+`some()`
+
+```js
+//findIndex()
+let customers = [
+  { customerId: 123, name: "John Doe" },
+  { customerId: 456, name: "Jane Doe" },
+  { customerId: 789, name: "Jim Smith" },
+];
+let targetId = 456;
+let targetCustomer = customers.some(function (customer) {
+  return customer.customerId === targetId;
+});
+console.log(targetCustomer); //true
+```
 
 In this example, the some() method is used to check if there are any customers with the customerId of 456. The some() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The some() method will stop and return true as soon as it finds the first customer object for which the callback returns true.
 
@@ -576,7 +648,21 @@ Here's an example of how you could use the every() method in a real-world projec
 
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to know if all customers have a customerId that is greater than 100.
 
-![Alt text](images/30-every.png)
+`every()`
+
+```js
+//every()
+let customers = [
+  { customerId: 123, name: "John Doe" },
+  { customerId: 456, name: "Jane Doe" },
+  { customerId: 789, name: "Jim Smith" },
+];
+let targetId = 456;
+let targetCustomer = customers.every(function (customer) {
+  return customer.customerId > 100;
+});
+console.log(targetCustomer); //true
+```
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
 
@@ -599,15 +685,41 @@ Here is the syntax of the call function: func.call(thisObj, args1, args2, ...)
 
 Note that if you invoke a function without any thisObj argument, then JavaScript considers this property to be a global object.
 
-![Alt text](images/31-call.png)
+`call()`
+
+```js
+let student = {
+  firstName: "Gyamzo",
+  lastName: "sherpa",
+  age: 27,
+  getEmail: function () {
+    return `${this.firstName}.${this.lastName}@test.com`;
+  },
+};
+let teacher = {
+  firstName: "entu",
+  lastName: "mintu",
+  age: 27,
+};
+console.log(student.getEmail.call(teacher)); //entu.mintu@test.com
+```
 
 In the example above, we have two objects student and teacher, where student object has getEmail function and teacher has no function. If we have to print firstName and lastName of teacher object then we can use call method as shown in line no 15 by combining with student object.
 
 If we do not have getEmail function in both object then we can access to the key properties by combining both objects with getEmail function.
 
-Another example:
+Another example: `code`
 
-![Alt text](images/32-call.png)
+```js
+let person = {
+  firstName: "Gyamzo",
+  lastName: "Sherpa",
+};
+let displayName = function (greeting) {
+  return greeting + " " + this.firstName + " " + this.lastName;
+};
+console.log(displayName.call(person, "Hello")); //Hello Gyamzo Sherpa
+```
 
 In this example, the call method is used to invoke the displayName function and set its this value to person object. The first argument passed to call is used as the value of this inside the function, and any additional arguments are passed as arguments to the function. In this case, we passed "Hello" as the greeting and person as the 'this' value. The result is the expected greeting along with firstName and lastName from the person object.
 
@@ -617,7 +729,18 @@ The Apply function is very similar to the Call function. The only difference bet
 
 In apply, arguments you can pass an argument as an array literal or a new array object.
 
-![Alt text](images/33-apply.png)
+`Apply()`
+
+```js
+let person = {
+  firstName: "Gyamzo",
+  lastName: "Sherpa",
+};
+let displayName = function (greeting) {
+  return greeting + " " + this.firstName + " " + this.lastName;
+};
+console.log(displayName.apply(person, "Hello")); //Hello Gyamzo Sherpa
+```
 
 In this example, the apply method is used to invoke the displayName function and set its this value to person object. The first argument passed to apply is used as the value of this inside the function, and the second argument is an array that contains the arguments to be passed to the function. In this case, we passed ["Hello"] as the array of arguments and person as the this value. The result is the expected greeting along with firstName and lastName from the person object.
 
@@ -625,7 +748,25 @@ The best part about apply is we don’t need to take care of the number of argum
 
 Let’s look at another example of apply function.
 
-![Alt text](images/34-apply.png)
+```js
+function Car(type, fuelType) {
+  this.type = type;
+  this.fuelType = fuelType;
+}
+function setBrand(brand) {
+  Car.apply(this, ["convertible", "petrol"]); // syntax with array literal
+  this.brand = brand;
+  console.log(`Car details`, this);
+}
+function definePrice(price) {
+  Car.apply(this, new Array("convertible", "diesel")); //syntax with array object construction
+  this.price = price;
+  console.log(`Car price =`, this);
+}
+
+const newBrand = new setBrand("Brand1");
+const newCarPrice = new definePrice(100000);
+```
 
 ### How to Use the Bind Function in JavaScript?
 
@@ -637,6 +778,18 @@ Here is the syntax for the bind function: func.bind(thisObj, arg1, arg2, ..., ar
 -thisObj is an object or a value that needs to be replaced with this keyword present inside the function func
 -arg1, arg2…argN – you can pass 1 argument to the calling function or more than that, similar to the call function.
 
-![Alt text](images/35-bind.png)
+`bind()`
+
+```js
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+let displayName = function (greeting) {
+  return greeting + " " + this.firstName + " " + this.lastName;
+};
+let displayPersonName = displayName.bind(person);
+console.log(displayPersonName("Hello")); //Hello John Doe
+```
 
 In this example, the bind method is used to create a new function displayPersonName that has its this value set to person object. When displayPersonName is called, it returns the expected greeting along with firstName and lastName from the person object.
