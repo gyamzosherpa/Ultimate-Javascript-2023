@@ -1,7 +1,5 @@
 # FUNCTION
 
-Table of Contents
-
 - [FUNCTION](#function)
   - [function definition](#function-definition)
   - [Parameters and Arguments](#parameters-and-arguments)
@@ -52,6 +50,8 @@ hello();
 
 ## Parameters and Arguments
 
+`code`
+
 ```js
 function greet(name) {
   console.log("Hello", +name + "!");
@@ -63,15 +63,23 @@ greet(userName); // Hello, John Doe!
 
 In this example, the greet function takes a single parameter, name, which is used to receive the value passed to the function when it is called. The userName variable is defined to store the string "John Doe", which is then passed as an argument to the greet function when it is called on the last line of the code
 
-Example:
+Example: `code`
 
-![Alt text](images/03-parameters.png)
+```js
+function multiply(num) {
+  for (i = 1; i <= 10; i++) {
+    console.log(`${num} × ${i} = ${num * i}`); // hold alt + enter 0215 to insert into symbol
+  }
+}
+multiply(2);
+multiply(3);
+```
 
 ## The arguments object
 
 In JavaScript, every function has a special object called the arguments object, which provides access to the arguments passed to the function. The arguments object in JavaScript is an array-like object accessible inside functions that contain the values of the arguments passed to that function. By using an argument object, you don’t need to define parameters.
 
-Here's an example:
+Here's an example `code`:
 
 ```js
 function sum() {
@@ -97,6 +105,8 @@ Here are some common uses of the return statement in programming:
 
 Functions can perform calculations and return the result back to the caller using the return statement. This allows the result to be used by other parts of the program.
 
+`code`
+
 ```js
 // Returning a value from a function
 function multiply(num1, num2) {
@@ -116,6 +126,8 @@ By using the return statement in this way, we can make our functions more flexib
 ### Terminating a function early
 
 If a function encounters an error condition or unexpected input, it can use the return statement to terminate the function early and return an error message or null value back to the caller.
+
+`code`
 
 ```js
 // terminating a function early
@@ -141,6 +153,8 @@ We can then call the divide function with different arguments to test its behavi
 ### Breaking out of a loop
 
 Inside a loop, a return statement can be used to break out of the loop early and return a result.
+
+`code`
 
 ```js
 // breaking out of loop
@@ -169,6 +183,8 @@ We can then call the findFirstPositive function with different arrays to test it
 ### Returning multiple values
 
 In some programming languages, a function can return multiple values using the return statement, separated by commas.
+
+`code`
 
 ```js
 // Returning multiple values
@@ -207,6 +223,8 @@ We can then call the calculateStats function and use array destructuring to assi
 
 An Immediately Invoked Function Expression (IIFE) is a self-executing anonymous function in JavaScript. It runs automatically as soon as it is defined and can't be re-invoked later. IIFEs are commonly used to create a private scope for variables and functions, avoiding polluting the global scope and conflicts with other variables with the same names.
 
+`code IIFE`
+
 ```js
 // IIFE are the function defined as a expression and executed immediately after creation
 let result = (function (a, b) {
@@ -221,7 +239,19 @@ Immediately Invoked Function Expressions (IIFEs) can be used in several situatio
 
 IIFEs allow you to create a new scope and isolate variables and functions from the global scope. This can help to prevent variable and function name collisions, especially when working on large projects with many contributors.
 
-![Alt text](images/10-iife.png)
+`code`
+
+```js
+function sum() {
+  let result = 0;
+
+  for (let i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  return result;
+}
+console.log(sum(1, 2, 3, 4, 5)); // 15
+```
 
 "In this example, an anonymous function is defined and immediately invoked as an IIFE. The function contains a let statement, which defines a local variable message, and a function printMessage, which prints the value of message to the console. The printMessage function is called within the IIFE, causing the value of message to be printed to the console.
 
@@ -231,7 +261,19 @@ After the IIFE is executed, an attempt is made to access the message variable fr
 
 IIFEs allow you to encapsulate code and data within a single unit, making it easier to understand and maintain.
 
-![Alt text](images/11-iife.png)
+`code`
+
+```js
+let add = (function () {
+  let counter = 0;
+  return function () {
+    return (counter += 1);
+  };
+})();
+console.log(add()); //1
+console.log(add()); //2
+console.log(add()); //3
+```
 
 "In this example, an IIFE returns a function that adds 1 to a counter each time it is called. The counter is defined within the IIFE and is not accessible from the outside. The returned function is assigned to the add variable in the global scope, making it accessible to the rest of the code.
 
@@ -241,7 +283,31 @@ When the add function is called multiple times, it returns the value of the coun
 
 IIFEs allow you to hide the implementation details of your code, making it more secure and less prone to tampering.
 
-![Alt text](images/12-iife.png)
+`code`
+
+```js
+let calculator = (function () {
+  let result = 0;
+
+  return {
+    add: function (num) {
+      result += num;
+    },
+    subtract: function (num) {
+      result -= num;
+    },
+    getResult: function () {
+      return result;
+    },
+  };
+})();
+
+calculator.add(10);
+calculator.subtract(5);
+
+console.log(calculator.getResult()); // 5
+console.log(calculator.result); // undefined
+```
 
 "In this example, an IIFE returns an object with several methods for performing basic arithmetic operations. The result variable, which stores the current value of the calculator, is defined within the IIFE and is not accessible from the outside."
 
@@ -253,7 +319,27 @@ IIFEs allow you to hide the implementation details of your code, making it more 
 
 IIFEs allow you to share data between scripts in a controlled and secure manner, which is useful when working with third-party libraries.
 
-![Alt text](images/13-iife.png)
+`code`
+
+```js
+//first file name script.js
+let data = (function () {
+  let data = {};
+
+  return {
+    setData: function (key, value) {
+      data[key] = value;
+    },
+    getData: function (key) {
+      return data[key];
+    },
+  };
+})();
+
+//another file name: script2.js
+data.setData("message", "Hello, World");
+console.log(data.getData("message")); // "Hello World"
+```
 
 "In this example, an IIFE is used to create a singleton object, data, that can be shared between scripts. The object contains methods setData and getData, which can be used to set and retrieve data stored in the data object.
 The first script, script1.js, defines the data object. The second script, script2.js, uses the data object to set and retrieve data.
@@ -263,6 +349,8 @@ Since the data object is defined as an IIFE, it can be included in multiple scri
 ## Anonymous Function or function expression
 
 An anonymous function is a function that is declared without a named identifier. It is often used as a function expression and assigned to a variable, or passed as an argument to another function.
+
+`code`
 
 ```js
 //function expression
@@ -284,6 +372,8 @@ Function expressions are useful because they allow us to define functions dynami
 
 An arrow function (also known as a "fat arrow function") is a shorthand syntax for writing anonymous functions in JavaScript. Arrow functions were introduced in ECMAScript 6 (ES6) and are widely used in modern JavaScript.
 
+`code`
+
 ```js
 let greet = () => {
   console.log("hello world");
@@ -293,6 +383,7 @@ greet();
 ```
 
 Here's an example of an arrow function with arguments:
+`code`
 
 ```js
 let square = (num) => {
@@ -306,6 +397,7 @@ In this example, the arrow function square takes a single argument num and retur
 If the arrow function has only a single expression, you can omit the curly braces and return keyword. The result of the expression will automatically be returned.
 
 Here's an example:
+`code`
 
 ```js
 let square = (num) => num * num;
@@ -317,6 +409,7 @@ console.log(square(5));
 Arrow functions in JavaScript can have default parameters, which are used when the function is called without a value being passed for that parameter. Default parameters are specified by assigning a value to the parameter in the function definition.
 
 For example:
+`code`
 
 ```js
 const greeting = (name = 'stranger) => {
@@ -327,15 +420,29 @@ console.log(greeting()); //'Hello, stranger
 console.log(greeting('John')); //'Hello, John
 ```
 
-![Alt text](images/20-arrow-5.png)
+`default parameters`
+
+```js
+//default parameters
+const details = (fname = "John", lname = "Doe", age = 30) => {
+  console.log(`${fname} ${lname} is ${age} years old`);
+};
+
+details(); //if arguments is passed, it will override the default value
+```
 
 Advantages of using arrow functions in JavaScript include:
 
-1. Shorter syntax: Arrow functions have a more concise syntax compared to traditional function expressions, making the code more readable and easier to write.
-2. Implicit this: Arrow functions do not have their own this value, which means that they inherit the this value from their surrounding context, making it easier to work with this inside callbacks.
-3. Lexical arguments: The arguments object is not available inside arrow functions, making it easier to manage function arguments.
-4. No new keyword: Arrow functions cannot be used with the new keyword to create objects, making it harder to accidentally create objects in the wrong way.
-5. Easy to use in functional programming: Arrow functions can be used in functional programming paradigms, making it easier to write functional code and to work with higher-order functions.
+1. Shorter syntax:
+   Arrow functions have a more concise syntax compared to traditional function expressions, making the code more readable and easier to write.
+2. Implicit this:
+   Arrow functions do not have their own this value, which means that they inherit the this value from their surrounding context, making it easier to work with this inside callbacks.
+3. Lexical arguments:
+   The arguments object is not available inside arrow functions, making it easier to manage function arguments.
+4. No new keyword:
+   Arrow functions cannot be used with the new keyword to create objects, making it harder to accidentally create objects in the wrong way.
+5. Easy to use in functional programming:
+   Arrow functions can be used in functional programming paradigms, making it easier to write functional code and to work with higher-order functions.
 
 ## Higher order Functions
 
@@ -345,30 +452,30 @@ Sometimes you may need to take an array and apply some procedure to its elements
 
 ![Alt text](images/21-map.png)
 
-In this example, the map function is called on the numbers array and a callback function num => num \* num is passed as an argument. The map function returns a new array squaredNumbers with the results of squaring each element in the numbers array.
+In this example, the map function is called on the numbers array and a callback function num => num × num is passed as an argument. The map function returns a new array squaredNumbers with the results of squaring each element in the numbers array.
 
-```
-  const employees = [
-    { name: "John", salary: 50000 },
-    { name: "Jane", salary: 55000 },
-    { name: "Jim", salary: 60000 },
-  ];
-  const updatedEmployees = employees.map((empLoyee) => {
-    return {
-      name: employee.name,
-      salary: employee.salary + 5000,
-      currency: "USD",
-    };
-  });
-  console.log, updatedEmployees;
+```js
+const employees = [
+  { name: "John", salary: 50000 },
+  { name: "Jane", salary: 55000 },
+  { name: "Jim", salary: 60000 },
+];
+const updatedEmployees = employees.map((empLoyee) => {
+  return {
+    name: employee.name,
+    salary: employee.salary + 5000,
+    currency: "USD",
+  };
+});
+console.log, updatedEmployees;
 
-  /*  [  { name: 'John', salary: 55000, currency: 'USD'},
+/*  [  { name: 'John', salary: 55000, currency: 'USD'},
           { name: 'Jane', salary: 60000, currency: 'USD' },
           { name: 'Jim', salary: 65000, currency: 'USD' }
         ] ;
     */
 
-  //In this example you get the new updated salary of all employees.
+//In this example you get the new updated salary of all employees.
 ```
 
 ### filter()
