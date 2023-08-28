@@ -9,7 +9,7 @@
 
 When a Date object is created, a number of methods allow you to operate on it. Date methods allow you to get and set the year, month, day, hour, minute, second, etc.
 
-```
+```js
   let date = new Date(); //current standard time, according to your region
   console.log(date);
   //let date2 = new Date('December 20, 1996 11:12:30');
@@ -37,35 +37,33 @@ When a Date object is created, a number of methods allow you to operate on it. D
 
 ## Get local (your region) date and time
 
-```
-  // Creating a new date object:
-  let date = new Date();
-  console.log(date );
+```js
+// Creating a new date object:
+let date = new Date();
+console.log(date);
 
-  // Getting the current date and time:
-  let now = new Date();
-  let date2 = now.toDateString();
-  let time = now.toLocaleTimeString();
-  console.log(time);
-  console.log(date2);
-
+// Getting the current date and time:
+let now = new Date();
+let date2 = now.toDateString();
+let time = now.toLocaleTimeString();
+console.log(time);
+console.log(date2);
 ```
 
 ## Get date and time of other regions
 
-```
+```js
 // Getting USA date and time
 let usaDate = new Date();
 let options = {
-  timeZone: 'America/New_York',
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric',
-}
-  let usDateTime = usaDate.toLocaleString('en-US', options);
-  console.log(usDateTime);
-
+  timeZone: "America/New_York",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+};
+let usDateTime = usaDate.toLocaleString("en-US", options);
+console.log(usDateTime);
 ```

@@ -15,42 +15,41 @@ Table of Contents
 3. An array can hold values of mixed types. For example, you can have an array that stores elements with the types number, string, and Boolean.
 4. Array element starts from index no. 0. "[ ]" is used to create an array
 
-```
-  // let array1 = new Array[('Gyamzo',26,'Swayambhu')];
-  let array1 = ['Gyamzo',26,'Swayambhu'];
+```js
+// let array1 = new Array[('Gyamzo',26,'Swayambhu')];
+let array1 = ["Gyamzo", 26, "Swayambhu"];
 
-  // update
-  array[1] = 27;
-  console.log(array1); //Gyamzo, 27, Swayambhu
+// update
+array[1] = 27;
+console.log(array1); //Gyamzo, 27, Swayambhu
 ```
 
 You can access elements in an array by using the square brackets and the index of the element that you want to access. The index of an array starts from 0 and goes up to the length of the array minus one.
 
-```
-  let arr = [1,2,3,4,5]
+```js
+let arr = [1, 2, 3, 4, 5];
 
-  //To access the first element of the array, you would use:
-  let firstElement = arr[0];
+//To access the first element of the array, you would use:
+let firstElement = arr[0];
 
-  //To access the last element of the array, you would use:
-  let lastElement = arr[arr.length - 1];
+//To access the last element of the array, you would use:
+let lastElement = arr[arr.length - 1];
 
-  //You can also modify elements in an array by assigning a new value to a specific index:
-  arr[2] = 42; // [1,2,45,4,5]
+//You can also modify elements in an array by assigning a new value to a specific index:
+arr[2] = 42; // [1,2,45,4,5]
 ```
 
 ### Array.at (ECMA 2022)
 
 New feature of ECMA 2022, better performance.
 
-```
-  //array.at(): ECMA 2022 NEW FEATURE
-  const arr1 = [1, 2, 3, 4, 5];
-  console.log(arr1[4]); //5
-  console.log(arr1[-1]); //undefined
-  console.log(arr1.at(-1)); //5
-  console.log(arr1.at()); // 1, shows 1st value
-
+```js
+//array.at(): ECMA 2022 NEW FEATURE
+const arr1 = [1, 2, 3, 4, 5];
+console.log(arr1[4]); //5
+console.log(arr1[-1]); //undefined
+console.log(arr1.at(-1)); //5
+console.log(arr1.at()); // 1, shows 1st value
 ```
 
 Previously, we couldn’t use negative value to access element, but the new feature i.e., array.at() solve this issue.
@@ -84,26 +83,25 @@ Here's a real-world example of using the slice() and splice() methods in a proje
 
 Imagine you're building a web application for a to-do list, and you want to allow users to add, remove, and rearrange tasks. The tasks are stored in an array, and you want to use the slice() and splice() methods to manipulate the tasks.
 
-```
-  //slice() and splice()
-  let tasks = ["Take out the trash", "Buy groceries", "Clean the kitchen"];
+```js
+//slice() and splice()
+let tasks = ["Take out the trash", "Buy groceries", "Clean the kitchen"];
 
-  // Use slice() to copy a portion of the tasks array
-  let newTasks = tasks.slice(1, 3);
+// Use slice() to copy a portion of the tasks array
+let newTasks = tasks.slice(1, 3);
 
-  console.log(newTasks);
-  // Output: [ 'Buy groceries', 'Clean the kitchen' ]
+console.log(newTasks);
+// Output: [ 'Buy groceries', 'Clean the kitchen' ]
 
-  // Use splice() to add a new task to the tasks array
-  tasks.splice(3, 0, "Do laundry");
-  console.log(tasks);
-  // Output: [ 'Take out the trash', 'Buy groceries', 'Clean the kitchen', 'Do laundry']
+// Use splice() to add a new task to the tasks array
+tasks.splice(3, 0, "Do laundry");
+console.log(tasks);
+// Output: [ 'Take out the trash', 'Buy groceries', 'Clean the kitchen', 'Do laundry']
 
-  // Use splice() to remove a task from the tasks array
-  tasks.splice(2, 1);
-  console.log(tasks);
-  // Output: [ 'Take out the trash', 'Buy groceries', 'Do laundry' ]
-
+// Use splice() to remove a task from the tasks array
+tasks.splice(2, 1);
+console.log(tasks);
+// Output: [ 'Take out the trash', 'Buy groceries', 'Do laundry' ]
 ```
 
 In this example, the tasks array is created to store the to-do tasks. The slice() method is then used to create a new array called newTasks that contains a portion of the tasks array, starting from index 1 and ending at index 2. The splice() method is then used to add a new task to the tasks array by specifying the index 3, the number of elements to remove (0), and the new task to add. The splice() method is then used again to remove a task from the tasks array by specifying the index 2 and the number of elements to remove (1). The results of the tasks array are logged to the console after each operation to show the updated state of the tasks array.
@@ -148,21 +146,20 @@ In this example, the numbers array is created and contains seven elements. The l
 
 Nested arrays can be created by simply including one or more arrays inside another array, separated by commas.
 
-```
-  //concat: copy array or join array
-  let array2 = ["Books", "fruits", "movies"];
-  let array3 = ["netflix", "coffee"];
-  let array4 = ["London"];
-  //let finalArray = array2.concat(array3).concat(array4);
-  let finalArray = array2.concat(array3, array4);
-  console.log(finalArray);
+```js
+//concat: copy array or join array
+let array2 = ["Books", "fruits", "movies"];
+let array3 = ["netflix", "coffee"];
+let array4 = ["London"];
+//let finalArray = array2.concat(array3).concat(array4);
+let finalArray = array2.concat(array3, array4);
+console.log(finalArray);
 
-  //nested arrays
-  let books = [["Physics", 200]];
-  ["Chemistry", 300], ["Computer", 500];
+//nested arrays
+let books = [["Physics", 200]];
+["Chemistry", 300], ["Computer", 500];
 
-  //access Computer
-  let computerBook = books[2][0];
-  console.log(computerBook);
-
+//access Computer
+let computerBook = books[2][0];
+console.log(computerBook);
 ```

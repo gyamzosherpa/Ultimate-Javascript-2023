@@ -29,24 +29,23 @@ For example, if we want to print "Hello, World!" 10 times then instead of writin
 - 2nd part is the condition,
 - 3rd part is the increment/decrement
 
-```
-  for (let i = 0; i < 10; i++) {
-    square = i * i;
-    console.log(square); //returns 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
-  }
+```js
+for (let i = 0; i < 10; i++) {
+  square = i * i;
+  console.log(square); //returns 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+}
 ```
 
 Sometimes, we might want a loop to run a number of times without being certain of what the number of iterations will be. Instead of declaring a static number, as we did in previous examples, we can make use of the length property of an array to have the loop run as many times as there are items in the array.
 
-```
-  // Declare array with 3 items
-  let fish = ["flounder", "salmon", "pike"];
-  // Initialize for loop to run for the total length of an array 0; i < fish.length; i++) {
-  for (let i = 0; i < fish.length; i++) {
-    // Print each item to the console
-    console.log(fish[i]);
-  }
-
+```js
+// Declare array with 3 items
+let fish = ["flounder", "salmon", "pike"];
+// Initialize for loop to run for the total length of an array 0; i < fish.length; i++) {
+for (let i = 0; i < fish.length; i++) {
+  // Print each item to the console
+  console.log(fish[i]);
+}
 ```
 
 ### While loop
@@ -65,48 +64,46 @@ The loop will always be executed at least once, even if the condition is false b
 
 The for-of-loop (ES6 Feature) in JavaScript allows you to iterate over iterable objects (arrays, sets, maps, strings, etc.). The for...of loop cannot be used to iterate over an object.
 
-```
-  // for of loop iterates over strings
-  const names = "John Doe";
-  for (let name of names) {
-    console.log(name); //returns J, o, h, n, D, o, e
-  }
+```js
+// for of loop iterates over strings
+const names = "John Doe";
+for (let name of names) {
+  console.log(name); //returns J, o, h, n, D, o, e
+}
 
-  //for of loop - iterates over arrays
-  const numbers = [1, 2, 3, 4, 5];
-  for (let number of numbers) {
-    console.log(number); //returns 1, 2, 3, 4, 5
-  }
-
+//for of loop - iterates over arrays
+const numbers = [1, 2, 3, 4, 5];
+for (let number of numbers) {
+  console.log(number); //returns 1, 2, 3, 4, 5
+}
 ```
 
 ### For in loop
 
 The JavaScript for in statement mainly loops through the properties of an Object:
 
-```
-  const shark = {
-    species: "great white",
-    color: "white",
-    numberOfTeeth: Infinity,
-  };
-  // Print property names of object
+```js
+const shark = {
+  species: "great white",
+  color: "white",
+  numberOfTeeth: Infinity,
+};
+// Print property names of object
+for (attribute in shark) {
+  console.log(attribute);
+}
+//Output: species, color, numberOfTeeth
+
+// Print property values of object
+for (attribute in shark) {
+  console.log(shark[attribute]);
+  //output: great white, white, Infinity
+
+  // Print names and values of object properties
   for (attribute in shark) {
-    console.log(attribute);
   }
-  //Output: species, color, numberOfTeeth
-
-  // Print property values of object
-  for (attribute in shark) {
-    console.log(shark[attribute]);
-    //output: great white, white, Infinity
-
-    // Print names and values of object properties
-    for (attribute in shark) {
-    }
-    console.log(`${attribute}`.toUpperCase() + `: ${shark[attribute]}`);
-  }
-
+  console.log(`${attribute}`.toUpperCase() + `: ${shark[attribute]}`);
+}
 ```
 
 In this example, the for...in loop is used to iterate over the properties of the shark object. The loop uses the attribute variable to store the current property name on each iteration, and shark[attribute] is used to access the value of that property.

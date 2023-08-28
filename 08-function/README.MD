@@ -38,29 +38,27 @@ The function is a block of code to perform a specific task. So, you don’t have
 
 ![Alt text](images/00-function.png)
 
-```
-  //function with no parameters
-  function hello() {
-    console.log("Hello World");
-  }
-  //calling the function, we can call the functin many times as we want
-  hello();
-  hello();
+```js
+//function with no parameters
+function hello() {
+  console.log("Hello World");
+}
+//calling the function, we can call the functin many times as we want
+hello();
+hello();
 
-  // it return 'Hello World' twice
-
+// it return 'Hello World' twice
 ```
 
 ## Parameters and Arguments
 
-```
-  function greet(name) {
-    console.log("Hello", +name + "!");
-  }
+```js
+function greet(name) {
+  console.log("Hello", +name + "!");
+}
 
-  let userName = "John Doe";
-  greet(userName); // Hello, John Doe!
-
+let userName = "John Doe";
+greet(userName); // Hello, John Doe!
 ```
 
 In this example, the greet function takes a single parameter, name, which is used to receive the value passed to the function when it is called. The userName variable is defined to store the string "John Doe", which is then passed as an argument to the greet function when it is called on the last line of the code
@@ -75,17 +73,16 @@ In JavaScript, every function has a special object called the arguments object, 
 
 Here's an example:
 
-```
-  function sum() {
-    let result = 0;
+```js
+function sum() {
+  let result = 0;
 
-    for (let i = 0; i < arguments.length; i++) {
-      result += arguments[i];
-    }
-    return result;
-    console.log(sum(1, 2, 3, 4, 5));
+  for (let i = 0; i < arguments.length; i++) {
+    result += arguments[i];
   }
-
+  return result;
+  console.log(sum(1, 2, 3, 4, 5));
+}
 ```
 
 In this example, the sum function takes an indefinite number of arguments and uses the arguments object to access their values. The arguments.length property provides the number of arguments passed to the function, and the arguments[i] syntax is used to access the value of the i-th argument. The sum function adds up all the arguments and returns the result.
@@ -100,15 +97,14 @@ Here are some common uses of the return statement in programming:
 
 Functions can perform calculations and return the result back to the caller using the return statement. This allows the result to be used by other parts of the program.
 
-```
-  // Returning a value from a function
-  function multiply(num1, num2) {
-    return num1 * num2;
-  }
+```js
+// Returning a value from a function
+function multiply(num1, num2) {
+  return num1 * num2;
+}
 
-  let result = multiply(5, 10);
-  console.log(result); // Output: 50
-
+let result = multiply(5, 10);
+console.log(result); // Output: 50
 ```
 
 In this example, the multiply function takes two arguments num1 and num2 and multiplies them together using the \* operator. It then uses the return statement to return the result of the multiplication back to the caller of the function.
@@ -121,22 +117,21 @@ By using the return statement in this way, we can make our functions more flexib
 
 If a function encounters an error condition or unexpected input, it can use the return statement to terminate the function early and return an error message or null value back to the caller.
 
-```
-  // terminating a function early
-  function divide(num1, num2) {
-    {
-      if (num2 === 0) {
-        return null; // Return null if denominator is zero
-      }
-      return num1 / num2;
+```js
+// terminating a function early
+function divide(num1, num2) {
+  {
+    if (num2 === 0) {
+      return null; // Return null if denominator is zero
     }
+    return num1 / num2;
   }
-  let result1 = divide(10, 2);
-  console.log(result1); // Output: 5
+}
+let result1 = divide(10, 2);
+console.log(result1); // Output: 5
 
-  let result2 = divide(10, 0);
-  console.log(result2); // Output: null
-
+let result2 = divide(10, 0);
+console.log(result2); // Output: null
 ```
 
 In this example, the divide function takes two arguments num1 and num2 and divides num1 by num2. However, if num2 is equal to 0, the function uses the return statement to exit early and return null.
@@ -147,25 +142,24 @@ We can then call the divide function with different arguments to test its behavi
 
 Inside a loop, a return statement can be used to break out of the loop early and return a result.
 
-```
-  // breaking out of loop
-  function findFirstPositive(numbers) {
-    for (let i = 0; i < numbers.length; i++) {}
-    if (numbers[i] > 0) {
-      return numbers[i]; // Return the first positive number
-    }
-
-    return null; // Return null if no positive number is found
+```js
+// breaking out of loop
+function findFirstPositive(numbers) {
+  for (let i = 0; i < numbers.length; i++) {}
+  if (numbers[i] > 0) {
+    return numbers[i]; // Return the first positive number
   }
 
-  let numbers1 = [-5, 3, 7, -2, 0];
-  let result1 = findFirstPositive(numbers1);
-  console.log(result1); // Output: 3
+  return null; // Return null if no positive number is found
+}
 
-  let numbers2 = [-5, -3, -7, -2, 0];
-  let result2 = findFirstPositive(numbers2);
-  console.log(result2); // Output: null
+let numbers1 = [-5, 3, 7, -2, 0];
+let result1 = findFirstPositive(numbers1);
+console.log(result1); // Output: 3
 
+let numbers2 = [-5, -3, -7, -2, 0];
+let result2 = findFirstPositive(numbers2);
+console.log(result2); // Output: null
 ```
 
 In this example, the findFirstPositive function takes an array of numbers as an argument and searches for the first positive number in the array. It uses a for loop to iterate through the array, and if it finds a positive number, it uses the return statement to exit the loop early and return the positive number back to the caller of the function.
@@ -176,34 +170,33 @@ We can then call the findFirstPositive function with different arrays to test it
 
 In some programming languages, a function can return multiple values using the return statement, separated by commas.
 
-```
-  // Returning multiple values
-  function calculateStats(numbers) {
-    let sum = 0;
+```js
+// Returning multiple values
+function calculateStats(numbers) {
+  let sum = 0;
 
-    let min = numbers[0];
+  let min = numbers[0];
 
-    let max = numbers[0];
+  let max = numbers[0];
 
-    for (let i = 0; i < numbers.length; i++) {
-      sum += numbers[i];
-      if (numbers[i] < min) {
-        min = numbers[i];
-      }
-
-      if (numbers[i] > max) {
-        max = numbers[i];
-      }
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+    if (numbers[i] < min) {
+      min = numbers[i];
     }
 
-    let avg = sum / numbers.length;
-    return [sum, avg, min, max];
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
   }
-  let numbers = [2, 5, 1, 10, 7];
-  let [sum, avg, min, max] = calculateStats(numbers);
-  console.log(`Sum: ${sum}, Avg: ${avg}, Min: ${min}, Max: ${max}`);
-  // Output: Sum: 25, Avg: 5, Min: 1, Max: 10
 
+  let avg = sum / numbers.length;
+  return [sum, avg, min, max];
+}
+let numbers = [2, 5, 1, 10, 7];
+let [sum, avg, min, max] = calculateStats(numbers);
+console.log(`Sum: ${sum}, Avg: ${avg}, Min: ${min}, Max: ${max}`);
+// Output: Sum: 25, Avg: 5, Min: 1, Max: 10
 ```
 
 In this example, the calculateStats function takes an array of numbers as an argument and calculates the sum, average, minimum, and maximum values of the array. It then returns an array containing these four values using the return statement.
@@ -214,13 +207,12 @@ We can then call the calculateStats function and use array destructuring to assi
 
 An Immediately Invoked Function Expression (IIFE) is a self-executing anonymous function in JavaScript. It runs automatically as soon as it is defined and can't be re-invoked later. IIFEs are commonly used to create a private scope for variables and functions, avoiding polluting the global scope and conflicts with other variables with the same names.
 
-```
-  // IIFE are the function defined as a expression and executed immediately after creation
-  let result = (function (a, b) {
-    return a + b;
-  })(1, 2);
-  console.log(result); //returns 3
-
+```js
+// IIFE are the function defined as a expression and executed immediately after creation
+let result = (function (a, b) {
+  return a + b;
+})(1, 2);
+console.log(result); //returns 3
 ```
 
 Immediately Invoked Function Expressions (IIFEs) can be used in several situations in JavaScript, including:
@@ -272,15 +264,14 @@ Since the data object is defined as an IIFE, it can be included in multiple scri
 
 An anonymous function is a function that is declared without a named identifier. It is often used as a function expression and assigned to a variable, or passed as an argument to another function.
 
-```
-  //function expression
-  let multiply = function (num1, num2) {
-    return num1 * num2;
-  };
+```js
+//function expression
+let multiply = function (num1, num2) {
+  return num1 * num2;
+};
 
-  let result = multiply(5, 10);
-  console.log(result); // Output: 50
-
+let result = multiply(5, 10);
+console.log(result); // Output: 50
 ```
 
 In this example, we define a function multiply using a function expression. We start by declaring a variable multiply and assigning it a function that takes two arguments num1 and num2 and multiplies them together using the \* operator. Note that we don't use the function keyword to define the function; instead, we use an anonymous function expression (a function without a name) that is assigned to the multiply variable.
@@ -293,21 +284,21 @@ Function expressions are useful because they allow us to define functions dynami
 
 An arrow function (also known as a "fat arrow function") is a shorthand syntax for writing anonymous functions in JavaScript. Arrow functions were introduced in ECMAScript 6 (ES6) and are widely used in modern JavaScript.
 
-```
-  `let greet = () => {
-    console.log("hello world");
-  };
+```js
+let greet = () => {
+  console.log("hello world");
+};
 
-  greet();`
+greet();
 ```
 
 Here's an example of an arrow function with arguments:
 
-```
-  let square = (num) => {
-    return num * num;
-  };
-  console.log(square(5));
+```js
+let square = (num) => {
+  return num * num;
+};
+console.log(square(5));
 ```
 
 In this example, the arrow function square takes a single argument num and returns its square.
@@ -316,9 +307,9 @@ If the arrow function has only a single expression, you can omit the curly brace
 
 Here's an example:
 
-```
-  let square = (num) => num * num;
-  console.log(square(5));
+```js
+let square = (num) => num * num;
+console.log(square(5));
 ```
 
 ### Default parameters
@@ -327,7 +318,7 @@ Arrow functions in JavaScript can have default parameters, which are used when t
 
 For example:
 
-```
+```js
 const greeting = (name = 'stranger) => {
   retutn `Hello, ${name}`;
 };
