@@ -1,7 +1,5 @@
 # Data Types
 
-Table of Contents
-
 - [Data Types](#data-types)
   - [Primitive and Non-Primitive Data Types](#primitive-and-non-primitive-data-types)
   - [Primitive Data Types](#primitive-data-types)

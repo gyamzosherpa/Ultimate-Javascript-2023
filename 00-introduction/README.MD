@@ -1,7 +1,5 @@
 # JavaScript
 
-Table of contents
-
 - [JavaScript](#javascript)
   - [Introduction](#introduction)
   - [Client-side and Server-side](#client-side-and-server-side)
