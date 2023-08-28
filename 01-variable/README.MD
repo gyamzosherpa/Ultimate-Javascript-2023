@@ -2,7 +2,7 @@
 
 - [VARIABLE](#variable)
   - [Variable Definition](#variable-definition)
-  - [Keywords: var, let, and const.](#keywords-var-let-and-const)
+  - [Keywords: var, let, and const](#keywords-var-let-and-const)
   - [Ways to declare a variable](#ways-to-declare-a-variable)
 
 ## Variable Definition
@@ -15,7 +15,7 @@ A variable can contain any type of data, such as a string, a true or false Boole
 
 A variable can be changed, depending on conditions or pieces of information passed to the program.
 
-## Keywords: var, let, and const.
+## Keywords: var, let, and const
 
 1. The var keyword is used in all JavaScript code from 1995 to 2015.
 2. The let and const keywords were added to JavaScript in 2015.
@@ -30,30 +30,29 @@ A variable can be changed, depending on conditions or pieces of information pass
 5. can start with underscore e.g.: \_myName
 6. can start with ‘$’ e.g.: $name
 
+```js
+var message = "Hello World!";
+// In this example, the message variable is declared using the var keyword and is assigned the string value "Hello World!".
 ```
-  var message = "Hello World!"
-  // In this example, the message variable is declared using the var keyword and is assigned the string value "Hello World!".
-```
 
-```
-  // Declare a variable called "message" and assign it a string value
-  let message = 'Hello, world!';
+```js
+// Declare a variable called "message" and assign it a string value
+let message = "Hello, world!";
 
-  // Log the value of message to the console
-  console. log(message);
+// Log the value of message to the console
+console.log(message);
 
-  // Reassign the value of "message" to a new string
-  message = 'Goodbye, world!';
+// Reassign the value of "message" to a new string
+message = "Goodbye, world!";
 
-  // Log the new value of message to the console
-  console.log(message);
+// Log the new value of message to the console
+console.log(message);
 
-  // Declare a constant called "PI" and assign it a numerical value
-  const PI = 3.14159;
+// Declare a constant called "PI" and assign it a numerical value
+const PI = 3.14159;
 
-  // Attempt to reassign the value of PI (will result in an error)
-  PI = 3.14;
-
+// Attempt to reassign the value of PI (will result in an error)
+PI = 3.14;
 ```
 
 In this example, we declare a variable called message and assign it a string value of "Hello, world!". We then log the value of message to the console using the console.log() method. We then reassign the value of message to a new string of "Goodbye, world!" and log this new value to the console.
