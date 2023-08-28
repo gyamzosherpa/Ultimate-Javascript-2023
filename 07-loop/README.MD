@@ -1,7 +1,5 @@
 # LOOP
 
-Table of Contents
-
 - [LOOP](#loop)
   - [Loop Definition](#loop-definition)
   - [Type of Loops](#type-of-loops)
@@ -19,7 +17,13 @@ A loop is a control flow statement used to execute a block of code repeatedly un
 
 For example, if we want to print "Hello, World!" 10 times then instead of writing printing code 10 times we can use a loop and write the code once.
 
-![Alt text](images/01-loop.png)
+Example: `loop`
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log("hello world"); // returns "hello world" 10 times
+}
+```
 
 ## Type of Loops
 
@@ -28,6 +32,8 @@ For example, if we want to print "Hello, World!" 10 times then instead of writin
 - 1st part of the loop is the initial condition,
 - 2nd part is the condition,
 - 3rd part is the increment/decrement
+
+Example: `code`
 
 ```js
 for (let i = 0; i < 10; i++) {
@@ -51,18 +57,37 @@ for (let i = 0; i < fish.length; i++) {
 ### While loop
 
 In JavaScript, a while statement is a loop that executes as long as the specified condition evaluates to true.
+Example: `while loop`
 
-![Alt text](images/04-while-loop.png)
+```js
+// condition is checked before the code is executed
+let i = 0;
+while (i < 10) {
+  console.log(i); // 0,1,2,3,4,5,6,7,8,9
+  i++; //updating
+}
+```
 
 ### Do while loop
 
 The loop will always be executed at least once, even if the condition is false because the code block is executed before the condition is tested.
 
-![Alt text](images/05-do-while-loop.png)
+Example: `do while loop`
+
+```js
+// executes a block of code once before the condition is checked
+let i = 1;
+do {
+  console.log(i); //1,2,3,4,5,6,7,8,9
+  i++;
+} while (i < 10);
+```
 
 ### For of loop
 
 The for-of-loop (ES6 Feature) in JavaScript allows you to iterate over iterable objects (arrays, sets, maps, strings, etc.). The for...of loop cannot be used to iterate over an object.
+
+Example: `for of loop`
 
 ```js
 // for of loop iterates over strings
@@ -81,6 +106,8 @@ for (let number of numbers) {
 ### For in loop
 
 The JavaScript for in statement mainly loops through the properties of an Object:
+
+Example: `for in loop`
 
 ```js
 const shark = {
