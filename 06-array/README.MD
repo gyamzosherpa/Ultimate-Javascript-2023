@@ -1,7 +1,5 @@
 # Array
 
-Table of Contents
-
 - [Array](#array)
   - [Array Definition](#array-definition)
     - [Array.at (ECMA 2022)](#arrayat-ecma-2022)
