@@ -6,6 +6,13 @@ Table of Contents
   - [Array Definition](#array-definition)
     - [Array.at (ECMA 2022)](#arrayat-ecma-2022)
   - [Array built-in methods](#array-built-in-methods)
+    - [Array.from()](#arrayfrom)
+    - [splice()](#splice)
+    - [slice()](#slice)
+    - [push(), pop(), shift(), unshift()](#push-pop-shift-unshift)
+    - [sort()](#sort)
+    - [indexOf()](#indexof)
+    - [lastIndexOf()](#lastindexof)
   - [Nested Array](#nested-array)
 
 ## Array Definition
@@ -56,11 +63,11 @@ Previously, we couldn’t use negative value to access element, but the new feat
 
 ## Array built-in methods
 
-1. Array.from()
+### Array.from()
 
 ![Splice](images/03-array-from.png)
 
-2. splice()
+### splice()
 
 splice(start, deleteCount, [item1 [, item2 [, ...]]]):
 
@@ -70,7 +77,7 @@ The splice() method changes the contents of an array by removing or replacing ex
 
 In this example, the splice() method is used to remove the first two elements of the numbers array and add the numbers 0 and 1 in their place. The splice() method returns the removed elements as a new array, which is logged to the console.
 
-3. slice()
+### slice()
 
 slice(start, [end]):
 The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included). The original array will not be modified. If end is omitted, slice() extracts to the end of the array.
@@ -106,7 +113,7 @@ console.log(tasks);
 
 In this example, the tasks array is created to store the to-do tasks. The slice() method is then used to create a new array called newTasks that contains a portion of the tasks array, starting from index 1 and ending at index 2. The splice() method is then used to add a new task to the tasks array by specifying the index 3, the number of elements to remove (0), and the new task to add. The splice() method is then used again to remove a task from the tasks array by specifying the index 2 and the number of elements to remove (1). The results of the tasks array are logged to the console after each operation to show the updated state of the tasks array.
 
-4. push(), pop(), shift(), unshift()
+### push(), pop(), shift(), unshift()
 
 push(element1, element2, ..., elementX): The push() method adds one or more elements to the end of an array and returns the new length of the array.
 
@@ -120,13 +127,13 @@ unshift(element1, element2, ..., elementX): The unshift() method adds one or mor
 
 In this example, the push() method is used to add the numbers 0, 1, and 2 to the numbers array. The pop() method is then used to remove the last element from the numbers array, which is logged to the console. The shift() method is used to remove the first element from the numbers array, which is also logged to the console. Finally, the unshift() method is used to add the numbers -1, -2, and -3 to the beginning of the numbers array, which is logged to the console.
 
-5. sort()
+### sort()
 
 sort(): Sorts the elements of an array in place and returns the array
 
 ![Alt text](images/06-array-sort.png)
 
-6. indexOf()
+### indexOf()
 
 The indexOf() method is used to find the first index of an element in an array that matches a specified value. If the element is not found, the indexOf() method returns -1.
 
@@ -134,7 +141,7 @@ The indexOf() method is used to find the first index of an element in an array t
 
 In this example, the colors array is created and contains three elements: 'red', 'green', and 'blue'. The indexOf() method is then used to find the index of 'green' in the colors array. The result is logged to the console and is 1, since 'green' is the second element in the array. The indexOf() method is then used again to find the index of 'yellow' in the colors array. The result is logged to the console and is -1, since 'yellow' is not in the colors array.
 
-7. lastIndexOf()
+### lastIndexOf()
 
 The lastIndexOf() method is used to find the last index of an element in an array that matches a specified value. If the element is not found, the lastIndexOf() method returns -1.
 
