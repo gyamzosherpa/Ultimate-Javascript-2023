@@ -12,7 +12,7 @@
   - [Arrow Function](#arrow-function)
     - [Default parameters](#default-parameters)
   - [Higher order Functions(HOF)](#higher-order-functionshof)
-    - [HOF Examples using various methods](#hof-examples-using-various-methods)
+    - [Built-in Higher order functions](#built-in-higher-order-functions)
       - [map()](#map)
       - [filter()](#filter)
       - [reduce()](#reduce)
@@ -539,7 +539,7 @@ In this code, the functions area, circumference, and diameter are defined. These
 - Finally, the output array containing the results of applying the logic function to each radius is returned.
 - The code then demonstrates how to use the calculate function with different functions (area, circumference, and diameter) as the logic argument.
 
-### HOF Examples using various methods
+### Built-in Higher order functions
 
 #### map()
 
