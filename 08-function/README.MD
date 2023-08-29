@@ -539,9 +539,7 @@ console.log(calculate(radius, diameter));
 
 In this code, the functions area, circumference, and diameter are defined. These are not higher-order functions themselves, but they will be used as arguments for the higher-order function "calculate".
 
-`Higher-Order Function calculate:`
-
-- The calculate function takes two parameters: an array of radii and a function called logic.
+- The calculate function takes two parameters: an array of radius and a function called logic.
 - Inside the function, an empty array called output is initialized. This array will store the results of applying the logic function to each radius.
 - A loop iterates through each radius in the radius array. For each radius, the logic function (which can be area, circumference, or diameter) is called with the current radius as an argument, and the result is pushed into the output array.
 - Finally, the output array containing the results of applying the logic function to each radius is returned.
