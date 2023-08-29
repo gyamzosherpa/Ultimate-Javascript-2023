@@ -39,38 +39,35 @@ Additionally, there are three special data types in JavaScript:
 Example:
 
 ```js
-    // primitive data types
-    let x = 90; // number
-    const fullName = 'Gyamzo Sherpa’; // string
-    let isSingle = true; // boolean: true or false
+// primitive data types
+let x = 90; // number
+const fullName = "Gyamzo Sherpa"; // string
+let isSingle = true; // boolean: true or false
 
-    let y;
-    console.log(y); // undefined
+let y;
+console.log(y); // undefined
 
-    const z = null;
-    console.log(z); // null
-    console.log(typeof z); // object
+const z = null;
+console.log(z); // null
+console.log(typeof z); // object
 
+// non-primitive data types
 
-    // non-primitive data types
+//function
+function text() {
+  const address = "london";
+  console.log(address);
+}
+text();
 
-    //function
-    function text() {
-    const address = 'london';
-    console.log(address);
+//array
+let players = ["messi", "ronaldo", "mbappe’", "neymar"];
 
-    }
-    text();
-
-    //array
-    let players = ['messi', 'ronaldo', 'mbappe’', 'neymar'];
-
-    //object
-    let person = {
-        name: "Gyamzo",
-        address: "KTM",
-    }
-
+//object
+let person = {
+  name: "Gyamzo",
+  address: "KTM",
+};
 ```
 
 ## Primitive Data Types
