@@ -20,6 +20,7 @@
       - [findIndex()](#findindex)
       - [some()](#some)
       - [every()](#every)
+      - [forEach()](#foreach)
   - [CALL APPLY BIND](#call-apply-bind)
     - [How to Use the Call Function in JavaScript?](#how-to-use-the-call-function-in-javascript)
     - [How to Use the Apply Function in JavaScript?](#how-to-use-the-apply-function-in-javascript)
@@ -760,6 +761,32 @@ console.log(targetCustomer); //true
 ```
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
+
+#### forEach()
+
+`forEach` used to iterate over elements in an array and apply a provided function to each element.
+
+Without a higher order function, if I want to add one to each number in an array and display it in the console, I can do the following:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+function addOne(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i] + 1);
+  }
+}
+
+addOne(numbers);
+```
+
+However, using what may be the most common higher order function, forEach(), we can simplify this process:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((number) => console.log(number + 1));
+```
 
 ## CALL APPLY BIND
 
