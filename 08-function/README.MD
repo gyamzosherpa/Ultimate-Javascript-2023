@@ -5,15 +5,9 @@
   - [Parameters and Arguments](#parameters-and-arguments)
   - [The arguments object](#the-arguments-object)
   - [Function with a return statement or return value](#function-with-a-return-statement-or-return-value)
-    - [Returning a value from a function](#returning-a-value-from-a-function)
-    - [Terminating a function early](#terminating-a-function-early)
-    - [Breaking out of a loop](#breaking-out-of-a-loop)
-    - [Returning multiple values](#returning-multiple-values)
+    - [some common uses of the return statement](#some-common-uses-of-the-return-statement)
   - [IIFE: Immediately Invoked Function Expression](#iife-immediately-invoked-function-expression)
-    - [Isolating variables and functions](#isolating-variables-and-functions)
-    - [Encapsulating code](#encapsulating-code)
-    - [Hiding implementation details](#hiding-implementation-details)
-    - [Sharing data between scripts](#sharing-data-between-scripts)
+    - [Common uses of Immediately Invoked Function Expressions (IIFEs)](#common-uses-of-immediately-invoked-function-expressions-iifes)
   - [Anonymous Function or function expression](#anonymous-function-or-function-expression)
   - [Arrow Function](#arrow-function)
     - [Default parameters](#default-parameters)
@@ -100,9 +94,9 @@ In this example, the sum function takes an indefinite number of arguments and us
 
 The return statement ends function execution and specifies a value to be returned to the function caller. When a return statement is used in a function body, the execution of the function is stopped.
 
-Here are some common uses of the return statement in programming:
+### some common uses of the return statement
 
-### Returning a value from a function
+`Returning a value from a function`
 
 Functions can perform calculations and return the result back to the caller using the return statement. This allows the result to be used by other parts of the program.
 
@@ -124,7 +118,7 @@ We can then call the multiply function and assign the returned value to a variab
 
 By using the return statement in this way, we can make our functions more flexible and reusable, as the returned value can be used by other parts of the program for further computation or to make decisions based on the result.
 
-### Terminating a function early
+`Terminating a function early`
 
 If a function encounters an error condition or unexpected input, it can use the return statement to terminate the function early and return an error message or null value back to the caller.
 
@@ -151,7 +145,7 @@ In this example, the divide function takes two arguments num1 and num2 and divid
 
 We can then call the divide function with different arguments to test its behavior. The first call to divide with arguments 10 and 2 will return 5, which is the correct result. The second call to divide with arguments 10 and 0 will return null, indicating that the division by zero was not allowed and the function terminated early.
 
-### Breaking out of a loop
+`Breaking out of a loop`
 
 Inside a loop, a return statement can be used to break out of the loop early and return a result.
 
@@ -181,7 +175,7 @@ In this example, the findFirstPositive function takes an array of numbers as an 
 
 We can then call the findFirstPositive function with different arrays to test its behavior. The first call to findFirstPositive with an array containing both positive and negative numbers will return 3, which is the first positive number in the array. The second call to findFirstPositive with an array containing only negative numbers and zero will return null, indicating that no positive number was found in the array.
 
-### Returning multiple values
+`Returning multiple values`
 
 In some programming languages, a function can return multiple values using the return statement, separated by commas.
 
@@ -234,9 +228,9 @@ let result = (function (a, b) {
 console.log(result); //returns 3
 ```
 
-Immediately Invoked Function Expressions (IIFEs) can be used in several situations in JavaScript, including:
+### Common uses of Immediately Invoked Function Expressions (IIFEs)
 
-### Isolating variables and functions
+`Isolating variables and functions`
 
 IIFEs allow you to create a new scope and isolate variables and functions from the global scope. This can help to prevent variable and function name collisions, especially when working on large projects with many contributors.
 
@@ -258,7 +252,7 @@ console.log(sum(1, 2, 3, 4, 5)); // 15
 
 After the IIFE is executed, an attempt is made to access the message variable from the global scope, but a ReferenceError is thrown because the message variable is not defined in the global scope. This demonstrates how the IIFE can be used to isolate variables and functions from the global scope."
 
-### Encapsulating code
+`Encapsulating code`
 
 IIFEs allow you to encapsulate code and data within a single unit, making it easier to understand and maintain.
 
@@ -280,7 +274,7 @@ console.log(add()); //3
 
 When the add function is called multiple times, it returns the value of the counter, which is incremented each time the function is called. This demonstrates how the IIFE can be used to encapsulate code and data within a single unit, making it easier to understand and maintain."
 
-### Hiding implementation details
+`Hiding implementation details`
 
 IIFEs allow you to hide the implementation details of your code, making it more secure and less prone to tampering.
 
@@ -316,7 +310,7 @@ console.log(calculator.result); // undefined
 
 "When the code is executed, the getResult method is called to retrieve the current value of the calculator, but an attempt to access the result variable directly from the global scope results in an undefined value. This demonstrates how the IIFE can be used to hide implementation details and make code more secure and less prone to tampering."
 
-### Sharing data between scripts
+`Sharing data between scripts`
 
 IIFEs allow you to share data between scripts in a controlled and secure manner, which is useful when working with third-party libraries.
 
