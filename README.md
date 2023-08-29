@@ -13,3 +13,4 @@
 | [Array](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/06-array)               | Array and it's methods                                     |
 | [Loop](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/07-loop)                 | Type of loops                                              |
 | [Function](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/08-function)         | Differetnt ways to use function                            |
+| [Scope](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/09-scope)               | Scope of let,const and var                                 |
