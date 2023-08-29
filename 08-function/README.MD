@@ -155,9 +155,10 @@ Inside a loop, a return statement can be used to break out of the loop early and
 ```js
 // breaking out of loop
 function findFirstPositive(numbers) {
-  for (let i = 0; i < numbers.length; i++) {}
-  if (numbers[i] > 0) {
-    return numbers[i]; // Return the first positive number
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+      return numbers[i]; // Return the first positive number
+    }
   }
 
   return null; // Return null if no positive number is found
