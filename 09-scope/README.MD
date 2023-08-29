@@ -17,6 +17,8 @@ Variables declared inside a function are only accessible within that function an
 
 Variables declared outside of any function or block are accessible throughout the entire program. This is known as global scope.
 
+---
+
 ![Alt text](let_var_const_differences.png)
 
 `Example 1`
