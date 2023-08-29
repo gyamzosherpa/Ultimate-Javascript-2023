@@ -150,3 +150,7 @@ world();
 
 console.log(x); // 50
 ```
+
+---
+
+It's generally recommended to use let and const instead for more predictable and block-scoped behavior.
