@@ -22,9 +22,9 @@ The condition can be any expression that evaluates to a boolean value (either tr
 ```js
   const age = 16;
   if (age >= 16) {
-  console. ('You can have voter card');
+  console.log('You can have voter card');
   } eLse {
-  console. ('You cannot have voter card');
+  console.log('You cannot have voter card');
   }
 ```
 
@@ -33,22 +33,21 @@ Here is a basic example of a block of code that contains an if statement, multip
 For example:
 
 ```js
-  // Set the current grade of the student
-  let grade = 87;
+// Set the current grade of the student
+let grade = 87;
 
-  // Check if grade is an A, 8, C, D, or F
-  if (grade >= 90) {
-    console. ('A');
-  } else if (grade >= 80) {
-      console.log('B');
-  } else if (grade >= 70) {
-      console.log('C');
-  } else if (grade >= 60) {
-      console.log('D');
-  } else {
-      console.log('F');
-  }
-
+// Check if grade is an A, 8, C, D, or F
+if (grade >= 90) {
+  console.log("A");
+} else if (grade >= 80) {
+  console.log("B");
+} else if (grade >= 70) {
+  console.log("C");
+} else if (grade >= 60) {
+  console.log("D");
+} else {
+  console.log("F");
+}
 ```
 
 ## Nested if/else
@@ -123,7 +122,7 @@ if (x > 10 || y > 10) {
 
 ## Equality Operator
 
-== VS ===
+``== VS ===`
 
 == (loose equality operator) checks for equality between two values after type coercion. It means that if the operands are of different types, JavaScript will attempt to convert them to a common type.
 
