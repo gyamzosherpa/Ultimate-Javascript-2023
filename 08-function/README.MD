@@ -239,15 +239,14 @@ IIFEs allow you to create a new scope and isolate variables and functions from t
 `code`
 
 ```js
-function sum() {
-  let result = 0;
-
-  for (let i = 0; i < arguments.length; i++) {
-    result += arguments[i];
+(function () {
+  let message = "Hello, World!";
+  function printMessage() {
+    console.log(message);
   }
-  return result;
-}
-console.log(sum(1, 2, 3, 4, 5)); // 15
+  printMessage();
+})();
+console.log(message); //referenceError: message is not defined
 ```
 
 "In this example, an anonymous function is defined and immediately invoked as an IIFE. The function contains a let statement, which defines a local variable message, and a function printMessage, which prints the value of message to the console. The printMessage function is called within the IIFE, causing the value of message to be printed to the console.
