@@ -17,14 +17,15 @@
   - [Anonymous Function or function expression](#anonymous-function-or-function-expression)
   - [Arrow Function](#arrow-function)
     - [Default parameters](#default-parameters)
-  - [Higher order Functions](#higher-order-functions)
-    - [map()](#map)
-    - [filter()](#filter)
-    - [reduce()](#reduce)
-    - [find()](#find)
-    - [findIndex()](#findindex)
-    - [some()](#some)
-    - [every()](#every)
+  - [Higher order Functions(HOF)](#higher-order-functionshof)
+    - [HOF Examples using various methods](#hof-examples-using-various-methods)
+      - [map()](#map)
+      - [filter()](#filter)
+      - [reduce()](#reduce)
+      - [find()](#find)
+      - [findIndex()](#findindex)
+      - [some()](#some)
+      - [every()](#every)
   - [CALL APPLY BIND](#call-apply-bind)
     - [How to Use the Call Function in JavaScript?](#how-to-use-the-call-function-in-javascript)
     - [How to Use the Apply Function in JavaScript?](#how-to-use-the-apply-function-in-javascript)
@@ -444,9 +445,111 @@ Advantages of using arrow functions in JavaScript include:
 5. Easy to use in functional programming:
    Arrow functions can be used in functional programming paradigms, making it easier to write functional code and to work with higher-order functions.
 
-## Higher order Functions
+## Higher order Functions(HOF)
 
-### map()
+A function which takes another function as an argument or returns a function from it is known as HOF.
+
+`Example`
+
+```js
+function test() {
+  return 1 + 2;
+}
+
+function hello(x) {
+  let data = function () {
+    console.log("HOF");
+    console.log("Result of test:", x());
+  };
+  return data;
+}
+
+const hofFunction = hello(test);
+hofFunction();
+
+//Here, "hello" is the HOF since it takes another function "test" as an argument and returns another function "data".
+```
+
+`without HOF: code`
+
+```js
+const radius = [3, 1, 2, 4];
+
+const calculateArea = function (radius) {
+  const output = [];
+  for (let i = 0; i < radius.length; i++) {
+    output.push(Math.PI * radius[i] * radius[i]);
+  }
+  return output;
+};
+
+console.log(calculateArea(radius));
+
+const calculateCircumference = function (radius) {
+  const output = [];
+  for (let i = 0; i < radius.length; i++) {
+    output.push(2 * Math.PI * radius[i] * radius[i]);
+  }
+  return output;
+};
+
+console.log(calculateCircumference(radius));
+
+const calculateDiameter = function (radius) {
+  const output = [];
+  for (let i = 0; i < radius.length; i++) {
+    output.push(2 * radius[i] * radius[i]);
+  }
+  return output;
+};
+
+console.log(calculateDiameter(radius));
+```
+
+Here, in this example, we are only changing the logic, but all the function has the similar code. This can be solved by using HOF writing minimal code.
+
+`HOW HOF WORKS?`
+
+```JS
+const radius = [3, 1, 2, 4];
+const area = function (radius) {
+  return Math.PI * radius * radius;
+};
+
+const circumference = function (radius) {
+  return 2 * Math.PI * radius * radius;
+};
+
+const diameter = function (radius) {
+  return 2 * radius;
+};
+
+const calculate = function (radius, logic) {
+  const output = [];
+  for (let i = 0; i < radius.length; i++) {
+    output.push(logic(radius[i]));
+  }
+  return output;
+};
+
+console.log(calculate(radius, area));
+console.log(calculate(radius, circumference));
+console.log(calculate(radius, diameter));
+```
+
+In this code, the functions area, circumference, and diameter are defined. These are not higher-order functions themselves, but they will be used as arguments for the higher-order function "calculate".
+
+`Higher-Order Function calculate:`
+
+- The calculate function takes two parameters: an array of radii and a function called logic.
+- Inside the function, an empty array called output is initialized. This array will store the results of applying the logic function to each radius.
+- A loop iterates through each radius in the radius array. For each radius, the logic function (which can be area, circumference, or diameter) is called with the current radius as an argument, and the result is pushed into the output array.
+- Finally, the output array containing the results of applying the logic function to each radius is returned.
+- The code then demonstrates how to use the calculate function with different functions (area, circumference, and diameter) as the logic argument.
+
+### HOF Examples using various methods
+
+#### map()
 
 Sometimes you may need to take an array and apply some procedure to its elements so that you get a new array with modified elements. "Creates a new array with the results of calling a provided function on every element in the calling array."
 
@@ -486,7 +589,7 @@ console.log, updatedEmployees;
 //In this example you get the new updated salary of all employees.
 ```
 
-### filter()
+#### filter()
 
 The filter () method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.
 
@@ -527,7 +630,7 @@ console.log(filteredProducts);
 
 In this example, the filter function is used to create a new array of products that are fruits and have a price less than 1.00. The original products array is not modified. The filter function takes a callback function as an argument, which returns true for elements that should be included in the filtered array and false for elements that should be excluded. In this example, the callback function checks if the product type is 'fruit' and the price is less than 1.00.
 
-### reduce()
+#### reduce()
 
 Applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
 
@@ -561,7 +664,7 @@ console.log(totalCost); // 29.64
 
 In this example, the reduce function is used to calculate the total cost of all purchases by multiplying the price and quantity of each purchase and adding the result to an accumulator. The second argument to reduce, 0, is the initial value of the accumulator. The reduce function takes a callback function as an argument, which takes the accumulator and the current purchase as arguments, calculates the cost of the current purchase, and returns the updated accumulator value. The reduce function returns the final accumulator value, which is the total cost of all purchases in this example.
 
-### find()
+#### find()
 
 Returns the value of the first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.
 
@@ -588,7 +691,7 @@ console.log(targetCustomer);
 
 In this example, the find() method is used to find the customer object with the customerId of 456. The find() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The find() method will stop and return the first customer object for which the callback returns true.
 
-### findIndex()
+#### findIndex()
 
 Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, -1 is returned. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
 
@@ -614,7 +717,7 @@ console.log(targetCustomer); //1
 
 In this example, the findIndex() method is used to find the index of the customer object with the customerId of 456. The findIndex() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The findIndex() method will stop and return the index of the first customer object for which the callback returns true.
 
-### some()
+#### some()
 
 Tests whether at least one element in the array passes the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
 
@@ -640,7 +743,7 @@ console.log(targetCustomer); //true
 
 In this example, the some() method is used to check if there are any customers with the customerId of 456. The some() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The some() method will stop and return true as soon as it finds the first customer object for which the callback returns true.
 
-### every()
+#### every()
 
 Tests whether all elements in the array pass the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
 
