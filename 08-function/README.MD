@@ -30,7 +30,7 @@
 
 The function is a block of code to perform a specific task. So, you don’t have to write the code for the same task again and again but create a function and call it wherever the task needed to be performed. “function” is a keyword to create a function.
 
-![Alt text](images/00-function.png)
+![Alt text](function.jpg)
 
 ```js
 //function with no parameters
