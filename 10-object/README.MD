@@ -3,6 +3,7 @@
 - [Object](#object)
   - [Object Definition](#object-definition)
   - [Several ways to create an object](#several-ways-to-create-an-object)
+  - [Object Methods or Action](#object-methods-or-action)
 
 ## Object Definition
 
@@ -91,3 +92,49 @@ console.log(Mobile);
 ```
 
 ---
+
+## Object Methods or Action
+
+methods are functions that are associated with an object and can be used to perform actions or operations related to that object.
+
+```js
+// Creating an object representing a calculator
+const calculator = {
+  currentValue: 0,
+
+  // This syntax is more common in ES5 (ECMAScript 5) and earlier versions of JavaScript.
+  add: function (num) {
+    this.currentValue += num;
+  },
+  subtract: function (num) {
+    this.currentValue -= num;
+  },
+
+  //This syntax is introduced in ES6 (ECMAScript 2015) and is commonly referred to as the method shorthand.
+  reset() {
+    this.currentValue = 0;
+  },
+  getValue() {
+    return this.currentValue;
+  },
+  //The method shorthand was introduced in ES6 as a more concise and cleaner way to define methods within objects. It automatically assumes that you are defining a method, so you don't need the function keyword. This shorthand is generally preferred when writing code in modern JavaScript environments.
+};
+
+// // Using object methods
+// calculator.add(5); // Adds 5 to the currentValue
+// calculator.subtract(3); // Subtracts 3 from the currentValue
+// console.log(calculator.getValue()); // Output: 2
+
+// calculator.reset(); // Resets the currentValue to 0
+// console.log(calculator.getValue()); // Output: 0
+
+// object destructuring
+const { add, subtract, reset, getValue } = calculator;
+
+add(5);
+subtract(3);
+console.log(getValue()); // 2
+
+reset(); // Resets the currentValue to 0
+console.log(getValue()); // 0
+```
