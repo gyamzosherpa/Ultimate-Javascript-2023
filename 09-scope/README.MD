@@ -92,7 +92,7 @@ console.log(i_am); //returns superman, because i_am is global variable
 `Example 4`
 
 ```js
-Example 4 : var keyword
+// Example 4 : var keyword
 var i_am = "superman";
 
 if (true) {
