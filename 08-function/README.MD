@@ -502,7 +502,7 @@ console.log(calculateDiameter(radius));
 
 Here, in this example, we are only changing the logic, but all the function has the similar code. This can be solved by using HOF writing minimal code.
 
-`HOW HOF WORKS?`
+`With HOF?`
 
 ```JS
 const radius = [3, 1, 2, 4];
