@@ -12,9 +12,10 @@
   - [Constructor Function Vs Object Literal](#constructor-function-vs-object-literal)
   - [Object Prototype](#object-prototype)
   - [CALL APPLY BIND](#call-apply-bind)
-    - [How to Use the Call Function in JavaScript?](#how-to-use-the-call-function-in-javascript)
-    - [How to Use the Apply Function in JavaScript?](#how-to-use-the-apply-function-in-javascript)
-    - [How to Use the Bind Function in JavaScript?](#how-to-use-the-bind-function-in-javascript)
+    - [Call()](#call)
+    - [Apply()](#apply)
+    - [Bind()](#bind)
+  - [DIFFERENCE BETWEEN CALL, APPLY, BIND](#difference-between-call-apply-bind)
 
 ## Object Definition
 
@@ -387,16 +388,9 @@ Apply is very similar to the call function. The only difference is that in apply
 
 Bind is a function that helps you create another function that you can execute later with the new context of this that is provided.
 
-### How to Use the Call Function in JavaScript?
+### Call()
 
-call is a function that you use to change the value of this inside a function and execute it with the arguments provided.
-Here is the syntax of the call function: func.call(thisObj, args1, args2, ...)
-
--func is a function that needs to be invoked with a different this object.
--thisObj is an object or a value that needs to be replaced with this keyword present inside the function func.
--args1, args2 are arguments that are passed to the invoking function with the changed this object.
-
-Note that if you invoke a function without any thisObj argument, then JavaScript considers this property to be a global object.
+call is a function that you use to change the value of "this" inside a function and execute it with the arguments provided.
 
 `call()`
 
@@ -417,94 +411,150 @@ let teacher = {
 console.log(student.getEmail.call(teacher)); //entu.mintu@test.com
 ```
 
-In the example above, we have two objects student and teacher, where student object has getEmail function and teacher has no function. If we have to print firstName and lastName of teacher object then we can use call method as shown in line no 15 by combining with student object.
+In the example above, we have two objects student and teacher, where student object has getEmail function and teacher has no function. If we have to print firstName and lastName of teacher object then we can use call method by combining with student object.
 
 If we do not have getEmail function in both object then we can access to the key properties by combining both objects with getEmail function.
 
-Another example: `code`
+`example: parameter`
 
 ```js
 let person = {
   firstName: "Gyamzo",
   lastName: "Sherpa",
 };
-let displayName = function (greeting) {
+let displayName = function (greeting, message) {
   return greeting + " " + this.firstName + " " + this.lastName;
 };
-console.log(displayName.call(person, "Hello")); //Hello Gyamzo Sherpa
+console.log(displayName.call(person, "Hello", "Morning")); //Hello, Morning Gyamzo Sherpa
 ```
 
-In this example, the call method is used to invoke the displayName function and set its this value to person object. The first argument passed to call is used as the value of this inside the function, and any additional arguments are passed as arguments to the function. In this case, we passed "Hello" as the greeting and person as the 'this' value. The result is the expected greeting along with firstName and lastName from the person object.
+In this example, the call method is used to invoke the displayName function and set its this value to person object. Here, we passed "Hello" as the `greeting`, "Morning" as `message` and `person` as the 'this' value. The result is the expected greeting along with firstName and lastName from the person object: `Hello, Morning Gyamzo Sherpa`
 
-### How to Use the Apply Function in JavaScript?
+---
 
-The Apply function is very similar to the Call function. The only difference between call and apply is the difference in how arguments are passed.
+### Apply()
 
-In apply, arguments you can pass an argument as an array literal or a new array object.
+The Apply function is very similar to the Call function. The only difference between call and apply is the difference in how arguments are passed. call() takes the arguments separated by commas, while apply() takes the arguments as an array.
+
+In apply, you can pass an argument as an array literal or a new array object.
 
 `Apply()`
 
 ```js
-let person = {
-  firstName: "Gyamzo",
-  lastName: "Sherpa",
+const person = {
+  firstName: "John",
+  lastName: "Doe",
 };
-let displayName = function (greeting) {
-  return greeting + " " + this.firstName + " " + this.lastName;
-};
-console.log(displayName.apply(person, "Hello")); //Hello Gyamzo Sherpa
+function greet(greeting, message) {
+  return `${greeting} ${this.firstName}. ${message}`;
+}
+let result = greet.apply(person, ["Hello", "How are you?"]);
+
+console.log(result); // Hello John. How are you?
 ```
 
-In this example, the apply method is used to invoke the displayName function and set its this value to person object. The first argument passed to apply is used as the value of this inside the function, and the second argument is an array that contains the arguments to be passed to the function. In this case, we passed ["Hello"] as the array of arguments and person as the this value. The result is the expected greeting along with firstName and lastName from the person object.
+In this example, we set the this value inside the function to the person object. The arguments of the greet() function was passed into the apply() method as an array.
 
-The best part about apply is we don’t need to take care of the number of arguments that are passed to the invoking function. Because of its dynamic and versatile nature, you can use it in complicated situations.
+The apply() method invoked the greet() function with the this value set to the person object and arguments as an array ['Hello', 'How are you?'].
 
-Let’s look at another example of apply function.
+If you use the call() method, you need to pass the arguments of the greet() function separately as follows:
+
+`let result = greet.call(person, Hello', 'How are you?');`
+
+`Another Example`
 
 ```js
-function Car(type, fuelType) {
-  this.type = type;
-  this.fuelType = fuelType;
+function greet(name, message) {
+  console.log(message + ", " + name);
 }
-function setBrand(brand) {
-  Car.apply(this, ["convertible", "petrol"]); // syntax with array literal
-  this.brand = brand;
-  console.log(`Car details`, this);
-}
-function definePrice(price) {
-  Car.apply(this, new Array("convertible", "diesel")); //syntax with array object construction
-  this.price = price;
-  console.log(`Car price =`, this);
-}
+// Using call(): this refers to window or document object
+greet.call(this, "Alice", "Hello"); // Hello, Alice
+greet.call(this, "Bob", "Hi"); // Hi, Bob
 
-const newBrand = new setBrand("Brand1");
-const newCarPrice = new definePrice(100000);
+// Using apply()
+greet.apply(window, ["Alice", "Hello"]); // Hello, Alice
+greet.apply(document, ["Bob", "Hi"]); // Hi, Bob
 ```
 
-### How to Use the Bind Function in JavaScript?
+---
+
+### Bind()
 
 The bind function creates a copy of a function with a new value to the this presents inside the calling function.
-
-Here is the syntax for the bind function: func.bind(thisObj, arg1, arg2, ..., argN);
-
--func is a function that needs to be invoked with a different this object
--thisObj is an object or a value that needs to be replaced with this keyword present inside the function func
--arg1, arg2…argN – you can pass 1 argument to the calling function or more than that, similar to the call function.
+`The bind() method creates a new function` whereas call and apply cannot create a copy of function.
 
 `bind()`
 
 ```js
-let person = {
-  firstName: "John",
-  lastName: "Doe",
+const student1 = {
+  name: "Jack",
+  grade: "5",
+  introduction: function () {
+    console.log(this.name + "studies in grade" + this.grade + "."); // Jimmy studies in grade 6.
+  },
 };
-let displayName = function (greeting) {
-  return greeting + " " + this.firstName + " " + this.lastName;
+
+const student2 = {
+  name: "Jimmy ",
+  grade: " 6",
 };
-let displayPersonName = displayName.bind(person);
-console.log(displayPersonName("Hello")); //Hello John Doe
+
+// the object student2 is borrowing introduction method from student1
+let result = student1.introduction.bind(student2);
+
+// invoking result() function
+result();
 ```
 
-In this example, the bind method is used to create a new function displayPersonName that has its this value set to person object. When displayPersonName is called, it returns the expected greeting along with firstName and lastName from the person object.
+In the above example, we have defined two objects `student1` and `student2`.
+
+Since student2 doesn't have the `introduction()` method, we are borrowing it from student1 using the bind() function.
+
+`student1.introduction.bind(student2)` returns the copy of `introduction()` and assigns it to result.
+
+---
+
+## DIFFERENCE BETWEEN CALL, APPLY, BIND
+
+`Example`
+
+```JS
+let student = {
+  firstName: "Gyamzo",
+  lastName: "sherpa",
+  age: 27,
+  getEmail: function (greeting, message) {
+    // return `${this.firstName}.${this.lastName}@test.com`;
+    console.log(
+      `${greeting}, ${message} ${this.firstName}.${this.lastName}@test.com`
+    );
+  },
+};
+let teacher = {
+  firstName: "entu",
+  lastName: "mintu",
+  age: 27,
+};
+
+// call()
+// let result = student.getEmail.call(teacher, "hello", "good morning");
+// result(); //typeError result is not a function
+
+// apply()
+// let result = student.getEmail.apply(teacher, ["hello", "good morning"]);
+// result(); // typeError result is not a function
+
+// bind()
+let result = student.getEmail.bind(teacher, "hello", "morning");
+result(); //hello, morning entu.mintu@test.com
+
+let result2 = student.getEmail.bind(teacher);
+result2("hello", "afternoon"); //hello, afternoon entu.mintu@test.com
+```
+
+Note:
+
+- The call() and apply() method does not make a copy of the function it is being called on, whereas The bind() method creates a new function
+- call() and apply() serve the exact same purpose. The only difference between how they work is that call() expects all parameters to be passed in individually, whereas apply() expects an array of all of our parameters.
 
 ---
