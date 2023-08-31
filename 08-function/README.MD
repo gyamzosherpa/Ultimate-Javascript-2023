@@ -25,6 +25,7 @@
     - [How to Use the Call Function in JavaScript?](#how-to-use-the-call-function-in-javascript)
     - [How to Use the Apply Function in JavaScript?](#how-to-use-the-apply-function-in-javascript)
     - [How to Use the Bind Function in JavaScript?](#how-to-use-the-bind-function-in-javascript)
+  - [this keyword](#this-keyword)
 
 ## function definition
 
@@ -440,6 +441,8 @@ Advantages of using arrow functions in JavaScript include:
 5. Easy to use in functional programming:
    Arrow functions can be used in functional programming paradigms, making it easier to write functional code and to work with higher-order functions.
 
+---
+
 ## Higher order Functions(HOF)
 
 A function which takes another function as an argument or returns a function from it is known as HOF.
@@ -540,6 +543,8 @@ In this code, the functions area, circumference, and diameter are defined. These
 - Finally, the output array containing the results of applying the logic function to each radius is returned.
 - The code then demonstrates how to use the calculate function with different functions (area, circumference, and diameter) as the logic argument.
 
+---
+
 ### Built-in Higher order functions
 
 #### map()
@@ -582,6 +587,8 @@ console.log, updatedEmployees;
 //In this example you get the new updated salary of all employees.
 ```
 
+---
+
 #### filter()
 
 The filter () method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.
@@ -623,6 +630,8 @@ console.log(filteredProducts);
 
 In this example, the filter function is used to create a new array of products that are fruits and have a price less than 1.00. The original products array is not modified. The filter function takes a callback function as an argument, which returns true for elements that should be included in the filtered array and false for elements that should be excluded. In this example, the callback function checks if the product type is 'fruit' and the price is less than 1.00.
 
+---
+
 #### reduce()
 
 Applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
@@ -657,6 +666,8 @@ console.log(totalCost); // 29.64
 
 In this example, the reduce function is used to calculate the total cost of all purchases by multiplying the price and quantity of each purchase and adding the result to an accumulator. The second argument to reduce, 0, is the initial value of the accumulator. The reduce function takes a callback function as an argument, which takes the accumulator and the current purchase as arguments, calculates the cost of the current purchase, and returns the updated accumulator value. The reduce function returns the final accumulator value, which is the total cost of all purchases in this example.
 
+---
+
 #### find()
 
 Returns the value of the first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.
@@ -684,6 +695,8 @@ console.log(targetCustomer);
 
 In this example, the find() method is used to find the customer object with the customerId of 456. The find() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The find() method will stop and return the first customer object for which the callback returns true.
 
+---
+
 #### findIndex()
 
 Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, -1 is returned. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
@@ -709,6 +722,8 @@ console.log(targetCustomer); //1
 ```
 
 In this example, the findIndex() method is used to find the index of the customer object with the customerId of 456. The findIndex() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The findIndex() method will stop and return the index of the first customer object for which the callback returns true.
+
+---
 
 #### some()
 
@@ -736,6 +751,8 @@ console.log(targetCustomer); //true
 
 In this example, the some() method is used to check if there are any customers with the customerId of 456. The some() method takes a callback function that returns true if the current customer object's customerId is equal to 456, and false otherwise. The some() method will stop and return true as soon as it finds the first customer object for which the callback returns true.
 
+---
+
 #### every()
 
 Tests whether all elements in the array pass the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
@@ -762,6 +779,8 @@ console.log(targetCustomer); //true
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
 
+---
+
 #### forEach()
 
 `forEach` used to iterate over elements in an array and apply a provided function to each element.
@@ -787,6 +806,8 @@ const numbers = [1, 2, 3, 4, 5];
 
 numbers.forEach((number) => console.log(number + 1));
 ```
+
+---
 
 ## CALL APPLY BIND
 
@@ -915,3 +936,49 @@ console.log(displayPersonName("Hello")); //Hello John Doe
 ```
 
 In this example, the bind method is used to create a new function displayPersonName that has its this value set to person object. When displayPersonName is called, it returns the expected greeting along with firstName and lastName from the person object.
+
+---
+
+## this keyword
+
+![Alt text](this_keyword.jpg)
+
+This keyword refers to the object it belongs to. It has different values depending on where it is used.
+
+- Alone “this” refers to the global object. If we call this directly, it refers to the window object.
+
+![Alt text](this_window.png)
+
+- In a regular or traditional function, “this” refers to the global object.
+
+![Alt text](this_regular_function.jpg) ![Alt text](this_regular_output.png)
+
+- In a method “this” refers to the owner object.
+
+```js
+const person = {
+  name: "Gyamzo",
+  address: "Kathmandu",
+  details: function () {
+    // this refers to the object "person" => person.name
+    console.log(this.name);
+  },
+};
+person.details();
+```
+
+- In a function in strict mode, this refers to undefined.
+
+![Alt text](_this_use_strict.jpg)
+
+- In the case of call, apply and bind, this refers to the object that is passed as an argument to the respective method.
+
+  1.The call method allows you to call a function with a specific this value and arguments passed individually.
+
+  2.The apply method is similar to the call method, but it takes the arguments as an array.
+
+  3.The bind method returns a new function where this refers to the object passed as an argument to bind. The returned function can be called later with a different this value and arguments.
+
+![Alt text](this_call-apply-bind.jpg)
+
+`In this example, the fullName function is a method of the person object. By using call, apply, and bind, we are able to change the "this" value inside the fullName function to person2 and get the full name of that object.`
