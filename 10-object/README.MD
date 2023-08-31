@@ -8,6 +8,9 @@
     - [Destructuring in Object](#destructuring-in-object)
     - [Destructuring in Array](#destructuring-in-array)
     - [Destructuring in Function](#destructuring-in-function)
+  - [Property getters and setters](#property-getters-and-setters)
+  - [Constructor Function Vs Object Literal](#constructor-function-vs-object-literal)
+  - [Object Prototype](#object-prototype)
 
 ## Object Definition
 
@@ -291,3 +294,81 @@ drawES6Chart({
 In this example, the function drawES6Chart takes an object as an argument and destructures it into three variables: size, cords and radius. Each variable has a default value in case the object does not have the corresponding property. The function also has a default value of {} for the whole parameter, in case no object is passed at all.
 
 ---
+
+## Property getters and setters
+
+In an object literal they are denoted by get and set:
+
+```js
+let user = {
+  name: "John",
+  surname: "Smith",
+
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  },
+};
+
+// console.log(user.name); // John
+
+// set fullName is executed with the given value
+user.fullName = "Alice Cooper";
+
+console.log(user.name); //Alice
+console.log(user.surname); //Cooper
+
+// if we log in the user object, we get new property values
+console.log(user); //name:"Alice", surname:"Cooper"
+```
+
+---
+
+## Constructor Function Vs Object Literal
+
+- Object Literal is generally used to create a single object. The constructor function can create multiple objects.
+
+`Example`
+
+```js
+// object literal
+let person = {
+  name: "Gyamzo",
+};
+
+// constructor function
+function person() {
+  this.name = "Gyamzo";
+}
+let person1 = new person();
+let person2 = new person();
+let person3 = new person();
+
+// adding new property to person1
+// Each object created from the constructor function is unique
+person1.age = 20;
+console.log(person1); // name:"Gyamzo", age:20
+console.log(person2); // name:"Gyamzo"
+console.log(person3); // name:"Gyamzo"
+```
+
+## Object Prototype
+
+Prototype helps to add the property to all the new objects form from parent object.
+
+```js
+function person() {
+  (this.name = "Gyamzo"), (this.age = 27);
+}
+let person1 = new person();
+let person2 = new person();
+
+// adding new property using prototype
+person.prototype.gender = "Male";
+
+console.log(person1.gender); //Male
+console.log(person2.gender); //Male
+```
