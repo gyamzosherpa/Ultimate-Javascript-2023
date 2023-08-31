@@ -21,6 +21,7 @@
       - [some()](#some)
       - [every()](#every)
       - [forEach()](#foreach)
+  - [use strict](#use-strict)
   - [this keyword](#this-keyword)
 
 ## function definition
@@ -801,6 +802,50 @@ However, using what may be the most common higher order function, forEach(), we 
 const numbers = [1, 2, 3, 4, 5];
 
 numbers.forEach((number) => console.log(number + 1));
+```
+
+---
+
+## use strict
+
+- The "use strict" directive was new in ECMAScript version 5.
+- The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+- It helps you to write cleaner code, like preventing you from using undeclared variables.
+- Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+- Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode):
+
+`use strict inside function`
+
+```js
+function subtract() {
+  //"use strict" inside function, doesn't affect outside the function
+  "use strict";
+  let a = 10;
+  let b = 20;
+  subtract = b - a;
+  return subtract;
+}
+
+result = subtract();
+console.log(result); // 10
+
+a = 40;
+console.log(a); // 40
+```
+
+`use strict to the begining of the code`
+
+```js
+"use strict"; // acts as global scope
+function subtract() {
+  a = 10; //ReferenceError, a is not defined
+  b = 20;
+  subtract = b - a;
+  return subtract;
+}
+
+result = subtract();
+console.log(result);
 ```
 
 ---
