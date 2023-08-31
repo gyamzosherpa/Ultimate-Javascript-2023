@@ -817,11 +817,24 @@ This keyword refers to the object it belongs to. It has different values dependi
 
 - In a regular or traditional function, “this” refers to the global object.
 
-![Alt text](this_regular_function.jpg) ![Alt text](this_regular_output.png)
+```js
+function add(a, b) {
+  sum = a + b;
+  console.log(sum);
+  console.log(this);
+  add(1, 2);
+}
+```
+
+output in browser:
+
+![Alt text](this_regular_output.png)
 
 - In a method “this” refers to the owner object.
 
 ```js
+//person is an object
+// refer to object chapter for more detals
 const person = {
   name: "Gyamzo",
   address: "Kathmandu",
@@ -835,15 +848,25 @@ person.details();
 
 - In a function in strict mode, this refers to undefined.
 
-![Alt text](_this_use_strict.jpg)
+```js
+"use strict";
+function add(a, b) {
+  const result = a + b;
+  console.log(result);
+  console.log(this); // undefined
+}
+add(10, 20);
+```
 
 - In the case of call, apply and bind, this refers to the object that is passed as an argument to the respective method.
 
-  1.The call method allows you to call a function with a specific this value and arguments passed individually.
+`refer to object chapter for more details on call-apply-bind.`
 
-  2.The apply method is similar to the call method, but it takes the arguments as an array.
+1. The call method allows you to call a function with a specific this value and arguments passed individually.
 
-  3.The bind method returns a new function where this refers to the object passed as an argument to bind. The returned function can be called later with a different this value and arguments.
+2. The apply method is similar to the call method, but it takes the arguments as an array.
+
+3. The bind method returns a new function where this refers to the object passed as an argument to bind. The returned function can be called later with a different this value and arguments.
 
 ![Alt text](this_call-apply-bind.jpg)
 
