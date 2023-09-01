@@ -24,6 +24,7 @@
       - [spread operator](#spread-operator)
     - [Deep Copying](#deep-copying)
       - [JSON.stringify() and JSON.parse()](#jsonstringify-and-jsonparse)
+  - [Everything is an Object in JavaScript](#everything-is-an-object-in-javascript)
 
 ## Object Definition
 
@@ -761,3 +762,56 @@ sports:"football"
 ```
 
 ---
+
+## Everything is an Object in JavaScript
+
+In JavaScript, everything is an object because it uses a prototype-based object-oriented programming language, which means that objects inherit properties and methods from their prototypes, and objects can also have their own properties and methods. Primitive data types such as numbers, strings, and Booleans can be represented as objects using Wrapper Objects like Number, String, and Boolean, respectively, and they inherit properties and methods from the prototype of their respective Wrapper Object. Even functions and arrays are objects in JavaScript, and they have their own properties and methods.
+
+```js
+const person = {
+  name: "Gyamzo",
+};
+console.log(typeof person); // object
+
+const array1 = [1, 2, 3, 4];
+console.log(typeof array1); // object
+
+function details() {
+  console.log("hello world");
+}
+console.log(typeof details); // function
+details.intro = "my name is Gyamzo Sherpa"; // ???
+console.log(details.intro); // my name is Gyamzo Sherpa
+```
+
+Example:
+
+```js
+let name = "John";
+
+// string obj created using the string constructor
+let nameObj = new String("John");
+
+console.log(typeof name); // string
+console.log(typeof nameObj); // object
+
+// checking if `name` is an object
+if (typeof name === "object") {
+  console.log("name is an object");
+} else {
+  console.log("name is not an object");
+}
+
+// checking if `nameObj` is an object
+if (typeof nameObj === "object") {
+  console.log("name is an object");
+} else {
+  console.log("name is not an object");
+}
+
+// output:
+// name is not an object
+// nameObj is  an object
+```
+
+`As you can see, name is a primitive data type string, but nameObject is an object created using the String constructor.`
