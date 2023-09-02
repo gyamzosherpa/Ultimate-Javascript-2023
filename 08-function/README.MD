@@ -13,6 +13,7 @@
     - [Default parameters](#default-parameters)
   - [Higher order Functions(HOF)](#higher-order-functionshof)
     - [Built-in Higher order functions](#built-in-higher-order-functions)
+      - [forEach()](#foreach)
       - [map()](#map)
       - [filter()](#filter)
       - [reduce()](#reduce)
@@ -20,7 +21,6 @@
       - [findIndex()](#findindex)
       - [some()](#some)
       - [every()](#every)
-      - [forEach()](#foreach)
   - [use strict](#use-strict)
   - [this keyword](#this-keyword)
 
@@ -544,9 +544,76 @@ In this code, the functions area, circumference, and diameter are defined. These
 
 ### Built-in Higher order functions
 
+#### forEach()
+
+`forEach` method takes in three parameters of element, index and array.
+
+- element: it specifies each item in the array.
+
+- index: it specifies the zero-based index of the items in the array.
+
+- array: it specifies the entire array.
+
+```js
+const moviesName = [
+  "The Hobbit",
+  "John Wick",
+  "Black Adam",
+  "The Woman King",
+  "Black Panther",
+  "Glass Onion",
+  "Avatar: The Way of Water",
+  "Memory",
+];
+
+const print = moviesName.forEach(function (movie, index, arr) {
+  console.log(
+    `The name of this movie is ${movie}, and is at the index of: ${index} and the array is: ${arr}`
+  );
+});
+
+console.log(print);
+```
+
+`Example`
+
+```js
+// List of popular movies
+const moviesName = ["The Hobbit", "John Wick", "Black Adam"];
+
+// A function: log out the names of the movies to the console.
+function printMovies(movie) {
+  console.log(movie);
+}
+
+// // anonymous function or arrow function can make your code easier to read.
+// A forEach method with a function as an argument
+moviesName.forEach(printMovies);
+
+// // anonymous function
+// moviesName.forEach(function (movie) {
+//   console.log(movie);
+// });
+
+// // arrow function
+// moviesName.forEach((movie) => console.log(movie));
+
+//Console output.
+/*
+The Hobbit
+John Wick
+Black Adam
+*/
+```
+
+Here, the movieNames variable is assigned names of popular movie titles, and then a function of printMovies is invoked to log out the names of the movies in the console. The forEach() method takes the function name as an argument as iterates through the array and then prints the title of each movie into the console.
+
+---
+
 #### map()
 
-Sometimes you may need to take an array and apply some procedure to its elements so that you get a new array with modified elements. "Creates a new array with the results of calling a provided function on every element in the calling array."
+- Sometimes you may need to take an array and apply some procedure to its elements so that you get a new array with modified elements.
+- the map() takes in a callback function as an argument that executes once and does not change the original array but instead, it returns as a new value.
 
 `map()`
 
@@ -558,7 +625,7 @@ console.log(squareNumbers); // [1,4,9,16,25]
 
 In this example, the map function is called on the numbers array and a callback function num => num × num is passed as an argument. The map function returns a new array squaredNumbers with the results of squaring each element in the numbers array.
 
-`code`
+`Example: 1`
 
 ```js
 const employees = [
@@ -584,11 +651,48 @@ console.log, updatedEmployees;
 //In this example you get the new updated salary of all employees.
 ```
 
+`Example:2`
+
+```js
+// List of Hollyword moves, names, director, release date, series.
+const movies = [
+  {
+    name: "The Hobbit",
+    director: "Peter Jackson",
+    firstRelease: 2012,
+    lastRelease: 2014,
+    series: 3,
+  },
+  {
+    name: "John Wick",
+    director: "Chad Stahelski",
+    firstRelease: 2014,
+    lastRelease: 2023,
+    series: 4,
+  },
+  {
+    name: "Black Adam",
+    director: "Jaume Collet-Serra",
+    firstRelease: 2022,
+    lastRelease: 2022,
+    series: 1,
+  },
+];
+
+// return all the series of the movies into a new array
+const print = movies.map(function (movie) {
+  return movie.series;
+});
+console.log(print); // [3, 4, 1]
+```
+
 ---
 
 #### filter()
 
-The filter () method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.
+- The filter() higher-order function is used to filter through an entire array and return a new array that meets the specified condition.
+- The filter() takes in a callback function as an argument.
+- It does not mutate the original array, instead, it returns a new one.
 
 `filter()`
 
@@ -603,9 +707,7 @@ function checkAdult(age) {
 console.log(result); // [32,33,40]
 ```
 
-Let’s look at real project example:
-
-`code`
+`Example:1`
 
 ```js
 const products = [
@@ -627,11 +729,49 @@ console.log(filteredProducts);
 
 In this example, the filter function is used to create a new array of products that are fruits and have a price less than 1.00. The original products array is not modified. The filter function takes a callback function as an argument, which returns true for elements that should be included in the filtered array and false for elements that should be excluded. In this example, the callback function checks if the product type is 'fruit' and the price is less than 1.00.
 
+`Example:2`
+
+```js
+const movies = [
+  {
+    name: "The Hobbit",
+    director: "Peter Jackson",
+    firstRelease: 2012,
+    lastRelease: 2014,
+    series: 3,
+  },
+  {
+    name: "John Wick",
+    director: "Chad Stahelski",
+    firstRelease: 2014,
+    lastRelease: 2023,
+    series: 4,
+  },
+  {
+    name: "Black Adam",
+    director: "Jaume Collet-Serra",
+    firstRelease: 2022,
+    lastRelease: 2022,
+    series: 1,
+  },
+];
+// Return the movie with Chad Stahelski as director
+const print = movies.filter(function (movie) {
+  return movie.director === "Chad Stahelski";
+});
+
+console.log(print);
+```
+
 ---
 
 #### reduce()
 
-Applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+- The reduce() method is used to return a single value.
+- The reduce() method takes a callback function, this callback function takes in two parameters which are:
+
+  - accumulator: This is the value that is accumulated and returned as the total.
+  - current value: This is the current value in the array.
 
 `reduce()`
 
@@ -643,9 +783,7 @@ let sum = numbers.reduce(function (accumulator, currentValue) {
 console.log(sum); // 15
 ```
 
-Let’s look at real project example:
-
-`code`
+`Example:1`
 
 ```js
 const purchases = [
@@ -663,13 +801,46 @@ console.log(totalCost); // 29.64
 
 In this example, the reduce function is used to calculate the total cost of all purchases by multiplying the price and quantity of each purchase and adding the result to an accumulator. The second argument to reduce, 0, is the initial value of the accumulator. The reduce function takes a callback function as an argument, which takes the accumulator and the current purchase as arguments, calculates the cost of the current purchase, and returns the updated accumulator value. The reduce function returns the final accumulator value, which is the total cost of all purchases in this example.
 
+`Example:2`
+
+```js
+//List of Movies
+const movies = [
+  {
+    name: "The Hobbit",
+    director: "Peter Jackson",
+    firstRelease: 2012,
+    lastRelease: 2014,
+    series: 3,
+  },
+  {
+    name: "John Wick",
+    director: "Chad Stahelski",
+    firstRelease: 2014,
+    lastRelease: 2023,
+    series: 4,
+  },
+  {
+    name: "Black Adam",
+    director: "Jaume Collet-Serra",
+    firstRelease: 2022,
+    lastRelease: 2022,
+    series: 1,
+  },
+];
+// return the total movies in the series
+const print = movies.reduce(function (accumulator, movie) {
+  return accumulator + movie.series;
+}, 0);
+
+console.log(print); // 8
+```
+
 ---
 
 #### find()
 
 Returns the value of the first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.
-
-Here's an example of how you could use the find() method in a real-world project:
 
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to find the customer with a specific customerId.
 
@@ -698,8 +869,6 @@ In this example, the find() method is used to find the customer object with the 
 
 Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, -1 is returned. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
 
-Here's an example of how you could use the findIndex() method in a real-world project:
-
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to find the index of the customer with a specific customerId.
 
 `findIndex()`
@@ -725,8 +894,6 @@ In this example, the findIndex() method is used to find the index of the custome
 #### some()
 
 Tests whether at least one element in the array passes the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
-
-Here's an example of how you could use the some() method in a real-world project:
 
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to know if there are any customers with a specific customerId.
 
@@ -754,8 +921,6 @@ In this example, the some() method is used to check if there are any customers w
 
 Tests whether all elements in the array pass the test implemented by the provided function. The callback function is invoked with three arguments: the value of the current element, the index of the current element, and the array being traversed.
 
-Here's an example of how you could use the every() method in a real-world project:
-
 Imagine you have an array of objects representing customers, and each object has a customerId property. You want to know if all customers have a customerId that is greater than 100.
 
 `every()`
@@ -775,34 +940,6 @@ console.log(targetCustomer); //true
 ```
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
-
----
-
-#### forEach()
-
-`forEach` used to iterate over elements in an array and apply a provided function to each element.
-
-Without a higher order function, if I want to add one to each number in an array and display it in the console, I can do the following:
-
-```js
-const numbers = [1, 2, 3, 4, 5];
-
-function addOne(array) {
-  for (let i = 0; i < array.length; i++) {
-    console.log(array[i] + 1);
-  }
-}
-
-addOne(numbers);
-```
-
-However, using what may be the most common higher order function, forEach(), we can simplify this process:
-
-```js
-const numbers = [1, 2, 3, 4, 5];
-
-numbers.forEach((number) => console.log(number + 1));
-```
 
 ---
 
