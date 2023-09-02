@@ -900,7 +900,7 @@ Imagine you have an array of objects representing customers, and each object has
 `some()`
 
 ```js
-//findIndex()
+//some()
 let customers = [
   { customerId: 123, name: "John Doe" },
   { customerId: 456, name: "Jane Doe" },

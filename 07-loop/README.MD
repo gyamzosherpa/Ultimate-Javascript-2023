@@ -24,7 +24,7 @@ for (let i = 0; i < 10; i++) {
   console.log("Loop", i);
 }
 
-//first i assign it value to 0 and increase letter, this is called post increment
+//first i assign it value to 0 and increase later, this is called post increment
 
 /*Note:
 first i = 0 (one time only); 0 < 10 => true; i++ =>0+1=1, code repeats untill the condition is true,
