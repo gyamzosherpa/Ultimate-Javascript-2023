@@ -21,6 +21,7 @@
       - [findIndex()](#findindex)
       - [some()](#some)
       - [every()](#every)
+  - [JavaScript functions as first-class citizens](#javascript-functions-as-first-class-citizens)
   - [use strict](#use-strict)
   - [this keyword](#this-keyword)
 
@@ -942,6 +943,58 @@ console.log(targetCustomer); //true
 ```
 
 In this example, the every() method is used to check if all customers have a customerId that is greater than 100. The every() method takes a callback function that returns true if the current customer object's customerId is greater than 100, and false otherwise. The every() method will stop and return false as soon as it finds the first customer object for which the callback returns false.
+
+---
+
+## JavaScript functions as first-class citizens
+
+- Assigning a function to a variable
+- Passing a function as an argument to another function
+- Returning a function from another function
+- Storing functions in data structures
+
+`Example`
+
+```js
+// 1. Assigning a function to a variable
+const greet = function (name) {
+  return `Hello, ${name}!`;
+};
+
+// 2. Passing a function as an argument to another function
+function executeGreeting(greeterFunction, name) {
+  return greeterFunction(name);
+}
+
+const result = executeGreeting(greet, "John");
+console.log(result); // Output: Hello, John!
+
+// 3. Returning a function from another function
+function createMultiplier(factor) {
+  return function (number) {
+    return number * factor;
+  };
+}
+
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+
+console.log(double(5)); // Output: 10
+console.log(triple(5)); // Output: 15
+
+// 4. Storing functions in data structures
+const mathOperations = {
+  add: function (a, b) {
+    return a + b;
+  },
+  subtract: function (a, b) {
+    return a - b;
+  },
+};
+
+console.log(mathOperations.add(10, 5)); // Output: 15
+console.log(mathOperations.subtract(10, 5)); // Output: 5
+```
 
 ---
 
