@@ -554,6 +554,8 @@ In this code, the functions area, circumference, and diameter are defined. These
 
 - array: it specifies the entire array.
 
+`Example:1`
+
 ```js
 const moviesName = [
   "The Hobbit",
@@ -575,7 +577,7 @@ const print = moviesName.forEach(function (movie, index, arr) {
 console.log(print);
 ```
 
-`Example`
+`Example:2`
 
 ```js
 // List of popular movies
