@@ -8,7 +8,7 @@
     - [Number](#number)
       - [Some Number built-in methods](#some-number-built-in-methods)
       - [Math Built-In Methods](#math-built-in-methods)
-      - [some important math built in methods:](#some-important-math-built-in-methods)
+      - [some important math built in methods](#some-important-math-built-in-methods)
       - [Random Number Generator](#random-number-generator)
     - [null and undefined](#null-and-undefined)
     - [Boolean](#boolean)
@@ -102,7 +102,7 @@ let person = {
 4. replace, toUpperCase, toLowerCase
 5. trim, includes, concat, etc
 
-for more details: https://www.w3schools.com/jsref/jsref_obj_string.asp
+for more details: [String-methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)
 
 ### Number
 
@@ -194,7 +194,7 @@ var truncatedNum2 = Math.trunc(num2);
 console.log(truncatedNum2); // Output: -12
 ```
 
-#### some important math built in methods:
+#### some important math built in methods
 
 1. math.floor()
 2. math.round()
