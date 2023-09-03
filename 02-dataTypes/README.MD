@@ -269,6 +269,17 @@ console.log(typeof isNepali); //boolean
 
 ## Type Conversion
 
+> `truthy / Falsy`
+> In JavaScript, a truthy or falsy value is a value that is being casted into a boolean when evaluated in a boolean context. An example of boolean context would be the evaluation of an if condition:
+> Every value will be casted to true unless they are equal to:
+
+`false`
+`0`
+`"" (empty string)`
+`null`
+`undefined`
+`NaN`
+
 ### Implicit(type-coercion)
 
 JavaScript automatically converts one data type to another (to the right type). This is known as implicit conversion.
