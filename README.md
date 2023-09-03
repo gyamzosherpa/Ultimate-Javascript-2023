@@ -2,8 +2,6 @@
 
 ![JavaScript 2023](LOGO.png)
 
-![Alt text](learnjavascript.jpg)
-
 | Table of Contents                                                                                    | Description                                                                                                                                                            |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Introduction](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/00-introduction) | JavaScript Introduction                                                                                                                                                |
