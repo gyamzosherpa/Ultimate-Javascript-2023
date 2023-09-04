@@ -60,11 +60,10 @@ used for combining and manipulating boolean values (e.g. AND (&&), OR (||), NOT 
 ```js
 // Logical. operator
 let x = true,
-y = false;
+  y = false;
 console.log(x && y); // false
-console.log(x 11 y); // true
+console.log(x || y); // true
 console.log(!x); // false
-
 ```
 
 ## Assignment operators
