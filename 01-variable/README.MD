@@ -21,7 +21,7 @@ A variable can be changed, depending on conditions or pieces of information pass
 2. The let and const keywords were added to JavaScript in 2015.
 3. If you want your code to run in the older browser you must use var.
 
-## Ways to declare a variable
+## Rules to declare a variable
 
 1. cannot start with a number, e.g.: 123 //error
 2. cannot give space, e.g.: my name //error
