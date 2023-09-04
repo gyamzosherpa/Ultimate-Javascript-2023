@@ -32,3 +32,33 @@ Here we have two functions:
 - an inner function(inner) which has its variable a, and accesses an outer variable b, within its function body.
 
 ![Alt text](closure.png)
+
+---
+
+Another Example:
+
+```js
+function outerFunction(outerValue) {
+  // This inner function is a closure because it "closes over" the outerValue parameter.
+  function innerFunction(innerValue) {
+    return outerValue + innerValue;
+  }
+
+  return innerFunction;
+}
+
+// Create two closures with different outerValues
+const closure1 = outerFunction(10);
+const closure2 = outerFunction(20);
+
+// Use the closures to add values to their respective outerValues
+console.log(closure1(5)); // Output: 15 (10 + 5)
+console.log(closure2(5)); // Output: 25 (20 + 5)
+```
+
+> In this example:
+
+- outerFunction takes an outerValue parameter and defines an innerFunction within it.
+- innerFunction is a closure because it references the outerValue variable from its containing scope, even after outerFunction has finished executing.
+- When we call outerFunction(10), it returns innerFunction with outerValue set to 10, creating a closure. Similarly, outerFunction(20) creates another closure with outerValue set to 20.
+- When we later call closure1(5), it adds 5 to the outerValue of the first closure, resulting in 15. Likewise, closure2(5) adds 5 to the outerValue of the second closure, resulting in 25.
