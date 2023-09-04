@@ -148,7 +148,7 @@ reset(); // Resets the currentValue to 0
 console.log(getValue()); // 0
 ```
 
-> [Destructuring](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/12-destructuring)
+> [Destructuring](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/12-Destructuring#destructuring)
 
 ---
 
