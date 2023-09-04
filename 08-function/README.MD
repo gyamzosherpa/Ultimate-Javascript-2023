@@ -636,7 +636,7 @@ const employees = [
   { name: "Jane", salary: 55000 },
   { name: "Jim", salary: 60000 },
 ];
-const updatedEmployees = employees.map((empLoyee) => {
+const updatedEmployees = employees.map((employee) => {
   return {
     name: employee.name,
     salary: employee.salary + 5000,
