@@ -61,53 +61,56 @@ Server-side refers to JavaScript code that runs on a web server, typically in re
 
 > ECMAScript Standardization (1997)
 
-    - JavaScript was submitted to Ecma International for standardization.
-    - ECMAScript, the standardized version of JavaScript, was first released as ECMA- 262 in June 1997.
-    - ECMAScript 1 laid the foundation for JavaScript's core syntax, data types, and objects.
+- JavaScript was submitted to Ecma International for standardization.
+- ECMAScript, the standardized version of JavaScript, was first released as ECMA- 262 in June 1997.
+- ECMAScript 1 laid the foundation for JavaScript's core syntax, data types, and objects.
 
 ### ECMAScript 2 and 3 (1998-1999)
 
 > ECMAScript 2 and 3 (1998-1999)
 
-    - ECMAScript 2 was released in 1998, mainly focusing on bug fixes and clarifications.
-    - ECMAScript 3, released in Dec 1999, brought significant enhancements & introduced features like
-      - regular expressions try/catch,
-      - Added switch & do-while
-      - New methods for strings & arrays.
+- ECMAScript 2 was released in 1998, mainly focusing on bug fixes and clarifications.
+- ECMAScript 3, released in Dec 1999, brought significant enhancements & introduced features like
+  - regular expressions try/catch,
+  - Added switch & do-while
+  - New methods for strings & arrays.
 
 ### ECMAScript 4 (Abandoned) 2000s
 
 > ECMAScript 4 (Abandoned) 2000s
 
-    - Work began on ECMAScript 4 in the early 2000s with ambitious goals of major language changes and improvements.
-      However, due to disagreements within the industry and concerns over complexity, ECMAScript 4 was eventually abandoned.
+- Work began on ECMAScript 4 in the early 2000s with ambitious goals of major language changes and improvements.
+  However, due to disagreements within the industry and concerns over complexity, ECMAScript 4 was eventually abandoned.
 
 ### ECMAScript 5 (2009)
 
 > ECMAScript 5 (2009)
 
-    - ES5 introduced several new features and improvements, including
-      - Added "strict mode"
-      - Added JSON support • Added String.trim() • Added Array.isArray()
-        Added Array iteration methods & More...
-    - ECMAScript 5 gained broad adoption and became the de facto standard for JavaScript development.
+- ES5 introduced several new features and improvements, including
+  - added "strict mode"
+  - added JSON support
+  - added String.trim()
+  - added Array.isArray()
+  - added Array iteration methods & More...
+- ECMAScript 5 gained broad adoption and became the de facto standard for JavaScript development.
 
 ### ECMAScript 6 (2015)
 
 > ECMAScript 6 (2015)
 
-      - ECMAScript 6 (ES6), also known as ECMAScript (2015), marked a significant milestone in JavaScript's evolution
-      - ES6 brought substantial changes and introduced features like:
-          - arrow functions, classes
-          - let and const
-          - modules, template literals
-          - destructuring assignments
-          - promises & more
-      - Since 2016, versions are named by year (ECMAScript 2016, 2017, 2018, 2019, 2020, 2021, 2022)
+- ECMAScript 6 (ES6), also known as ECMAScript (2015), marked a significant milestone in JavaScript's evolution.
+- ES6 brought substantial changes and introduced features like:
+  - arrow functions
+  - classes
+  - let and const
+  - modules, template literals
+  - destructuring assignments
+  - promises & more
+- Since 2016, versions are named by year (ECMAScript 2016, 2017, 2018, 2019, 2020, 2021, 2022)
 
 ### Frameworks & Libraries
 
 > Frameworks & Libraries
 
-      - JavaScript has witnessed the rise of numerous frameworks and libraries, such as React, Angular, Vue.js, and Node.js.
-      - These frameworks and libraries have significantly expanded JavaScript's capabilities, enabling the development of complex web applications, mobile apps, server-side applications, and more.
+- JavaScript has witnessed the rise of numerous frameworks and libraries, such as React, Angular, Vue.js, and Node.js.
+- These frameworks and libraries have significantly expanded JavaScript's capabilities, enabling the development of complex web applications, mobile apps, server-side applications, and more.
