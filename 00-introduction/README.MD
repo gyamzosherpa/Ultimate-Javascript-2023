@@ -53,9 +53,9 @@ Server-side refers to JavaScript code that runs on a web server, typically in re
 
 > Birth and Early Development (1995-1997)
 
-    - JS was created by Brendan Eich at Netscape Communications Corporation in 1995.
-    - Initially named "Mocha," it was designed to add interactivity to web pages.
-    - In December 1995, it was renamed "LiveScript" and later renamed again to "JavaScript" to align with the popularity of Java.
+- JS was created by Brendan Eich at Netscape Communications Corporation in 1995.
+- Initially named "Mocha," it was designed to add interactivity to web pages.
+- In December 1995, it was renamed "LiveScript" and later renamed again to "JavaScript" to align with the popularity of Java.
 
 ### ECMAScript Standardization (1997)
 
