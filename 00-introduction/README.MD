@@ -37,23 +37,19 @@ Server-side refers to JavaScript code that runs on a web server, typically in re
 
 ## Advantages of JavaScript
 
-:::
-
 1. `Cross-platform compatibility`: JavaScript can run on any platform that supports a web browser, making it a versatile and portable language.
 
 2. `Interactivity`: JavaScript is often used to add interactivity to websites, such as form validation, drop-down menus, and dynamic content.
 
-3. Simplicity: JavaScript is a relatively simple language to learn, especially for those with a background in programming. Its syntax is similar to other popular programming languages, such as C or Java.
+3. `Simplicity`: JavaScript is a relatively simple language to learn, especially for those with a background in programming. Its syntax is similar to other popular programming languages, such as C or Java.
 
-4. Rich Libraries and Frameworks: JavaScript has a large and active community of developers who have created many libraries and frameworks, such as jQuery, React, and Angular, that make it easier to build complex and dynamic web applications.
+4. `Rich Libraries and Frameworks`: JavaScript has a large and active community of developers who have created many libraries and frameworks, such as jQuery, React, and Angular, that make it easier to build complex and dynamic web applications.
 
-5. Async Processing: JavaScript supports asynchronous processing, which allows for multiple tasks to be performed in parallel without blocking the main thread. This is useful for building fast, responsive web applications.
+5. `Async Processing`: JavaScript supports asynchronous processing, which allows for multiple tasks to be performed in parallel without blocking the main thread. This is useful for building fast, responsive web applications.
 
-6. Server-side Execution: JavaScript can be used on the server-side with technologies such as Node.js, allowing developers to build full-stack web applications using only JavaScript.
+6. `Server-side Execution`: JavaScript can be used on the server-side with technologies such as Node.js, allowing developers to build full-stack web applications using only JavaScript.
 
-7. Dynamic Typing: JavaScript uses dynamic typing, which means that a variable's type can change at runtime. This makes it a flexible and adaptable language for solving a wide range of problems.
-
-:::
+7. `Dynamic Typing:` JavaScript uses dynamic typing, which means that a variable's type can change at runtime. This makes it a flexible and adaptable language for solving a wide range of problems.
 
 ---
 
