@@ -31,6 +31,4 @@ Here we have two functions:
 - an outer function(outer) which has a variable b, and returns the inner function.
 - an inner function(inner) which has its variable a, and accesses an outer variable b, within its function body.
 
-![Alt text](closure-1.png)
-
-![Alt text](closure-2.png)
+![Alt text](closure.png)
