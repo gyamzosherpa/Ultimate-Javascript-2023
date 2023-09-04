@@ -1,5 +1,8 @@
 # CLOSURE
 
+- [CLOSURE](#closure)
+  - [Definition](#definition)
+
 ## Definition
 
 A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function's variables - `scope chain`
