@@ -16,7 +16,7 @@
 
 The JavaScript engine executes and compiles JavaScript into native machine code. Every major browser has developed its JS engine: Google's Chrome, EDGE AND OPERA uses V8, Safari uses JavaScript Core, and Firefox uses Spider Monkey.
 
-![Alt text](js-engine-1.png)
+![Alt text](images/js-engine-1.png)
 
 ## Compilation vs Interpretation
 
@@ -28,17 +28,17 @@ The JavaScript engine executes and compiles JavaScript into native machine code.
 
 In conclusion, `JavaScript is an interpreted language`, with elements of just-in-time (JIT) compilation, as the code is interpreted by the JavaScript engine as it is executed, and it may also be compiled just before it is executed for performance optimization.
 
-![Alt text](COMPILATION_Interpretation.jpg)
+![Alt text](images/COMPILATION_Interpretation.jpg)
 
 ## How Does JavaScript work?
 
-![Alt text](js-engine-2.png)
+![Alt text](images/js-engine-2.png)
 
 The first thing V8 needs to do is to download the source code. This can be done via a network, cache, or service worker. Once the code is received, we need to change it in a way that the compiler can understand. This process is called parsing and consists of the scanner and the parser itself.
 
 The scanner takes the JS file and converts it to the list of known tokens. The parser picks it up and creates an Abstract Syntax Tree (AST): a tree representation of the source code. Each node of the tree denotes a construct occurring in the code.
 
-![Alt text](JIT.jpg)
+![Alt text](images/JIT.jpg)
 
 - A JavaScript engine works by parsing and executing JavaScript code. The engine consists of two main parts: a compiler and a runtime.
 - The compiler takes the JavaScript code and compiles it into an intermediate representation called bytecode. The bytecode is optimized for efficient execution and then executed by the runtime environment.
@@ -64,7 +64,7 @@ console.log(result); // 7
 - An execution context in JavaScript is an abstract concept that represents the environment in which JavaScript code is executed. It includes information about the current code being executed, such as the value of the this keyword and the variables and functions defined within the context.
 - There are two types of execution context in JavaScript: the global execution context and function execution contexts. The global execution context is created when the JavaScript interpreter starts and represents the code that is not inside any function. The function execution contexts are created whenever a function is called and represent the code within that function.
 
-![Alt text](execution-1.png)
+![Alt text](images/execution-1.png)
 
 > Everything in JavaScript happens inside an execution context. It can be considered a big box that contains two components. The first component is the memory component which is also called a variable environment and the second component is the code component also known as the thread of execution. The code component is the main component where code is executed one by one at a time, as we already know that JS is a synchronous single-threaded language which means only one command can be executed at a time and cannot move to the next command until the previous command has been executed.
 
@@ -95,7 +95,7 @@ console.log(y); // 100
 > When the JavaScript engine executes the JavaScript code, it creates execution contexts.
 > Each execution context has two phases: the creation phase and the execution phase.
 
-![Alt text](EC-Object.png)
+![Alt text](images/EC-Object.png)
 
 ### The creation phase
 
@@ -111,7 +111,7 @@ When the JavaScript engine executes the code example above, it does the followin
 - First, store the variables x and y and function declaration timesTen() in the global execution context.
 - Second, initialize the variables x and y to undefined.
 
-![Alt text](GEC-1.png)
+![Alt text](images/GEC-1.png)
 
 After the creation phase, the global execution context moves to the execution phase.
 
@@ -119,19 +119,19 @@ After the creation phase, the global execution context moves to the execution ph
 
 During the execution phase, the JavaScript engine executes the code line by line, assigns the values to variables, and executes the function calls.
 
-![Alt text](GEC-2.png)
+![Alt text](images/GEC-2.png)
 
 For each function call, the JavaScript engine creates a new function execution context.
 
 The function execution context is similar to the global execution context. But instead of creating the global object, the JavaScript engine creates the arguments object that is a reference to all the parameters of the function:
 
-![Alt text](gec-3.png)
+![Alt text](images/gec-3.png)
 
 In our example, the function execution context creates the arguments object that references all parameters passed into the function, sets this value to the global object, and initializes the a parameter to undefined.
 
 During the execution phase of the function execution context, the JavaScript engine assigns 10 to the parameter a and returns the result (100) to the global execution context:
 
-![Alt text](gec-4.png)
+![Alt text](images/gec-4.png)
 
 To keep track of all the execution contexts, including the global execution context and function execution contexts, the JavaScript engine uses the call stack,
 
@@ -173,35 +173,35 @@ let x = average(10, 20);
 
 When the JavaScript engine executes this script, it places the global execution context (denoted by main() or global() function on the call stack.
 
-![Alt text](Call-Stack-main.png)
+![Alt text](images/Call-Stack-main.png)
 
 The global execution context enters the creation phase and moves to the execution phase.
 
 The JavaScript engine executes the call to the average(10, 20) function and creates a function execution context for the average() function and pushes it on top of the call stack:
 
-![Alt text](Call-Stack-step-2.png)
+![Alt text](images/Call-Stack-step-2.png)
 
 The JavaScript engine starts executing the average() since because the average() function is on the top of the call stack.
 
 The average() function calls add() function. At this point, the JavaScript engine creates another function execution context for the add() function and places it on the top of the call stack:
 
-![Alt text](Call-Stack-step-3.png)
+![Alt text](images/Call-Stack-step-3.png)
 
 JavaScript engine executes the add() function and pops it off the call stack:
 
-![Alt text](Call-Stack-step-4.png)
+![Alt text](images/Call-Stack-step-4.png)
 
 At this point, the average() function is on the top of the call stack, the JavaScript engine executes and pops it off the call stack.
 
-![Alt text](Call-Stack-step-5.png)
+![Alt text](images/Call-Stack-step-5.png)
 
 Now, the call stack is empty so the script stops executing:
 
-![Alt text](Call-Stack-empty-stack.png)
+![Alt text](images/Call-Stack-empty-stack.png)
 
 The following picture illustrates the overall status of the Call Stack in all steps:
 
-![Alt text](JavaScript-Call-Stack.png)
+![Alt text](images/JavaScript-Call-Stack.png)
 
 ---
 
