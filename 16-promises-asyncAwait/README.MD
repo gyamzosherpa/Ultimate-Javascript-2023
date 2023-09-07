@@ -4,6 +4,8 @@
   - [Asynchronous vs Synchronous](#asynchronous-vs-synchronous)
   - [SYNCHRONOUS](#synchronous)
   - [ASYNCHRONOUS](#asynchronous)
+  - [callback](#callback)
+    - [Callback Hell](#callback-hell)
   - [Promise](#promise)
     - [HTTP requests using Fetch API](#http-requests-using-fetch-api)
     - [Promise Chaining](#promise-chaining)
@@ -43,6 +45,215 @@ Here's an example of asynchronous JavaScript code using the setTimeout function:
 > In this example, the program first logs "Starting asynchronous code" and then sets a timer for 2 seconds using the setTimeout function. The setTimeout function is asynchronous because it doesn't block the program from executing the next lines of code. The program then logs "Asynchronous code finished". After 2 seconds have passed, the setTimeout function calls its callback function, which logs "Asynchronous operation finished".
 
 Asynchronous JavaScript allows the program to continue running and executing other code, even while long-running operations are being performed, which can lead to better performance. However, it can also make the code more complex, as the program must keep track of multiple operations that are executing in parallel.
+
+---
+
+## callback
+
+- A callback is a function that is to be executed after another function has finished executing.
+- The benefit of using a callback function is that you can wait for the result of a previous function call and then execute another function call.
+- A function that is passed as an argument to another function is called a callback function.
+
+![Alt text](images/callback.png)
+
+`Basic example`
+
+```js
+function greet(name, callback) {
+  console.log("Hello, " + name + "!");
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Alice", sayGoodbye);
+```
+
+> In this example, the greet function takes a name and a callback function as arguments. It logs a greeting message and then calls the callback function. When greet is called with the sayGoodbye function as the callback, it logs both a greeting and a goodbye message.
+
+`Example:2`
+
+```js
+const arr = [1, 2, 3, 4, 5, 6];
+
+function calculator(arr, callback) {
+  const ans = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const element = callback(arr[i]);
+    ans.push(element);
+  }
+  console.log(ans);
+  return "done";
+}
+
+function add(a) {
+  return a + 10;
+}
+
+function multiply(a) {
+  return a * 10;
+}
+
+// calculator(arr, (a) => a * 10);
+calculator(arr, multiply);
+calculator(arr, add);
+```
+
+### Callback Hell
+
+Callback hell, also known as "Pyramid of Doom," is a situation in JavaScript where you have deeply nested callbacks, making the code difficult to read and maintain. This typically occurs in scenarios with multiple asynchronous operations.
+
+Here's an example to illustrate callback hell:
+
+```js
+// Simulated asynchronous operations with callbacks
+function operation1(callback) {
+  setTimeout(function () {
+    console.log("Operation 1 completed");
+    callback();
+  }, 1000);
+}
+
+function operation2(callback) {
+  setTimeout(function () {
+    console.log("Operation 2 completed");
+    callback();
+  }, 1000);
+}
+
+function operation3(callback) {
+  setTimeout(function () {
+    console.log("Operation 3 completed");
+    callback();
+  }, 1000);
+}
+
+function operation4(callback) {
+  setTimeout(function () {
+    console.log("Operation 4 completed");
+    callback();
+  }, 1000);
+}
+
+// Nested callbacks (Callback Hell)
+operation1(function () {
+  operation2(function () {
+    operation3(function () {
+      operation4(function () {
+        console.log("All operations completed");
+      });
+    });
+  });
+});
+```
+
+> In this example:
+
+- We have four simulated asynchronous operations (operation1, operation2, operation3, and operation4) that each take a callback function.
+- Inside the main code block, these operations are nested within each other, creating a deep callback structure.
+- Each operation takes some time to complete (simulated using setTimeout), and the next operation is called only after the previous one finishes.
+- Finally, when all operations are completed, a message is logged to indicate that.
+
+`Another example: callback hell`
+
+```js
+let stocks = {
+  Fruits: ["strawberry", "grapes", "banana", "apple"],
+  liquid: ["water", "ice"],
+  holder: ["cone", "stick"],
+  toppings: ["chocolate", "peanuts"],
+};
+
+let isShopOpen = true;
+
+function order(time, work, callback) {
+  if (isShopOpen) {
+    setTimeout(() => {
+      work();
+      callback();
+    }, time);
+  } else {
+    console.log("shop is closed");
+  }
+}
+
+order(
+  2000,
+  () => {
+    console.log(`${stocks.Fruits[0]} was selected`);
+  },
+  () => {
+    order(
+      1000,
+      () => {
+        console.log("production has started");
+      },
+      () => {
+        order(
+          2000,
+          () => {
+            console.log("fruit has been chopped");
+          },
+          () => {
+            order(
+              1000,
+              () => {
+                console.log(
+                  `${stocks.liquid[0]} and ${stocks.liquid[1]} added`
+                );
+              },
+              () => {
+                order(
+                  1000,
+                  () => {
+                    console.log("start the machine");
+                  },
+                  () => {
+                    order(
+                      2000,
+                      () => {
+                        console.log(`ice cream placed on ${stocks.holder[1]}`);
+                      },
+                      () => {
+                        order(
+                          3000,
+                          () => {
+                            console.log(`${stocks.toppings[0]} as toppings`);
+                          },
+                          () => {
+                            order(
+                              2000,
+                              () => {
+                                console.log("serve ice cream");
+                              },
+                              () => {
+                                console.log("shop is closed");
+                              }
+                            );
+                          }
+                        );
+                      }
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
+      }
+    );
+  }
+);
+```
+
+> This structure can quickly become hard to manage and read as you add more operations or error handling. It can lead to callback hell, which is challenging to maintain and debug.
+
+To mitigate callback hell, we can use techniques like Promises or async/await in modern JavaScript to make code more readable and maintainable by avoiding deep callback nesting.
+
+---
 
 ## Promise
 
