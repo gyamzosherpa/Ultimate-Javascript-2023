@@ -9,7 +9,22 @@
 
 It is an object representing the eventual completion or failure of an asynchronous operation. Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.
 
-![Alt text](images/promise-1.jpg)
+A JavaScript promise has a specific syntax that you need to follow in order to use promises.
+
+`Syntax`
+
+```js
+const promise = new Promise((resolve, reject) => {
+  // Your code here
+});
+```
+
+- `const promise`: This declares a constant named promise that will hold the promise object.
+- `new Promise`: This creates a new promise object.
+- `((resolve, reject) { })`: This is the function that will be executed when the promise is created. It takes in two parameters: resolve and reject.
+- The resolve function is used to resolve the promise when it succeeds, and
+- The reject function is used to reject the promise when an
+  error occurs.
 
 ![Alt text](images/promise-2.png)
 
