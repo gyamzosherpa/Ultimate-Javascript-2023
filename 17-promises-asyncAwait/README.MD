@@ -4,6 +4,9 @@
   - [Promise](#promise)
     - [HTTP requests using Fetch API](#http-requests-using-fetch-api)
     - [Promise Chaining](#promise-chaining)
+  - [Async Await](#async-await)
+    - [Fetch data using async/await](#fetch-data-using-asyncawait)
+    - [Difference between promise and async-await](#difference-between-promise-and-async-await)
 
 ## Promise
 
@@ -191,3 +194,126 @@ order(2000, () => {
   })
   .catch(() => console.log("shop is closed"));
 ```
+
+---
+
+## Async Await
+
+Async Await is supposed to be the better way to write “promises” and it helps us keep our code simple and clean.
+All you have to do is write the word async before any regular function and it becomes a promise.
+We use the “try” keyword to run our code while we use “catch” to catch our errors. It's the same concept we saw when we looked at promises.
+
+- Promises in JS -> resolve or reject.
+- Async / Await in JS -> try, catch.
+- The keyword await makes JavaScript wait until a promise settles and returns its result.
+- When using Async/ Await, you can also use the `.then, .catch, and .finally` handlers as well which are a core part of promises.
+
+`Example`
+
+```js
+let promise = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve("Promise resolved");
+  }, 4000);
+});
+
+//async
+async function asyncFunc() {
+  // wait until promise resolves
+  let result = await promise;
+
+  console.log(result);
+  console.log("hello");
+}
+
+// calling the async function
+asyncFunc();
+```
+
+`Example:2: converting promise to async/await`
+
+```js
+let stocks = {
+  Fruits: ["strawberry", "grapes", "banana", "apple"],
+  liquid: ["water", "ice"],
+  holder: ["cone", "stick"],
+  toppings: ["chocolate", "peanuts"],
+};
+
+let isShopOpen = true;
+
+const order = async (time, work) => {
+  return new Promise(async (resolve, reject) => {
+    if (isShopOpen) {
+      setTimeout(async () => {
+        await work();
+        resolve();
+      }, time);
+    } else {
+      reject("shop is closed");
+    }
+  });
+};
+
+const makeIceCream = async () => {
+  try {
+    await order(2000, () => {
+      console.log(`${stocks.Fruits[0]} was selected`);
+    });
+    await order(1000, () => {
+      console.log("production has started");
+    });
+    await order(2000, () => {
+      console.log("fruit has been chopped");
+    });
+    await order(1000, () => {
+      console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} added`);
+    });
+    await order(1000, () => {
+      console.log("start the machine");
+    });
+    await order(2000, () => {
+      console.log(`ice cream placed on ${stocks.holder[1]}`);
+    });
+    await order(3000, () => {
+      console.log(`${stocks.toppings[0]} as toppings`);
+    });
+    await order(2000, () => {
+      console.log("serve ice cream");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+makeIceCream();
+```
+
+### Fetch data using async/await
+
+Here's a basic example of using async/await to perform a simple HTTP request:
+
+```js
+async function getData(username) {
+  try {
+    const usersResponse = await fetch(
+      `https://api.github.com/users/${username}`
+    );
+    const userData = await usersResponse.json();
+    const repoResponse = await fetch(userData.repos_url);
+    const repoData = await repoResponse.json();
+
+    console.log(userData, repoData);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getData("gyamzosherpa");
+```
+
+### Difference between promise and async-await
+
+> Using async-await , code looks readable
+
+![Alt text](images/dif-async-promise.png)
