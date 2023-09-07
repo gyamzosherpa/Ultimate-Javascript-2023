@@ -5,6 +5,7 @@
   - [Closures](#closures)
   - [Hoisting](#hoisting)
     - [Variable Hoisting](#variable-hoisting)
+      - [Temporal Dead Zone](#temporal-dead-zone)
     - [Function Hoisting](#function-hoisting)
 
 ## Lexical Scoping
@@ -15,7 +16,7 @@ Lexical scoping refers to the way in which the compiler determines the scope of 
 
 ![Alt text](images/lexical-scoping.png)
 
-In the example, we have three functions first, second, and third. When we create a function, each function has its scope and execution context. As we can see function second is inside function first, so we can say that first is the parent function and second is the inner or child function. If we don’t have variable we are trying to access in inner function, it searches for that variable in parent function and in global scope too. Function second access the variable b and a from parent function and global variable respectively. But if we look at function third, it cannot access b and c, because this function is not inside the parent function, but it can access global variable a, it is a different function and has its scope and execution context, so, it throws an error if we run that code.
+In the example, we have three functions `first, second, and third`. When we create a function, each function has its scope and execution context. As we can see function `second` is inside function `first`, so we can say that `first` is the parent function and `second` is the inner or child function. If we don’t have variable we are trying to access in inner function, it searches for that variable in parent function and in global scope too. Function `second` access the variable `b and a` from parent function and global variable respectively. But if we look at function `third`, it cannot access `b and c`, because this function is not inside the parent function, but it can access global variable `a`, it is a different function and has its scope and execution context, so, it throws an error if we run that code.
 
 `Example:2`
 
@@ -161,6 +162,14 @@ Here, it shows undefined because “a” has not been declared, so, the JavaScri
 
 - Variables declared with let and const are also hoisted, but they are not initialized (TDZ-Temporal Dead Zone) until the point of declaration.
 - Trying to access such variables before declaration results in a reference error as shown in the example.
+
+#### Temporal Dead Zone
+
+The temporal dead zone (TDZ) in JavaScript refers to the period of time between the declaration and initialization of a variable declared with let or const where the variable cannot be accessed or used. In this period, the variable is said to be in the TDZ and is considered to be in an "uninitialized" state.
+
+![Alt text](images/tdz.png)
+
+In contrast, if x was declared with var, it would be assigned a value of undefined before the assignment and the code would not throw an error.
 
 ---
 
