@@ -126,34 +126,107 @@
 //   .catch(() => console.log("shop is closed"));
 
 // example:4
-const data = fetch("https://api.github.com/users/gyamzosherpa");
+// const data = fetch("https://api.github.com/users/gyamzosherpa");
 
-data
-  .then((usersResponse) => {
-    return usersResponse.json();
-  })
-  .then((users) =>
-    fetch(users.repos_url)
-      .then((repoResponse) => {
-        return repoResponse.json();
-      })
-      .then((repoData) => console.log(users, repoData))
-  )
-  .catch((error) => console.log("unable to fetch the data", error));
+// data
+//   .then((usersResponse) => {
+//     return usersResponse.json();
+//   })
+//   .then((users) =>
+//     fetch(users.repos_url)
+//       .then((repoResponse) => {
+//         return repoResponse.json();
+//       })
+//       .then((repoData) => console.log(users, repoData))
+//   )
+//   .catch((error) => console.log("unable to fetch the data", error));
 
-// async function getData(username) {
-//   try {
-//     const usersResponse = await fetch(
-//       `https://api.github.com/users/${username}`
-//     );
-//     const userData = await usersResponse.json();
-//     const repoResponse = await fetch(userData.repos_url);
-//     const repoData = await repoResponse.json();
+async function getData(username) {
+  try {
+    const usersResponse = await fetch(
+      `https://api.github.com/users/${username}`
+    );
+    const userData = await usersResponse.json();
+    const repoResponse = await fetch(userData.repos_url);
+    const repoData = await repoResponse.json();
 
-//     console.log(userData, repoData);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+    console.log(userData, repoData);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 // getData("gyamzosherpa");
+
+// let promise = new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//     resolve("Promise resolved");
+//   }, 4000);
+// });
+
+// //async
+// async function asyncFunc() {
+//   // wait until promise resolves
+//   let result = await promise;
+
+//   console.log(result);
+// }
+
+// // calling the async function
+// console.log(asyncFunc());
+// console.log(promise);
+
+// let stocks = {
+//   Fruits: ["strawberry", "grapes", "banana", "apple"],
+//   liquid: ["water", "ice"],
+//   holder: ["cone", "stick"],
+//   toppings: ["chocolate", "peanuts"],
+// };
+
+//let isShopOpen = true;
+
+// const order = async (time, work) => {
+//   return new Promise(async (resolve, reject) => {
+//     if (isShopOpen) {
+//       setTimeout(async () => {
+//         await work();
+//         resolve();
+//       }, time);
+//     } else {
+//       reject("shop is closed");
+//     }
+//   });
+// };
+
+// const makeIceCream = async () => {
+//   try {
+//     await order(2000, () => {
+//       console.log(`${stocks.Fruits[0]} was selected`);
+//     });
+//     await order(1000, () => {
+//       console.log("production has started");
+//     });
+//     await order(2000, () => {
+//       console.log("fruit has been chopped");
+//     });
+//     await order(1000, () => {
+//       console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} added`);
+//     });
+//     await order(1000, () => {
+//       console.log("start the machine");
+//     });
+//     await order(2000, () => {
+//       console.log(`ice cream placed on ${stocks.holder[1]}`);
+//     });
+//     await order(3000, () => {
+//       console.log(`${stocks.toppings[0]} as toppings`);
+//     });
+//     await order(2000, () => {
+//       console.log("serve ice cream");
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// makeIceCream();
