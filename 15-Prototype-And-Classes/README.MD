@@ -10,6 +10,7 @@
     - [Use strict in class](#use-strict-in-class)
     - [Class Inheritance](#class-inheritance)
     - [JavaScript super() keyword](#javascript-super-keyword)
+    - [Object and class inheritance](#object-and-class-inheritance)
 
 ## Prototypes
 
@@ -339,9 +340,15 @@ console.log(mng1.info()); //hello super inside child, //introduction
   - An instance of the Manager class is created with the name "Alice Smith," address "456 Elm St," and department "HR" and stored in the mng1 variable.
 
 - `Calling Methods`:
+
   - emp1.displayInfo() calls the displayInfo method of the Employee class, which displays the name and address of the employee.
   - mng1.displayInfo() calls the displayInfo method of the Manager class. Since the Manager class does not have its own displayInfo method, it inherits the method from the Employee class and displays the name and address, along with the department.
-  - mng1.info() calls the info method of the Manager class.
-    - Inside the info method:
-      - super.msg() calls the msg method of the parent class (Employee), which prints "hello super inside child."
-      - this.intro() calls the intro method of the Manager class, which prints "introduction."
+  - mng1.info() calls the info method of the Manager class. - Inside the info method: - super.msg() calls the msg method of the parent class (Employee), which prints "hello super inside child." - this.intro() calls the intro method of the Manager class, which prints "introduction."
+
+---
+
+### Object and class inheritance
+
+![Alt text](images/diff.png)
+
+---
