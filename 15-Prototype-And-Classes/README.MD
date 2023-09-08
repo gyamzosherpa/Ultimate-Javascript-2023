@@ -10,6 +10,7 @@
     - [Use strict in class](#use-strict-in-class)
     - [Class Inheritance](#class-inheritance)
     - [JavaScript super() keyword](#javascript-super-keyword)
+    - [static methods and properties](#static-methods-and-properties)
     - [Object and class inheritance](#object-and-class-inheritance)
 
 ## Prototypes
@@ -346,6 +347,40 @@ console.log(mng1.info()); //hello super inside child, //introduction
   - mng1.info() calls the info method of the Manager class. - Inside the info method: - super.msg() calls the msg method of the parent class (Employee), which prints "hello super inside child." - this.intro() calls the intro method of the Manager class, which prints "introduction."
 
 ---
+
+### static methods and properties
+
+```js
+class Person {
+  constructor(n, a) {
+    this.name = n;
+    this.age = a;
+  }
+
+  sayHi() {
+    console.log("Hi....");
+  }
+
+  static address = "Kathmandu";
+
+  static hello() {
+    console.log("hello");
+  }
+}
+
+let person1 = new Person("gyamzo", 26);
+person1.sayHi();
+
+// static "hello", gets call from class not from object
+// person1.hello(); "hello", // uncaught TypeError: person1.hello is not a function
+
+Person.hello(); // no error
+
+console.log(person1.address); // undefined due to static
+console.log(person1);
+```
+
+> There's some benefit to this. To call an instance method, you would have to create a new instance of the class, and then call the method (it's a two-step process). With static methods, this isn't necessary. Static methods are often utility functions, such as functions to create or clone objects, whereas static properties are useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances. Static methods give the method to the constructor of the class... not the instance. This makes it so you can call ClassName.functionName(param);
 
 ### Object and class inheritance
 
