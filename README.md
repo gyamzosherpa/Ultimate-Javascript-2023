@@ -5,6 +5,8 @@
 - [Ultimate_JavaScript](#ultimate_javascript)
   - [Table Of Contents](#table-of-contents)
   - [Best Practices And Coding Conventions For JavaScript](#best-practices-and-coding-conventions-for-javascript)
+  - [Resources](#resources)
+  - [FrontEnd Tools](#frontend-tools)
 
 ## Table Of Contents
 
@@ -27,6 +29,8 @@
 | [How JavaScript Works](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/14-Js-Engine)                    | JS Engine, execution context, call stack, event loop                                                                    |
 | [Prototype and Classes](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/15-Prototype-And-Classes)       | Object Prototype, _proto_, inheritance using prototype, classes                                                         |
 | [Promise and Async-await](https://github.com/gyamzosherpa/Ultimate-Javascript-2023/tree/master/16-promises-asyncAwait)       | asynchronous and synchronous difference,callback, callback hell, promises, promise-chaining, fetch, async-await         |
+
+---
 
 ## Best Practices And Coding Conventions For JavaScript
 
@@ -60,3 +64,19 @@
 - `Comment your code`
   Use comments to explain what your code is doing and why, especially for complex or non-obvious code.
   By following these best practices and coding conventions, you can write clean, readable, and maintainable JavaScript code that is easier to debug, modify, and scale.
+
+---
+
+## Resources
+
+- [JavaScript Info](https://javascript.info/)
+- [JavaScriptTutorial.net](https://www.javascripttutorial.net/)
+
+## FrontEnd Tools
+
+- [Color](https://colorhunt.co/)
+- [CSS Clip-Path](https://bennettfeely.com/clippy/)
+- [Icons](https://heroicons.com/)
+- [Fonts](https://fonts.google.com/)
+
+---
