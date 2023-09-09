@@ -267,7 +267,7 @@ console.log(mng1.name);
 
 ### JavaScript super() keyword
 
-The super keyword used inside a child class denotes its parent class. For example,
+The super keyword used inside a child class denotes its parent class. Super keyword calls the parent class constructor. For example,
 
 ```js
 class Employee {
