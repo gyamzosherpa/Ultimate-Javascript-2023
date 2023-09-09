@@ -29,7 +29,7 @@
 
 The function is a block of code to perform a specific task. So, you don’t have to write the code for the same task again and again but create a function and call it wherever the task needed to be performed. “function” is a keyword to create a function.
 
-![Alt text](function.jpg)
+![Alt text](images/function.jpg)
 
 ```js
 //function with no parameters
@@ -1044,13 +1044,13 @@ console.log(result);
 
 ## this keyword
 
-![Alt text](this_keyword.jpg)
+![Alt text](images/this_keyword.jpg)
 
 This keyword refers to the object it belongs to. It has different values depending on where it is used.
 
 - Alone “this” refers to the global object. If we call this directly, it refers to the window object.
 
-![Alt text](this_window.png)
+![Alt text](images/this_window.png)
 
 - In a regular or traditional function, “this” refers to the global object.
 
@@ -1065,7 +1065,7 @@ function add(a, b) {
 
 output in browser:
 
-![Alt text](this_regular_output.png)
+![Alt text](images/this_regular_output.png)
 
 - In a method “this” refers to the owner object.
 
@@ -1105,6 +1105,8 @@ add(10, 20);
 
 3. The bind method returns a new function where this refers to the object passed as an argument to bind. The returned function can be called later with a different this value and arguments.
 
-![Alt text](this_call-apply-bind.jpg)
+![Alt text](images/this_call-apply-bind.jpg)
 
 `In this example, the fullName function is a method of the person object. By using call, apply, and bind, we are able to change the "this" value inside the fullName function to person2 and get the full name of that object.`
+
+---
